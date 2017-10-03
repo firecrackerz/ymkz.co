@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { colors } from '../constants'
-import ImageNarosiraseMain from '../images/narosirase-1.png'
 import Default from './Default'
 import Mobile from './Mobile'
 
@@ -23,7 +22,7 @@ const Narosirase = () => (
             今のところ、とりあえずの目的のための実装は完了し普段から使えるレベルにはなりましたが、これからもよりよいUXを求めて機能追加や改修をしていきたいと思っています。<br />
           </AppDescription>
           <AppImages>
-            <AppImage src={ImageNarosiraseMain} />
+            <AppImage src="assets/narosirase-1.png" />
           </AppImages>
           <AppLinker>
             <AppLink>
@@ -52,7 +51,7 @@ const Narosirase = () => (
             今のところ、とりあえずの目的のための実装は完了し普段から使えるレベルにはなりましたが、これからもよりよいUXを求めて機能追加や改修をしていきたいと思っています。<br />
           </MobileAppDescription>
           <AppImages>
-            <AppImage src={ImageNarosiraseMain} />
+            <AppImage src="assets/narosirase-1.png" />
           </AppImages>
           <AppLinker>
             <AppLink>

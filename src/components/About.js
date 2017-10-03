@@ -1,10 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { colors } from '../constants'
-import GitHub from '../images/icons/github.svg'
-import Twitter from '../images/icons/twitter.svg'
-import Facebook from '../images/icons/facebook.svg'
-import Steam from '../images/icons/steam.svg'
 import Default from './Default'
 import Mobile from './Mobile'
 
@@ -41,16 +37,16 @@ const About = () => (
         <Section>
           <Title>SOCIAL</Title>
           <Link href="https://github.com/ymkz" target="_blank" first>
-            <Icon src={GitHub} />
+            <Icon src="assets/icons/github.svg" />
           </Link>
           <Link href="https://twitter.com/ymkzly" target="_blank">
-            <Icon src={Twitter} />
+            <Icon src="assets/icons/twitter.svg" />
           </Link>
           <Link href="https://facebook.com/ymkzly" target="_blank">
-            <Icon src={Facebook} />
+            <Icon src="assets/icons/facebook.svg" />
           </Link>
           <Link href="http://steamcommunity.com/id/ymkz" target="_blank" last>
-            <Icon src={Steam} />
+            <Icon src="assets/icons/steam.svg" />
           </Link>
         </Section>
         <Section>
@@ -95,16 +91,16 @@ const About = () => (
         <MobileSection>
           <MobileTitle>SOCIAL</MobileTitle>
           <Link href="https://github.com/ymkz" target="_blank" first>
-            <Icon src={GitHub} />
+            <Icon src="assets/icons/github.svg" />
           </Link>
           <Link href="https://twitter.com/ymkzly" target="_blank">
-            <Icon src={Twitter} />
+            <Icon src="assets/icons/twitter.svg" />
           </Link>
           <Link href="https://facebook.com/ymkzly" target="_blank">
-            <Icon src={Facebook} />
+            <Icon src="assets/icons/facebook.svg" />
           </Link>
           <Link href="http://steamcommunity.com/id/ymkz" target="_blank" last>
-            <Icon src={Steam} />
+            <Icon src="assets/icons/steam.svg" />
           </Link>
         </MobileSection>
         <MobileSection>

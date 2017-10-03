@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { colors } from '../constants'
-import ImageCancelecturesRNMain from '../images/cancelectures-1.png'
-import ImageCancelecturesRNSetting from '../images/cancelectures-2.png'
 import Default from './Default'
 import Mobile from './Mobile'
 
@@ -26,8 +24,8 @@ const Cancelectures = () => (
             アプリ版は拡張機能版で友人や知り合いから頂いたフィードバックを元にシンプルで見やすいなUIを実装できたと思います。またコードの記述も自分の満足いくようなものができたと思っています。<br />
           </AppDescription>
           <AppImages>
-            <AppImage src={ImageCancelecturesRNMain} />
-            <AppImage src={ImageCancelecturesRNSetting} />
+            <AppImage src="assets/cancelectures-1.png" />
+            <AppImage src="assets/cancelectures-2.png" />
           </AppImages>
           <AppLinker>
             <AppLink>
@@ -66,8 +64,8 @@ const Cancelectures = () => (
             アプリ版は拡張機能版で友人や知り合いから頂いたフィードバックを元にシンプルで見やすいなUIを実装できたと思います。またコードの記述も自分の満足いくようなものができたと思っています。<br />
           </MobileAppDescription>
           <AppImages>
-            <AppImage src={ImageCancelecturesRNMain} />
-            <AppImage src={ImageCancelecturesRNSetting} />
+            <AppImage src="assets/cancelectures-1.png" />
+            <AppImage src="assets/cancelectures-2.png" />
           </AppImages>
           <AppLinker>
             <AppLink>

@@ -1,17 +1,7 @@
-const {
-  Sparky,
-  FuseBox,
-  EnvPlugin,
-  SVGPlugin,
-  CSSPlugin,
-  BabelPlugin,
-  QuantumPlugin,
-  WebIndexPlugin,
-  ImageBase64Plugin
-} = require('fuse-box')
+const { Sparky, FuseBox, EnvPlugin, CSSPlugin, BabelPlugin, QuantumPlugin, WebIndexPlugin } = require('fuse-box')
 let production = false
 
-Sparky.task('init', () => {
+Sparky.task('config', () => {
   const fuse = FuseBox.init({
     homeDir: 'src/',
     hash: production,
@@ -29,8 +19,6 @@ Sparky.task('init', () => {
         plugins: [['transform-react-jsx']]
       }),
       CSSPlugin(),
-      SVGPlugin(),
-      ImageBase64Plugin(),
       WebIndexPlugin({
         template: 'src/index.html',
         title: 'YMKZ'
@@ -60,9 +48,11 @@ Sparky.task('init', () => {
   return fuse.run()
 })
 
-Sparky.task('default', ['clean', 'init'], () => {})
-Sparky.task('set-env-production', () => {
-  production = true
-})
-Sparky.task('clean', () => Sparky.src('build/').clean('build/'))
-Sparky.task('production', ['clean', 'set-env-production', 'init'], () => {})
+Sparky.task('default', ['clean', 'config', 'serve'], () => {})
+Sparky.task('set-env-production', () => (production = true))
+Sparky.task(
+  'serve',
+  () => (production ? Sparky.src('assets/**/**.*').dest('build') : Sparky.watch('assets/**/**.*').dest('build'))
+)
+Sparky.task('clean', () => Sparky.src('build').clean('build'))
+Sparky.task('production', ['clean', 'set-env-production', 'config', 'serve'], () => {})
