@@ -171,6 +171,7 @@ const Name = styled.div`
 const Aka = styled.div`
   font-size: 10em;
   font-weight: 900;
+  color: ${colors.ghostWhite};
   position: absolute;
   top: 128px;
   left: 0;
