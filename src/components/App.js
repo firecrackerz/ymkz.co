@@ -17,26 +17,14 @@ const store = compose(applyMiddleware(routerMiddleware(history)))(createStore)(r
 const App = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Container>
+      <div>
         <Header />
         <Route exact path="/" component={About} />
         <Route path="/about" component={About} />
         <Route path="/work" component={Work} />
-      </Container>
+      </div>
     </ConnectedRouter>
   </Provider>
 )
 
 export default App
-
-const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-  overflow-y: scroll;
-  background-color: ${colors.gorgeousPurple};
-  color: ${colors.ghostWhite};
-  font-family: 'Roboto', sans-serif;
-  -webkit-overflow-scrolling: touch;
-`
-
-const Title = styled.span`font-weight: bold;`

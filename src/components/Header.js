@@ -14,8 +14,10 @@ const Header = ({ router }) => (
           <TitleLink to="/">ymkz</TitleLink>
           <Role>front-end engineer</Role>
         </Title>
-        <NavLink to="/about">about</NavLink>
-        <NavLink to="/work">work</NavLink>
+        <NavLink to="/about">
+          about {(router.location.pathname === '/' || router.location.pathname === '/about') && <Active>●</Active>}
+        </NavLink>
+        <NavLink to="/work">work {router.location.pathname === '/work' && <Active>●</Active>}</NavLink>
       </DefaultNav>
     </Default>
     <Mobile>
@@ -23,8 +25,10 @@ const Header = ({ router }) => (
         <Title>
           <TitleLink to="/">ymkz</TitleLink>
         </Title>
-        <NavLink to="/about">about</NavLink>
-        <NavLink to="/work">work</NavLink>
+        <NavLink to="/about">
+          about {(router.location.pathname === '/' || router.location.pathname === '/about') && <Active>●</Active>}
+        </NavLink>
+        <NavLink to="/work">work {router.location.pathname === '/work' && <Active>●</Active>}</NavLink>
       </MobileNav>
     </Mobile>
   </Container>
@@ -78,8 +82,10 @@ const NavLink = styled(Link)`
   text-decoration: none;
   font-size: 0.85em;
   margin: 0 8px;
-  &:hover {
-    text-decoration: underline;
-    transition: 0.5s ease-in;
-  }
+`
+
+const Active = styled.span`
+  font-size: 1px;
+  color: ${colors.activeLight};
+  text-shadow: 1px 1px 2px black, 0 0 1em ${colors.activeLight}, 0 0 0.2em ${colors.activeLight};
 `

@@ -7,5 +7,6 @@ export const colors = {
   tranquil: '#dfe3e2',
   taupeGrey: '#847f82',
   dodgerBlue: '#2779e8',
-  ashesGrey: '#63637e'
+  ashesGrey: '#63637e',
+  activeLight: '#b0bec5'
 }

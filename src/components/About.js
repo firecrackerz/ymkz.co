@@ -32,6 +32,7 @@ const About = () => (
             <Skill>Webpack</Skill>
             <Skill>FuseBox</Skill>
             <Skill>Ruby on Rails</Skill>
+            <Skill>Chrome Extension</Skill>
           </Row>
         </Section>
         <Section>
@@ -86,6 +87,7 @@ const About = () => (
             <MobileSkill>Webpack</MobileSkill>
             <MobileSkill>FuseBox</MobileSkill>
             <MobileSkill>Ruby on Rails</MobileSkill>
+            <MobileSkill>Chrome Extension</MobileSkill>
           </Row>
         </MobileSection>
         <MobileSection>

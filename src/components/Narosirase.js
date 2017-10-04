@@ -23,6 +23,7 @@ const Narosirase = () => (
           </AppDescription>
           <AppImages>
             <AppImage src="assets/narosirase-1.png" />
+            <AppImage src="assets/narosirase-2.png" />
           </AppImages>
           <AppLinker>
             <AppLink>
@@ -52,6 +53,7 @@ const Narosirase = () => (
           </MobileAppDescription>
           <AppImages>
             <AppImage src="assets/narosirase-1.png" />
+            <AppImage src="assets/narosirase-2.png" />
           </AppImages>
           <AppLinker>
             <AppLink>
