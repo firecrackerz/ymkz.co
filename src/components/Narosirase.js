@@ -130,7 +130,7 @@ const MobileAppTitle = styled.div`
 const AppDescription = styled.div`
   color: ${colors.ghostWhite};
   font-size: 17px;
-  line-height: 28px;
+  line-height: 36px;
   padding: 48px 0;
 `
 
