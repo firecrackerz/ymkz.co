@@ -228,7 +228,7 @@ const MobileAka = styled.div`
   left: 0;
 `
 
-const MobileSection = styled.section`margin-bottom: 96px;`
+const MobileSection = styled.section`padding-bottom: 96px;`
 
 const MobileTitle = styled.div`
   color: ${colors.ashesGrey};

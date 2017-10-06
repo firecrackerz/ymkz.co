@@ -85,7 +85,7 @@ const NavLink = styled(Link)`
 `
 
 const Active = styled.span`
-  font-size: 1px;
+  font-size: 8px;
   color: ${colors.activeLight};
   text-shadow: 1px 1px 2px black, 0 0 1em ${colors.activeLight}, 0 0 0.2em ${colors.activeLight};
 `
