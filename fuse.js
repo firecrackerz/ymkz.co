@@ -48,11 +48,12 @@ Sparky.task('config', () => {
   return fuse.run()
 })
 
-Sparky.task('default', ['clean', 'config', 'serve'], () => {})
+Sparky.task('default', ['clean', 'config', 'serve-assets'], () => {})
 Sparky.task('set-env-production', () => (production = true))
 Sparky.task(
-  'serve',
+  'serve-assets',
   () => (production ? Sparky.src('assets/**/**.*').dest('build') : Sparky.watch('assets/**/**.*').dest('build'))
 )
+Sparky.task('serve-public', () => Sparky.src('*', { base: 'public' }).dest('build'))
 Sparky.task('clean', () => Sparky.src('build').clean('build'))
-Sparky.task('production', ['clean', 'set-env-production', 'config', 'serve'], () => {})
+Sparky.task('production', ['clean', 'set-env-production', 'config', 'serve-assets', 'serve-public'], () => {})
