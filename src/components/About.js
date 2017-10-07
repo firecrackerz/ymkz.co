@@ -16,8 +16,8 @@ const About = () => (
         <Section>
           <Title>ABOUT</Title>
           <Block>
-            <Text>I'm a front-end engineer nearby UI/UX engineering.</Text>
-            <Text>And I'm a student, major in Information Technology.</Text>
+            <Text>I&apos;m a front-end engineer nearby UI/UX engineering.</Text>
+            <Text>And I&apos;m a student, major in Information Technology.</Text>
             <Text>Researching Human-Computer Interaction with Eye-Tracking.</Text>
           </Block>
         </Section>
@@ -71,8 +71,8 @@ const About = () => (
         <MobileSection>
           <MobileTitle>ABOUT</MobileTitle>
           <Block>
-            <Text>I'm a front-end engineer nearby UI/UX engineering.</Text>
-            <Text>And I'm a student, major in Information Technology.</Text>
+            <Text>I&apos;m a front-end engineer nearby UI/UX engineering.</Text>
+            <Text>And I&apos;m a student, major in Information Technology.</Text>
             <Text>Researching Human-Computer Interaction with Eye-Tracking.</Text>
           </Block>
         </MobileSection>

@@ -4,10 +4,20 @@
   "version": "1.0.0",
   "main": "fuse.js",
   "license": "MIT",
+  "author": "Kaz 'ymkz' Yamashita",
+  "homepage": "https://ymkz.co",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ymkz/portfolio"
+  },
+  "bugs": {
+    "url": "https://github.com/ymkz/portfolio/issues"
+  },
   "scripts": {
     "start": "node fuse",
     "build": "node fuse production",
-    "clean": "rimraf node_modules && yarn cache clean && yarn"
+    "clean": "rimraf node_modules && yarn cache clean && yarn",
+    "lint": "eslint --config .eslintrc *.js src"
   },
   "prettier": {
     "semi": false,
@@ -31,6 +41,16 @@
     "babel-core": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.6.0",
+    "eslint": "^4.8.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-node": "^5.2.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.4.0",
+    "eslint-plugin-standard": "^3.0.1",
     "fuse-box": "^2.2.31",
     "prettier": "^1.7.0",
     "rimraf": "^2.6.2",

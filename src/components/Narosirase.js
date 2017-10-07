@@ -90,7 +90,7 @@ class Narosirase extends React.Component {
           modalStyle={{ padding: 0 }}
           overlayStyle={{ alignItems: 'center' }}
         >
-          <img style={{ height: '80vh' }} src={this.state.src} onClick={() => this.handleCloseModal()} />
+          <img style={{ height: '80vh' }} src={this.state.src} alt="modal" onClick={() => this.handleCloseModal()} />
         </Modal>
       </Container>
     )
