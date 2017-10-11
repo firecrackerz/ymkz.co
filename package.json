@@ -17,7 +17,7 @@
     "start": "node fuse",
     "build": "node fuse production",
     "clean": "rimraf node_modules && yarn cache clean && yarn",
-    "lint": "eslint --config .eslintrc *.js src"
+    "lint": "eslint src"
   },
   "prettier": {
     "semi": false,
@@ -28,14 +28,13 @@
     "history": "^4.7.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-medium-image-zoom": "^2.0.3",
     "react-redux": "^5.0.6",
     "react-responsive": "^1.3.4",
-    "react-responsive-modal": "^1.8.0",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.6",
     "redux": "^3.7.2",
-    "styled-components": "^2.1.2",
-    "uri-js": "^3.0.2"
+    "styled-components": "^2.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

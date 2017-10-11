@@ -1,6 +1,7 @@
 export const colors = {
   russianBlack: '#26272b',
   gorgeousPurple: '#22222a',
+  gorgeousPurpleAlpha: 'rgba(34, 34, 42, .8)',
   pureWhite: '#ffffff',
   ghostWhite: '#fefeff',
   ghost: '#d2d2d3',
