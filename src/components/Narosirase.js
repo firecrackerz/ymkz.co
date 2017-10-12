@@ -29,10 +29,6 @@ const Narosirase = () => (
                 alt: 'Narosirase Main View',
                 style: { width: '128px', marginRight: '24px', marginBottom: '20px' }
               }}
-              zoomImage={{
-                src: '/assets/narosirase-1.png',
-                alt: 'Narosirase Main View'
-              }}
               defaultStyles={{
                 overlay: { backgroundColor: colors.gorgeousPurpleAlpha }
               }}
@@ -42,10 +38,6 @@ const Narosirase = () => (
                 src: '/assets/narosirase-2.png',
                 alt: 'Narosirase Setting View',
                 style: { width: '128px', marginRight: '24px', marginBottom: '20px' }
-              }}
-              zoomImage={{
-                src: '/assets/narosirase-2.png',
-                alt: 'Narosirase Setting View'
               }}
               defaultStyles={{
                 overlay: { backgroundColor: colors.gorgeousPurpleAlpha }
@@ -85,10 +77,6 @@ const Narosirase = () => (
                 alt: 'Narosirase Main View',
                 style: { width: '128px', marginRight: '24px', marginBottom: '20px' }
               }}
-              zoomImage={{
-                src: '/assets/narosirase-1.png',
-                alt: 'Narosirase Main View'
-              }}
               defaultStyles={{
                 overlay: { backgroundColor: colors.gorgeousPurpleAlpha }
               }}
@@ -98,10 +86,6 @@ const Narosirase = () => (
                 src: '/assets/narosirase-2.png',
                 alt: 'Narosirase Setting View',
                 style: { width: '128px', marginRight: '24px', marginBottom: '20px' }
-              }}
-              zoomImage={{
-                src: '/assets/narosirase-2.png',
-                alt: 'Narosirase Setting View'
               }}
               defaultStyles={{
                 overlay: { backgroundColor: colors.gorgeousPurpleAlpha }
@@ -166,7 +150,10 @@ const MobileAppDescription = styled.div`
   padding: 26px 0;
 `
 
-const AppImages = styled.div`padding: 26px 0;`
+const AppImages = styled.div`
+  padding: 26px 0;
+  overflow: hidden;
+`
 
 const AppLinker = styled.div`padding: 48px 0;`
 

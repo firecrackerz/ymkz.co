@@ -31,10 +31,6 @@ const Cancelectures = () => (
                 alt: 'Cancelectures Main View',
                 style: { width: '128px', marginRight: '24px', marginBottom: '20px' }
               }}
-              zoomImage={{
-                src: 'assets/cancelectures-1.png',
-                alt: 'Cancelectures Main View'
-              }}
               defaultStyles={{
                 overlay: { backgroundColor: colors.gorgeousPurpleAlpha }
               }}
@@ -44,10 +40,6 @@ const Cancelectures = () => (
                 src: 'assets/cancelectures-2.png',
                 alt: 'Cancelectures Setting View',
                 style: { width: '128px', marginRight: '24px', marginBottom: '20px' }
-              }}
-              zoomImage={{
-                src: 'assets/cancelectures-2.png',
-                alt: 'Cancelectures Setting View'
               }}
               defaultStyles={{
                 overlay: { backgroundColor: colors.gorgeousPurpleAlpha }
@@ -97,10 +89,6 @@ const Cancelectures = () => (
                 alt: 'Cancelectures Main View',
                 style: { width: '128px', marginRight: '24px', marginBottom: '20px' }
               }}
-              zoomImage={{
-                src: 'assets/cancelectures-1.png',
-                alt: 'Cancelectures Main View'
-              }}
               defaultStyles={{
                 overlay: { backgroundColor: colors.gorgeousPurpleAlpha }
               }}
@@ -110,10 +98,6 @@ const Cancelectures = () => (
                 src: 'assets/cancelectures-2.png',
                 alt: 'Cancelectures Setting View',
                 style: { width: '128px', marginRight: '24px', marginBottom: '20px' }
-              }}
-              zoomImage={{
-                src: 'assets/cancelectures-2.png',
-                alt: 'Cancelectures Setting View'
               }}
               defaultStyles={{
                 overlay: { backgroundColor: colors.gorgeousPurpleAlpha }
@@ -186,7 +170,10 @@ const MobileAppDescription = styled.div`
   padding: 26px 0;
 `
 
-const AppImages = styled.div`padding: 26px 0;`
+const AppImages = styled.div`
+  padding: 26px 0;
+  overflow: hidden;
+`
 
 const AppLinker = styled.div`padding: 48px 0;`
 
