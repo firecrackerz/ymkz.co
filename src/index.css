@@ -52,8 +52,6 @@ textarea {
 
 html,
 body {
-  width: 100vw;
-  height: 100vh;
   background-color: #22222a;
   color: #fefeff;
   font-family: 'Roboto', sans-serif;
@@ -67,4 +65,8 @@ html {
   font-feature-settings: 'liga';
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium', YuGothic, 'Custom Yu Gothic',
     'Yu Gothic', 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
 }
