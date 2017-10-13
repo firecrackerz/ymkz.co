@@ -164,16 +164,16 @@ const Who = styled.section`
 
 const Name = styled.div`
   font-size: 8em;
-  color: ${colors.ashesGrey};
+  color: ${colors.shadowPurple};
   font-weight: 900;
 `
 
 const Aka = styled.div`
-  font-size: 10em;
+  font-size: 11em;
   font-weight: 900;
   color: ${colors.ghostWhite};
   position: absolute;
-  top: 128px;
+  top: 138px;
   left: 0;
 `
 
@@ -221,7 +221,7 @@ const MobileName = styled.div`
 `
 
 const MobileAka = styled.div`
-  font-size: 5em;
+  font-size: 5.5em;
   font-weight: 900;
   position: absolute;
   top: 96px;
