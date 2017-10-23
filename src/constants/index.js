@@ -12,3 +12,7 @@ export const colors = {
   ashesGrey: '#63637e',
   activeLight: '#b0bec5'
 }
+
+export const sizes = {
+  headerHeight: '72px'
+}

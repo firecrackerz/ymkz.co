@@ -1,5 +1,11 @@
 {
-  "extends": ["standard", "plugin:react/recommended", "plugin:jsx-a11y/recommended", "prettier"],
+  "extends": [
+    "standard",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:jsx-a11y/recommended",
+    "prettier"
+  ],
   "plugins": ["standard", "node", "import", "promise", "react", "jsx-a11y", "prettier"],
   "env": {
     "es6": true,
@@ -13,5 +19,15 @@
     "react/prop-types": ["off"],
     "jsx-a11y/click-events-have-key-events": ["off"],
     "jsx-a11y/no-noninteractive-element-interactions": ["off"]
+  },
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "sourceType": "module",
+    "ecmaVersion": 2017,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "experimentalDecorators": true,
+      "jsx": true
+    }
   }
 }

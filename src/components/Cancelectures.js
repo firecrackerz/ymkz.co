@@ -128,57 +128,54 @@ const Cancelectures = () => (
 
 export default Cancelectures
 
-const Container = styled.div`width: 100%;`
-
+const Container = styled.div`
+  width: 100%;
+`
 const DefaultMain = styled.div`
   width: 100%;
   padding: 0 100px;
 `
-
 const MobileMain = styled.div`
   width: 100%;
   padding: 0 24px;
 `
-
-const App = styled.section`width: 100%;`
-
+const App = styled.section`
+  width: 100%;
+`
 const AppTitle = styled.div`
   color: ${colors.ghostWhite};
   font-size: 96px;
   font-weight: 900;
   padding: 96px 0;
 `
-
 const MobileAppTitle = styled.div`
   color: ${colors.ghostWhite};
   font-size: 48px;
   font-weight: 900;
   padding: 26px 0;
 `
-
 const AppDescription = styled.div`
   color: ${colors.ghostWhite};
   font-size: 17px;
   line-height: 36px;
   padding: 48px 0;
 `
-
 const MobileAppDescription = styled.div`
   color: ${colors.ghostWhite};
   font-size: 15px;
   line-height: 28px;
   padding: 26px 0;
 `
-
 const AppImages = styled.div`
   padding: 26px 0;
   overflow: hidden;
 `
-
-const AppLinker = styled.div`padding: 48px 0;`
-
-const AppLink = styled.li`margin: 10px 0;`
-
+const AppLinker = styled.div`
+  padding: 48px 0;
+`
+const AppLink = styled.li`
+  margin: 10px 0;
+`
 const Link = styled.a.attrs({
   target: '_blank'
 })`

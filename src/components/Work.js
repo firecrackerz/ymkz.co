@@ -14,8 +14,9 @@ const Work = () => (
 
 export default Work
 
-const Container = styled.div`width: 100%;`
-
+const Container = styled.div`
+  width: 100%;
+`
 const Separator = styled.div`
   height: 128px;
   width: 100%;

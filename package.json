@@ -16,8 +16,10 @@
   "scripts": {
     "start": "node fuse",
     "build": "node fuse production",
-    "clean": "rimraf node_modules && yarn cache clean && yarn",
-    "lint": "eslint src"
+    "lint": "prettier-eslint \"src/**/*.js\"",
+    "lint:fix": "prettier-eslint --write \"src/**/*.js\"",
+    "clean": "rimraf node_modules && yarn",
+    "clean:cache": "rimraf node_modules && yarn cache clean && yarn"
   },
   "prettier": {
     "semi": false,
@@ -52,6 +54,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "fuse-box": "^2.2.31",
     "prettier": "^1.7.0",
+    "prettier-eslint-cli": "^4.4.0",
     "rimraf": "^2.6.2",
     "uglify-js": "^3.1.2"
   }

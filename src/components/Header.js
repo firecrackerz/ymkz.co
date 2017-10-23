@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { colors } from '../constants'
+import { colors, sizes } from '../constants'
 import Default from './Default'
 import Mobile from './Mobile'
 
@@ -40,11 +40,10 @@ export default connect(({ router }) => ({
 
 const Container = styled.header`
   width: 100%;
-  height: 72px;
+  height: ${sizes.headerHeight};
   display: flex;
   align-items: center;
 `
-
 const DefaultNav = styled.nav`
   width: 100%;
   display: flex;
@@ -52,7 +51,6 @@ const DefaultNav = styled.nav`
   align-items: center;
   padding: 0 100px;
 `
-
 const MobileNav = styled.nav`
   width: 100%;
   display: flex;
@@ -60,30 +58,25 @@ const MobileNav = styled.nav`
   align-items: center;
   padding: 0 24px;
 `
-
 const Title = styled.div`
   font-weight: bold;
   margin-right: auto;
 `
-
 const Role = styled.span`
   color: ${colors.ashesGrey};
   font-size: 0.85em;
   padding-left: 8px;
 `
-
 const TitleLink = styled(Link)`
   color: ${colors.ghostWhite};
   text-decoration: none;
 `
-
 const NavLink = styled(Link)`
   color: ${colors.ghostWhite};
   text-decoration: none;
   font-size: 0.85em;
   margin: 0 8px;
 `
-
 const Active = styled.span`
   font-size: 8px;
   color: ${colors.activeLight};
