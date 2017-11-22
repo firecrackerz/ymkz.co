@@ -79,4 +79,5 @@ body {
   -webkit-overflow-scrolling: touch;
   background-color: #22222a;
   color: #fefeff;
+  overflow-x: hidden;
 }

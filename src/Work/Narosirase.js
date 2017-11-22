@@ -58,17 +58,18 @@ export default NarosiraseComponent
 const AppTitle = styled.div`
   font-size: 6rem;
   font-weight: 900;
-  padding: 72px 0;
+  padding: 72px 0 12px;
   @media (max-width: 768px) {
     font-size: 3rem;
   }
 `
 const AppDescription = styled.div`
   font-size: 1.1rem;
-  line-height: 36px;
+  line-height: 2rem;
   padding: 24px 0;
   @media (max-width: 768px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
   }
 `
 const AppImages = styled.div`
