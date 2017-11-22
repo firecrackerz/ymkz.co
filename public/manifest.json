@@ -1,0 +1,42 @@
+{
+  "name": "YMKZ",
+  "short_name": "YMKZ",
+  "start_url": "./index.html",
+  "lang": "ja-JP",
+  "display": "standalone",
+  "theme_color": "#22222a",
+  "background_color": "#22222a",
+  "description": "The portfolio site about ymkz",
+  "icons": [
+    {
+      "src": "icon16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "icon132.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "icon96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "icon120.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "icon152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "icon180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
