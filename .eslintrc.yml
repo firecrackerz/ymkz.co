@@ -1,0 +1,35 @@
+---
+  parser: babel-eslint
+  extends:
+    - plugin:react/recommended
+    - plugin:import/recommended
+    - plugin:jsx-a11y/recommended
+    - standard
+    - prettier
+    - prettier/react
+    - prettier/standard
+  plugins:
+    - node
+    - promise
+    - react
+    - import
+    - jsx-a11y
+    - standard
+    - prettier
+  env:
+    es6: true
+    node: true
+    jest: true
+    browser: true
+  rules:
+    prettier/prettier: error
+    react/prop-types: off
+    react/display-name: off
+  parserOptions:
+    sourceType: module
+    ecmaVersion: 2017
+    ecmaFeatures:
+      experimentalObjectRestSpread: true
+      experimentalDecorators: true
+      classes: true
+      jsx: true

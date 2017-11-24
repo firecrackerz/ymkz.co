@@ -48,4 +48,9 @@ const HeaderNavLink = styled.div`
   font-size: 0.85rem;
   font-weight: ${({ active }) => active && 500};
   cursor: pointer;
+  @media (max-width: 768px) {
+    padding: 0 0.4rem;
+    padding-right: ${({ last }) => last && 0};
+    padding-left: ${({ first }) => first && 0};
+  }
 `
