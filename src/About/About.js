@@ -15,10 +15,10 @@ const AboutComponent = () => (
 export default AboutComponent
 
 const Container = styled.div`
-  padding: 64px 0;
+  align-items: center;
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
+  padding: 64px 0;
   @media (max-width: 768px) {
     display: block;
   }
@@ -26,14 +26,14 @@ const Container = styled.div`
 const Title = styled.div`
   color: #63637e;
   font-size: 0.85rem;
-  width: 256px;
   min-width: 256px;
+  width: 256px;
   @media (max-width: 768px) {
     font-size: 1rem;
     padding-bottom: 1rem;
   }
 `
 const Text = styled.p`
-  line-height: 1.85rem;
   font-size: 1.15rem;
+  line-height: 1.85rem;
 `

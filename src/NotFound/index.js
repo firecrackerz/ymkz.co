@@ -6,8 +6,8 @@ const NotFoundContainer = () => <Container>404 Not Found</Container>
 export default NotFoundContainer
 
 const Container = styled.div`
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   height: calc(100vh - 72px);
+  justify-content: center;
 `

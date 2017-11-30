@@ -73,8 +73,8 @@ const AppDescription = styled.div`
   }
 `
 const AppImages = styled.div`
-  padding: 24px 0;
   overflow: hidden;
+  padding: 24px 0;
 `
 const AppLinker = styled.div`
   padding: 24px 0;
@@ -85,6 +85,6 @@ const AppLink = styled.li`
 const Link = styled.a.attrs({
   target: '_blank'
 })`
-  text-decoration: none;
   color: #fefeff;
+  text-decoration: none;
 `

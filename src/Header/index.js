@@ -31,10 +31,10 @@ export default connect(
 )(Header)
 
 const HeaderContainer = styled.div`
-  display: flex;
   align-items: center;
-  justify-content: space-between;
+  display: flex;
   height: 72px;
+  justify-content: space-between;
 `
 const HeaderTitleLink = styled(Link)`
   color: #fefeff;
@@ -51,20 +51,20 @@ const HeaderTitleRole = styled.span`
   }
 `
 const HeaderNavigation = styled.div`
-  display: flex;
   align-items: center;
+  display: flex;
 `
 const HeaderNavLink = styled.div`
-  padding: 0 1rem;
-  padding-right: ${({ last }) => last && 0};
-  padding-left: ${({ first }) => first && 0};
   color: ${({ active }) => (active ? '#fefeff' : '#63637e')};
+  cursor: pointer;
   font-size: 0.85rem;
   font-weight: ${({ active }) => active && 500};
-  cursor: pointer;
+  padding: 0 1rem;
+  padding-left: ${({ first }) => first && 0};
+  padding-right: ${({ last }) => last && 0};
   @media (max-width: 768px) {
     padding: 0 0.4rem;
-    padding-right: ${({ last }) => last && 0};
     padding-left: ${({ first }) => first && 0};
+    padding-right: ${({ last }) => last && 0};
   }
 `

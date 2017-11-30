@@ -22,9 +22,9 @@
     jest: true
     browser: true
   rules:
-    prettier/prettier: error
     react/prop-types: off
     react/display-name: off
+    prettier/prettier: error
   parserOptions:
     sourceType: module
     ecmaVersion: 2017

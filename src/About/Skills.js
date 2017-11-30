@@ -21,10 +21,10 @@ const SkillsComponent = () => (
 export default SkillsComponent
 
 const Container = styled.div`
-  padding: 64px 0;
+  align-items: center;
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
+  padding: 64px 0;
   @media (max-width: 768px) {
     display: block;
   }
@@ -32,8 +32,8 @@ const Container = styled.div`
 const Title = styled.div`
   color: #63637e;
   font-size: 0.85rem;
-  width: 256px;
   min-width: 256px;
+  width: 256px;
   @media (max-width: 768px) {
     font-size: 1rem;
     padding-bottom: 1rem;
@@ -45,7 +45,7 @@ const Skills = styled.div`
 `
 const Skill = styled.span`
   display: block;
+  font-size: 1.1rem;
   padding: 0.5rem 0;
   padding-right: ${({ last }) => (last ? 0 : '2rem')};
-  font-size: 1.1rem;
 `

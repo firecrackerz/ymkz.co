@@ -6,23 +6,23 @@ import { Provider } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
 import { ConnectedRouter, routerMiddleware, routerReducer as router } from 'react-router-redux'
 import styled from 'styled-components'
-import registerServiceWorker from './worker'
 import Header from './Header'
 import About from './About'
 import Work from './Work'
 import NotFound from './NotFound'
+import registerServiceWorker from './worker'
 import './index.css'
 
 const history = createBrowserHistory()
 const reducer = combineReducers({ router })
 const store = createStore(reducer, undefined, compose(applyMiddleware(routerMiddleware(history))))
 const AppContainer = styled.div`
-  width: 100vw;
-  padding: 0 192px;
   background-color: #22222a;
+  color: #fefeff;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  color: #fefeff;
+  padding: 0 192px;
+  width: 100vw;
   @media (max-width: 768px) {
     padding: 0 24px;
   }

@@ -22,10 +22,10 @@ const SocialComponent = () => (
 export default SocialComponent
 
 const Container = styled.div`
-  padding: 64px 0;
+  align-items: center;
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
+  padding: 64px 0;
   @media (max-width: 768px) {
     display: block;
   }
@@ -33,22 +33,22 @@ const Container = styled.div`
 const Title = styled.div`
   color: #63637e;
   font-size: 0.85rem;
-  width: 256px;
   min-width: 256px;
+  width: 256px;
   @media (max-width: 768px) {
     font-size: 1rem;
     padding-bottom: 1rem;
   }
 `
 const Icon = styled.img`
-  width: 32px;
   height: 32px;
+  width: 32px;
 `
 const Link = styled.a.attrs({
   target: '_blank'
 })`
-  text-decoration: none;
   padding: 0 16px;
   padding-right: ${({ last }) => last && 0};
   padding-left: ${({ first }) => first && 0};
+  text-decoration: none;
 `

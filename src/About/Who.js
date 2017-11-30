@@ -12,9 +12,9 @@ const WhoComponent = () => (
 export default WhoComponent
 
 const Container = styled.div`
-  height: 512px;
   display: flex;
   flex-flow: column nowrap;
+  height: 512px;
   justify-content: center;
   position: relative;
   @media (max-width: 768px) {
@@ -22,8 +22,8 @@ const Container = styled.div`
   }
 `
 const Name = styled.div`
-  font-size: 8.5rem;
   color: #3e3e4e;
+  font-size: 8.5rem;
   font-weight: 900;
   @media (max-width: 768px) {
     font-size: 4rem;
