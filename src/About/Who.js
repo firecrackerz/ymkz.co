@@ -26,17 +26,17 @@ const Name = styled.div`
   color: #3e3e4e;
   font-weight: 900;
   @media (max-width: 768px) {
-    font-size: 4em;
+    font-size: 4rem;
   }
 `
 const Aka = styled.div`
   font-size: 11rem;
   font-weight: 900;
   position: absolute;
-  top: 138px;
+  top: 142px;
   left: 0;
   @media (max-width: 768px) {
-    font-size: 5.5em;
-    top: 96px;
+    font-size: 5.2rem;
+    top: 104px;
   }
 `

@@ -1,11 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { push } from 'react-router-redux'
 import styled from 'styled-components'
 
 const Header = ({ router: { location: { pathname } }, push }) => (
   <HeaderContainer>
-    <HeaderTitleLink onClick={() => push('/')}>ymkz</HeaderTitleLink>
+    <div>
+      <HeaderTitleLink to="/">ymkz</HeaderTitleLink>
+      <HeaderTitleRole>is front-end engineer</HeaderTitleRole>
+    </div>
     <HeaderNavigation>
       <HeaderNavLink onClick={() => push('/about')} active={pathname === '/' || pathname === '/about'} first>
         about
@@ -32,9 +36,19 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   height: 72px;
 `
-const HeaderTitleLink = styled.div`
+const HeaderTitleLink = styled(Link)`
+  color: #fefeff;
   font-weight: 900;
-  cursor: pointer;
+  text-decoration: none;
+`
+const HeaderTitleRole = styled.span`
+  color: #63637e;
+  font-size: 0.75rem;
+  padding-left: 0.5rem;
+  vertical-align: bottom;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 const HeaderNavigation = styled.div`
   display: flex;

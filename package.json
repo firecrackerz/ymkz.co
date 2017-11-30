@@ -20,7 +20,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.js\"",
     "lint:fix": "prettier --write \"src/**/*.js\"",
-    "lint:check": "eslint --print-config .eslintrc.yml | eslint-config-prettier-check",
+    "lint:validitycheck": "eslint --print-config .eslintrc.yml | eslint-config-prettier-check",
     "clean": "rimraf node_modules && yarn",
     "clean:cache": "rimraf node_modules && yarn cache clean && yarn"
   },
