@@ -22,7 +22,9 @@
     "lint:fix": "prettier --write \"src/**/*.js\"",
     "lint:validitycheck": "eslint --print-config .eslintrc.yml | eslint-config-prettier-check",
     "clean": "rimraf node_modules && yarn",
-    "clean:cache": "rimraf node_modules && yarn cache clean && yarn"
+    "clean:cache": "rimraf node_modules && yarn cache clean && yarn",
+    "package": "ncu",
+    "package:upgrade": "ncu --upgrade"
   },
   "dependencies": {
     "history": "^4.7.2",
@@ -48,6 +50,7 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.5.1",
     "eslint-plugin-standard": "^3.0.1",
+    "npm-check-updates": "^2.13.0",
     "prettier": "^1.8.2",
     "rimraf": "^2.6.2"
   }
