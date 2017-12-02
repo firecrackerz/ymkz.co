@@ -4,7 +4,9 @@ import styled from 'styled-components'
 const WhoComponent = () => (
   <Container>
     <Name>Kaz</Name>
-    <Aka>ymkz</Aka>
+    <Aka>
+      <span>ymkz</span>
+    </Aka>
     <Name>Yamashita</Name>
   </Container>
 )
@@ -21,7 +23,7 @@ const Container = styled.div`
     height: 320px;
   }
 `
-const Name = styled.div`
+const Name = styled.p`
   color: #3e3e4e;
   font-size: 8.5rem;
   font-weight: 900;
