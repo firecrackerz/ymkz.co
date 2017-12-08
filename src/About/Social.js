@@ -7,13 +7,13 @@ import Facebook from './images/facebook.svg'
 const SocialComponent = () => (
   <Container>
     <Title>SOCIAL</Title>
-    <Link href="https://github.com/ymkz" rel="noopener" first>
+    <Link href="https://github.com/ymkz" rel="noopener noreferrer" first>
       <Icon src={GitHub} alt="GitHub" />
     </Link>
-    <Link href="https://twitter.com/ymkzly" rel="noopener">
+    <Link href="https://twitter.com/ymkzly" rel="noopener noreferrer">
       <Icon src={Twitter} alt="Twitter" />
     </Link>
-    <Link href="https://facebook.com/ymkzly" rel="noopener" last>
+    <Link href="https://facebook.com/ymkzly" rel="noopener noreferrer" last>
       <Icon src={Facebook} alt="Facebook" />
     </Link>
   </Container>
