@@ -8,6 +8,7 @@ const AboutComponent = () => (
       <Text>I&apos;m a front-end engineer nearby UI/UX engineering.</Text>
       <Text>And I&apos;m a student, major in Information Technology.</Text>
       <Text>Researching Human-Computer Interaction with Eye-Tracking.</Text>
+      <Text>21y/o, based in Matsue, I like padding, create UI and FPS Game.</Text>
     </div>
   </Container>
 )

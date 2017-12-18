@@ -55,7 +55,7 @@ const HeaderNavigation = styled.div`
   display: flex;
 `
 const HeaderNavLink = styled.div`
-  color: ${({ active }) => (active ? '#fefeff' : '#63637e')};
+  color: ${({ active }) => (active ? '#fefeff' : '#eceff1')};
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: ${({ active }) => active && 500};
