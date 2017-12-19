@@ -45,7 +45,7 @@ const NarosiraseComponent = () => (
         <Link href="https://github.com/ymkz/narosirase">Repository - GitHub(ymkz/narosirase)</Link>
       </AppLink>
       <AppLink>
-        <Link href="https://github.com/ymkz/narosirase">Expo - @ymkz/narosirase</Link>
+        <Link href="https://expo.io/@ymkz/narosirase">Expo - @ymkz/narosirase</Link>
       </AppLink>
     </AppLinker>
   </div>

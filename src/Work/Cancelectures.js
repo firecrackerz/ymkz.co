@@ -56,7 +56,7 @@ const CancelecturesComponent = () => (
         <Link href="https://github.com/ymkz/cancelectures-rn">Repository - GitHub(ymkz/cancelectures-RN)</Link>
       </AppLink>
       <AppLink>
-        <Link href="https://github.com/ymkz/cancelectures">Expo - @ymkz/cancelectures</Link>
+        <Link href="https://expo.io/@ymkz/cancelectures">Expo - @ymkz/cancelectures</Link>
       </AppLink>
     </AppLinker>
   </div>
