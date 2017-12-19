@@ -58,7 +58,7 @@ const HeaderNavLink = styled.div`
   color: ${({ active }) => (active ? '#fefeff' : '#eceff1')};
   cursor: pointer;
   font-size: 0.85rem;
-  font-weight: ${({ active }) => active && 500};
+  font-weight: ${({ active }) => active && 900};
   padding: 0 1rem;
   padding-left: ${({ first }) => first && 0};
   padding-right: ${({ last }) => last && 0};
