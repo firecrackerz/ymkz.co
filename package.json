@@ -18,13 +18,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint \"src/**/*.js\"",
-    "lint:fix": "prettier --write \"src/**/*.js\"",
-    "lint:validitycheck": "eslint --print-config .eslintrc.yml | eslint-config-prettier-check",
+    "lint": "eslint 'src/**/*.js'",
+    "lint:style": "stylelint 'src/**/*.js'",
+    "lint:fix": "prettier --write 'src/**/*.js'",
+    "lint:check": "eslint --print-config .eslintrc.yml | eslint-config-prettier-check",
     "clean": "rimraf node_modules && yarn",
-    "clean:cache": "rimraf node_modules && yarn cache clean && yarn",
-    "package": "ncu",
-    "package:upgrade": "ncu --upgradeAll"
+    "clean:cache": "rimraf node_modules && yarn cache clean && yarn"
   },
   "dependencies": {
     "history": "^4.7.2",
@@ -46,8 +45,12 @@
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-prettier": "^2.4.0",
     "eslint-plugin-react": "^7.5.1",
-    "npm-check-updates": "^2.13.0",
     "prettier": "^1.9.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-order": "^0.8.0",
+    "stylelint-processor-styled-components": "^1.2.1"
   }
 }
