@@ -1,19 +1,19 @@
 @font-face {
   font-family: 'Custom Yu Gothic';
-  src: local('Yu Gothic');
   font-weight: 300;
+  src: local('Yu Gothic');
 }
 
 @font-face {
   font-family: 'Custom Yu Gothic';
-  src: local('Yu Gothic');
   font-weight: 500;
+  src: local('Yu Gothic');
 }
 
 @font-face {
   font-family: 'Custom Yu Gothic';
-  src: local('Yu Gothic');
   font-weight: bold;
+  src: local('Yu Gothic');
 }
 
 *,
@@ -39,27 +39,45 @@ h4,
 h5,
 input,
 textarea {
-  margin: 0;
-  padding: 0;
+  background: transparent;
   border: 0;
   font-size: 100%;
+  margin: 0;
+  padding: 0;
   vertical-align: baseline;
-  background: transparent;
 }
 
 html {
-  font-size: 16px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga';
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', '游ゴシック Medium', YuGothic, 'Custom Yu Gothic',
     'Yu Gothic', 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo, sans-serif;
+  font-feature-settings: 'liga';
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  -webkit-overflow-scrolling: touch;
   background-color: #22222a;
   color: #fefeff;
+  -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
+}
+
+::-webkit-input-placeholder {
+  color: #4d4d60;
+}
+
+::-moz-placeholder,
+:-moz-placeholder {
+  color: #4d4d60;
+  opacity: 1;
+}
+
+:placeholder-shown {
+  color: #4d4d60;
+}
+
+:-ms-input-placeholder {
+  color: #4d4d60;
 }

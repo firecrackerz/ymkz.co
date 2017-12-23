@@ -3,7 +3,7 @@
   "short_name": "YMKZ",
   "start_url": "./index.html",
   "lang": "ja-JP",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#22222a",
   "background_color": "#22222a",
   "description": "The portfolio site about ymkz",

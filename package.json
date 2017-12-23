@@ -19,8 +19,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint 'src/**/*.js'",
-    "lint:style": "stylelint 'src/**/*.js'",
     "lint:fix": "prettier --write 'src/**/*.js'",
+    "lint:style": "stylelint 'src/**/*.js'",
     "lint:check": "eslint --print-config .eslintrc.yml | eslint-config-prettier-check",
     "clean": "rimraf node_modules && yarn",
     "clean:cache": "rimraf node_modules && yarn cache clean && yarn"

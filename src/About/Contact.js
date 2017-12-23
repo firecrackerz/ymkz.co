@@ -1,16 +1,81 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ContactComponent = () => (
-  <Container>
-    <Title>CONTACT</Title>
-    <div>
-      <Text>
-        Contact me from SNS accounts, or <Mailto href="mailto:ymkzly@gmail.com">ymkzly@gmail.com</Mailto>
-      </Text>
-    </div>
-  </Container>
-)
+class ContactComponent extends React.Component {
+  constructor() {
+    super()
+    this.state = {}
+  }
+
+  encode = data =>
+    Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&')
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
+  handleSubmit = async e => {
+    e.preventDefault()
+    const url = '/'
+    const options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: this.encode({ 'form-name': 'contact', ...this.state })
+    }
+    await fetch(url, options).catch(error => console.log(error))
+  }
+
+  render() {
+    return (
+      <Container>
+        <Title>CONTACT</Title>
+        <FormWrapper>
+          <form
+            data-netlify
+            data-netlify-honeypot="bot-field"
+            method="post"
+            name="contact"
+            onSubmit={this.handleSubmit}
+          >
+            <input id="bot-field" name="bot-field" hidden />
+            <div>
+              <label htmlFor="name">
+                <InputLabel first>Name</InputLabel>
+                <Input id="name" name="name" placeholder="John Doe" onChange={this.handleChange} type="text" />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="email">
+                <InputLabel>Email</InputLabel>
+                <Input
+                  id="email"
+                  name="email"
+                  placeholder="john@example.com"
+                  onChange={this.handleChange}
+                  type="email"
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="message">
+                <InputLabel>Message</InputLabel>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="What you want to message"
+                  onChange={this.handleChange}
+                />
+              </label>
+            </div>
+            <Submit type="submit">Send</Submit>
+          </form>
+        </FormWrapper>
+      </Container>
+    )
+  }
+}
 
 export default ContactComponent
 
@@ -33,12 +98,60 @@ const Title = styled.div`
     padding-bottom: 1rem;
   }
 `
-const Text = styled.p`
-  font-size: 1.15rem;
-  line-height: 1.85rem;
+const FormWrapper = styled.div`
+  width: 100%;
 `
-const Mailto = styled.a`
+const InputLabel = styled.p`
+  font-size: 1.1rem;
+  padding: 0.8rem 0;
+  padding-top: ${({ first }) => first && 0};
+`
+const Input = styled.input`
+  background-color: #3e3e4e;
+  border-radius: 4px;
   color: #fefeff;
-  font-weight: 900;
-  text-decoration: none;
+  font-size: 1.1rem;
+  max-width: 640px;
+  padding: 0.65rem;
+  width: 100%;
+  &:focus {
+    border-color: #373747;
+    box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075), 0 0 0 0.2em rgba(77, 77, 96, 0.3);
+    outline: none;
+  }
+`
+const Textarea = styled.textarea`
+  background-color: #3e3e4e;
+  border-radius: 4px;
+  color: #fefeff;
+  font-size: 1.1rem;
+  height: 12rem;
+  max-width: 640px;
+  padding: 0.65rem;
+  resize: none;
+  width: 100%;
+  &:focus {
+    border-color: #373747;
+    box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075), 0 0 0 0.2em rgba(77, 77, 96, 0.3);
+    outline: none;
+  }
+`
+const Submit = styled.button`
+  background-color: #3e3e4e;
+  border: 0;
+  border-radius: 4px;
+  color: #fefeff;
+  font-size: 1rem;
+  height: 2.5rem;
+  margin-top: 1rem;
+  width: 5rem;
+  &:focus {
+    border-color: #373747;
+    box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075), 0 0 0 0.2rem rgba(77, 77, 96, 0.3);
+    outline: none;
+  }
+  &:active {
+    border-color: #373747;
+    box-shadow: inset 0 0.5rem 0.5rem rgba(27, 31, 35, 0.15);
+  }
 `
