@@ -10,7 +10,7 @@ import Header from './Header'
 import About from './About'
 import Work from './Work'
 import NotFound from './NotFound'
-import registerServiceWorker from './worker'
+import registerServiceWorker from './service-worker'
 import './index.css'
 
 const history = createBrowserHistory()

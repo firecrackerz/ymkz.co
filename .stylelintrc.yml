@@ -8,4 +8,4 @@
   rules:
     order/properties-alphabetical-order: true
   ignoreFiles:
-    - src/worker.js
+    - src/service-worker.js
