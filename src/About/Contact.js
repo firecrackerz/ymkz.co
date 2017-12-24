@@ -1,35 +1,89 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ContactComponent = () => (
-  <Container>
-    <Title>CONTACT</Title>
-    <FormWrapper>
-      <form method="post">
-        <input name="bot-field" type="hidden" value="contact" />
-        <div>
-          <label htmlFor="name">
-            <InputLabel first>Name</InputLabel>
-            <Input id="name" name="name" placeholder="John Doe" type="text" />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="email">
-            <InputLabel>Email</InputLabel>
-            <Input id="email" name="email" placeholder="john@example.com" type="email" />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="message">
-            <InputLabel>Message</InputLabel>
-            <Textarea id="message" name="message" placeholder="What you want to message" />
-          </label>
-        </div>
-        <Submit type="submit">Send</Submit>
-      </form>
-    </FormWrapper>
-  </Container>
-)
+class ContactComponent extends React.Component {
+  constructor() {
+    super()
+    this.state = { name: '', email: '', message: '' }
+  }
+
+  encode = data =>
+    Object.keys(data)
+      .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&')
+
+  handleSubmit = e => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: this.encode({ 'form-name': 'contact', ...this.state })
+    })
+      .then(() => alert('Thank you for your message!'))
+      .catch(error => alert(error))
+
+    e.preventDefault()
+  }
+
+  handleChange = e => this.setState({ [e.target.name]: e.target.value })
+
+  render() {
+    return (
+      <Container>
+        <Title>CONTACT</Title>
+        <FormWrapper>
+          <form
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            method="post"
+            name="contact"
+            onSubmit={this.handleSubmit}
+          >
+            <input name="bot-field" type="hidden" value="contact" />
+            <div>
+              <label htmlFor="name">
+                <InputLabel first>Name</InputLabel>
+                <Input
+                  id="name"
+                  name="name"
+                  placeholder="John Doe"
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="email">
+                <InputLabel>Email</InputLabel>
+                <Input
+                  id="email"
+                  name="email"
+                  placeholder="john@example.com"
+                  type="email"
+                  value={this.state.email}
+                  onChange={this.handleChange}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="message">
+                <InputLabel>Message</InputLabel>
+                <Textarea
+                  id="message"
+                  name="message"
+                  placeholder="What you want to message"
+                  value={this.state.message}
+                  onChange={this.handleChange}
+                />
+              </label>
+            </div>
+            <Submit type="submit">Send</Submit>
+          </form>
+        </FormWrapper>
+      </Container>
+    )
+  }
+}
 
 export default ContactComponent
 
