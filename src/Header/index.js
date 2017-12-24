@@ -36,24 +36,29 @@ const HeaderContainer = styled.div`
   height: 72px;
   justify-content: space-between;
 `
+
 const HeaderTitleLink = styled(Link)`
   color: #fefeff;
   font-weight: 900;
   text-decoration: none;
 `
+
 const HeaderTitleRole = styled.span`
   color: #63637e;
   font-size: 0.75rem;
   padding-left: 0.5rem;
   vertical-align: bottom;
+
   @media (max-width: 768px) {
     display: none;
   }
 `
+
 const HeaderNavigation = styled.div`
   align-items: center;
   display: flex;
 `
+
 const HeaderNavLink = styled.div`
   color: ${({ active }) => (active ? '#fefeff' : '#eceff1')};
   cursor: pointer;
@@ -62,6 +67,7 @@ const HeaderNavLink = styled.div`
   padding: 0 1rem;
   padding-left: ${({ first }) => first && 0};
   padding-right: ${({ last }) => last && 0};
+
   @media (max-width: 768px) {
     padding: 0 0.4rem;
     padding-left: ${({ first }) => first && 0};

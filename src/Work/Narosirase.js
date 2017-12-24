@@ -57,31 +57,39 @@ const AppTitle = styled.div`
   font-size: 6rem;
   font-weight: 900;
   padding: 72px 0 12px;
+
   @media (max-width: 768px) {
     font-size: 3rem;
   }
 `
+
 const AppDescription = styled.div`
   font-size: 1.1rem;
   line-height: 2rem;
   padding: 24px 0;
+
   @media (max-width: 768px) {
     font-size: 0.9rem;
     line-height: 1.5rem;
   }
 `
+
 const AppImages = styled.div`
   overflow: hidden;
   padding: 24px 0;
 `
+
 const AppLinker = styled.div`
   padding: 24px 0;
 `
+
 const AppLink = styled.li`
   margin: 12px 0;
 `
+
 const Link = styled.a.attrs({
-  target: '_blank'
+  target: '_blank',
+  rel: 'noopener noreferrer'
 })`
   color: #fefeff;
   text-decoration: none;

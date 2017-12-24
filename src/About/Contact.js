@@ -84,28 +84,34 @@ const Container = styled.div`
   display: flex;
   flex-flow: row nowrap;
   padding: 64px 0;
+
   @media (max-width: 768px) {
     display: block;
   }
 `
+
 const Title = styled.div`
   color: #63637e;
   font-size: 0.85rem;
   min-width: 256px;
   width: 256px;
+
   @media (max-width: 768px) {
     font-size: 1rem;
     padding-bottom: 1rem;
   }
 `
+
 const FormWrapper = styled.div`
   width: 100%;
 `
+
 const InputLabel = styled.p`
   font-size: 1.1rem;
   padding: 0.8rem 0;
   padding-top: ${({ first }) => first && 0};
 `
+
 const Input = styled.input`
   background-color: #3e3e4e;
   border-radius: 4px;
@@ -114,12 +120,14 @@ const Input = styled.input`
   max-width: 640px;
   padding: 0.65rem;
   width: 100%;
+
   &:focus {
     border-color: #373747;
     box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075), 0 0 0 0.2em rgba(77, 77, 96, 0.3);
     outline: none;
   }
 `
+
 const Textarea = styled.textarea`
   background-color: #3e3e4e;
   border-radius: 4px;
@@ -130,12 +138,14 @@ const Textarea = styled.textarea`
   padding: 0.65rem;
   resize: none;
   width: 100%;
+
   &:focus {
     border-color: #373747;
     box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075), 0 0 0 0.2em rgba(77, 77, 96, 0.3);
     outline: none;
   }
 `
+
 const Submit = styled.button`
   background-color: #3e3e4e;
   border: 0;
@@ -145,11 +155,13 @@ const Submit = styled.button`
   height: 2.5rem;
   margin-top: 1rem;
   width: 5rem;
+
   &:focus {
     border-color: #373747;
     box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075), 0 0 0 0.2rem rgba(77, 77, 96, 0.3);
     outline: none;
   }
+
   &:active {
     border-color: #373747;
     box-shadow: inset 0 0.5rem 0.5rem rgba(27, 31, 35, 0.15);

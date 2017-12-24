@@ -23,6 +23,7 @@ const AppContainer = styled.div`
   font-weight: 300;
   padding: 0 192px;
   width: 100vw;
+
   @media (max-width: 768px) {
     padding: 0 24px;
   }

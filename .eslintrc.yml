@@ -3,7 +3,8 @@
   extends:
     - eslint:recommended
     - plugin:react/recommended
-    - plugin:import/recommended
+    - plugin:import/errors
+    - plugin:import/warnings
     - plugin:jsx-a11y/recommended
     - prettier
     - prettier/react

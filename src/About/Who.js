@@ -19,24 +19,29 @@ const Container = styled.div`
   height: 512px;
   justify-content: center;
   position: relative;
+
   @media (max-width: 768px) {
     height: 320px;
   }
 `
+
 const Name = styled.p`
   color: #3e3e4e;
   font-size: 8.5rem;
   font-weight: 900;
+
   @media (max-width: 768px) {
     font-size: 4rem;
   }
 `
+
 const Aka = styled.div`
   font-size: 11rem;
   font-weight: 900;
+  left: 0;
   position: absolute;
   top: 142px;
-  left: 0;
+
   @media (max-width: 768px) {
     font-size: 5.2rem;
     top: 104px;

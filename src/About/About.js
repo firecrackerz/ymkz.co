@@ -20,20 +20,24 @@ const Container = styled.div`
   display: flex;
   flex-flow: row nowrap;
   padding: 64px 0;
+
   @media (max-width: 768px) {
     display: block;
   }
 `
+
 const Title = styled.div`
   color: #63637e;
   font-size: 0.85rem;
   min-width: 256px;
   width: 256px;
+
   @media (max-width: 768px) {
     font-size: 1rem;
     padding-bottom: 1rem;
   }
 `
+
 const Text = styled.p`
   font-size: 1.15rem;
   line-height: 1.85rem;
