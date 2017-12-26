@@ -1,10 +1,26 @@
 import React from 'react'
+import AlertContainer from 'react-alert'
 import styled from 'styled-components'
+import SuccessIcon from './images/sucess.svg'
+import ErrorIcon from './images/error.svg'
 
 class ContactComponent extends React.Component {
   constructor() {
     super()
-    this.state = { name: '', email: '', message: '' }
+
+    this.state = {
+      name: '',
+      email: '',
+      message: ''
+    }
+
+    this.alertOptions = {
+      offset: 16,
+      position: 'bottom right',
+      theme: 'dark',
+      time: 5000,
+      transition: 'scale'
+    }
   }
 
   encode = data =>
@@ -13,22 +29,29 @@ class ContactComponent extends React.Component {
       .join('&')
 
   handleSubmit = e => {
+    e.preventDefault()
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: this.encode({ 'form-name': 'contact', ...this.state })
     })
-      .then(() => alert('Thank you for your message!'))
-      .catch(error => alert(error))
-
-    e.preventDefault()
+      .then(() => this.showAlert({ message: 'Thank you for your contact', type: 'success' }))
+      .catch(() => this.showAlert({ message: 'Unexpected error has occurred', type: 'error' }))
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value })
 
+  showAlert = ({ message, type }) => {
+    this.alert.show(message, {
+      type: type,
+      icon: <AlertIcon src={type === 'success' ? SuccessIcon : ErrorIcon} alt="Alert icon" />
+    })
+  }
+
   render() {
     return (
       <Container>
+        <AlertContainer ref={alert => (this.alert = alert)} {...this.alertOptions} />
         <Title>CONTACT</Title>
         <FormWrapper>
           <form
@@ -96,6 +119,12 @@ const Container = styled.div`
   @media (max-width: 768px) {
     display: block;
   }
+`
+
+const AlertIcon = styled.img`
+  height: 50px;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  width: 50px;
 `
 
 const Title = styled.div`
