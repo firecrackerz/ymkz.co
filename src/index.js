@@ -11,7 +11,6 @@ import About from './About'
 import Work from './Work'
 import NotFound from './NotFound'
 import registerServiceWorker from './service-worker'
-import './index.css'
 
 const history = createBrowserHistory()
 const reducer = combineReducers({ router })
