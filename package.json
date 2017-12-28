@@ -28,6 +28,7 @@
     "clean:cache": "rimraf node_modules && yarn cache clean && yarn"
   },
   "dependencies": {
+    "formik": "^0.10.5",
     "history": "^4.7.2",
     "react": "^16.2.0",
     "react-alert": "^2.4.0",
@@ -38,7 +39,8 @@
     "react-router-redux": "^5.0.0-alpha.9",
     "react-scripts": "^1.0.17",
     "redux": "^3.7.2",
-    "styled-components": "^2.4.0"
+    "styled-components": "^2.4.0",
+    "yup": "^0.23.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^5.2.6",
