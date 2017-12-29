@@ -57,7 +57,11 @@ const FormComponent = ({ values, touched, errors, isValid, isSubmitting, handleC
 )
 
 export default withFormik({
-  mapPropsToValues: () => ({ name: '', email: '', message: '' }),
+  mapPropsToValues: () => ({
+    name: '',
+    email: '',
+    message: ''
+  }),
   validationSchema: Yup.object().shape({
     name: Yup.string().required('Name is required'),
     email: Yup.string()

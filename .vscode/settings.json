@@ -2,7 +2,14 @@
   "editor.formatOnSave": true,
   "javascript.format.enable": false,
   "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": false,
   "stylelint.enable": true,
+  "stylelint.additionalDocumentSelectors": [
+    "javascriptreact"
+  ],
   "css.validate": false,
-  "scss.validate": false
+  "scss.validate": false,
+  "files.associations": {
+    "*.js": "javascriptreact"
+  }
 }
