@@ -114,6 +114,7 @@ const Textarea = styled.textarea`
 
 const Invalid = styled.div`
   font-size: 0.9rem;
+  max-width: 640px;
   padding: 0.5rem 0;
   text-align: right;
 `
