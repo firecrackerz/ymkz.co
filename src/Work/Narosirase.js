@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import ImageZoom from 'react-medium-image-zoom'
 import Narosirase1 from './images/narosirase-1.jpg'
 import Narosirase2 from './images/narosirase-2.jpg'
+import Narosirase1Thumb from './images/narosirase-1-thumb.jpg'
+import Narosirase2Thumb from './images/narosirase-2-thumb.jpg'
 
 const NarosiraseComponent = () => (
   <div>
@@ -21,9 +23,13 @@ const NarosiraseComponent = () => (
     <AppImages>
       <ImageZoom
         image={{
-          src: Narosirase1,
+          src: Narosirase1Thumb,
           alt: 'Narosirase Main View',
           style: { width: '128px' }
+        }}
+        zoomImage={{
+          src: Narosirase1,
+          alt: 'Narosirase Main View'
         }}
         defaultStyles={{
           overlay: { backgroundColor: 'rgba(34, 34, 42, .8)' }
@@ -31,9 +37,13 @@ const NarosiraseComponent = () => (
       />
       <ImageZoom
         image={{
-          src: Narosirase2,
+          src: Narosirase2Thumb,
           alt: 'Narosirase Setting View',
           style: { width: '128px', marginLeft: '24px' }
+        }}
+        zoomImage={{
+          src: Narosirase2,
+          alt: 'Narosirase Setting View'
         }}
         defaultStyles={{
           overlay: { backgroundColor: 'rgba(34, 34, 42, .8)' }
