@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { withFormik } from 'formik'
 import Yup from 'yup'
+import Warning from './images/warning.svg'
 
 const FormComponent = ({ values, touched, errors, isValid, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
   <form data-netlify="true" data-netlify-honeypot="bot-field" method="post" name="contact" onSubmit={handleSubmit}>
@@ -18,7 +19,13 @@ const FormComponent = ({ values, touched, errors, isValid, isSubmitting, handleC
           onBlur={handleBlur}
           onChange={handleChange}
         />
-        {errors.name && touched.name && <Invalid>{errors.name}</Invalid>}
+        {errors.name &&
+          touched.name && (
+            <Invalid>
+              <Icon src={Warning} alt="warning" />
+              <Message>{errors.name}</Message>
+            </Invalid>
+          )}
       </label>
     </div>
     <div>
@@ -33,7 +40,13 @@ const FormComponent = ({ values, touched, errors, isValid, isSubmitting, handleC
           onBlur={handleBlur}
           onChange={handleChange}
         />
-        {errors.email && touched.email && <Invalid>{errors.email}</Invalid>}
+        {errors.email &&
+          touched.email && (
+            <Invalid>
+              <Icon src={Warning} alt="warning" />
+              <Message>{errors.email}</Message>
+            </Invalid>
+          )}
       </label>
     </div>
     <div>
@@ -47,7 +60,13 @@ const FormComponent = ({ values, touched, errors, isValid, isSubmitting, handleC
           onBlur={handleBlur}
           onChange={handleChange}
         />
-        {errors.message && touched.message && <Invalid>{errors.message}</Invalid>}
+        {errors.message &&
+          touched.message && (
+            <Invalid>
+              <Icon src={Warning} alt="warning" />
+              <Message>{errors.message}</Message>
+            </Invalid>
+          )}
       </label>
     </div>
     <Submit type="submit" disabled={!isValid || isSubmitting}>
@@ -67,7 +86,7 @@ export default withFormik({
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required'),
-    message: Yup.string().required('Name is required')
+    message: Yup.string().required('Message is required')
   }),
   handleSubmit: async (values, { props, setSubmitting, resetForm }) => {
     await props.postContactMessage(values)
@@ -117,10 +136,22 @@ const Textarea = styled.textarea`
 `
 
 const Invalid = styled.div`
+  align-items: center;
+  display: flex;
   font-size: 0.9rem;
+  justify-content: flex-end;
   max-width: 640px;
   padding: 0.5rem 0;
   text-align: right;
+`
+
+const Icon = styled.img`
+  height: 0.9rem;
+  width: 0.9rem;
+`
+
+const Message = styled.span`
+  padding-left: 0.2rem;
 `
 
 const Submit = styled.button`
