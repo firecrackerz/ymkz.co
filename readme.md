@@ -2,3 +2,8 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
 
 # The portfolio site about ymkz
+
+### Limitation
+
+commitlint and husky git hooks is not worked now.
+Due to the Netlify build is not supported git hooks maybe.
