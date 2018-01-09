@@ -121,6 +121,7 @@ const Textarea = styled.textarea`
   background-color: #3e3e4e;
   border-radius: 4px;
   color: #fefeff;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
   height: 12rem;
   max-width: 640px;
