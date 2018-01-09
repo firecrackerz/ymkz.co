@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { createBrowserHistory } from 'history'
-import { combineReducers, compose, createStore, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
 import { Route, Switch } from 'react-router-dom'
+import { combineReducers, compose, createStore, applyMiddleware } from 'redux'
 import { ConnectedRouter, routerMiddleware, routerReducer as router } from 'react-router-redux'
+import { Provider as ReduxProvider } from 'react-redux'
+import { Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
 import styled from 'styled-components'
 import Header from './Header'
 import About from './About'
@@ -29,19 +31,21 @@ const AppContainer = styled.div`
 `
 
 const App = () => (
-  <Provider store={store}>
+  <ReduxProvider store={store}>
     <ConnectedRouter history={history}>
-      <AppContainer>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={About} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/work" component={Work} />
-          <Route component={NotFound} />
-        </Switch>
-      </AppContainer>
+      <AlertProvider offset="16px" postion="bottom right" template={AlertTemplate} timeout={5000} transition="scale">
+        <AppContainer>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={About} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/work" component={Work} />
+            <Route component={NotFound} />
+          </Switch>
+        </AppContainer>
+      </AlertProvider>
     </ConnectedRouter>
-  </Provider>
+  </ReduxProvider>
 )
 
 ReactDOM.render(<App />, document.querySelector('#root'))
