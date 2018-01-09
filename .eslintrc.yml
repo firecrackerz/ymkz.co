@@ -10,12 +10,12 @@ extends:
   - prettier/react
 plugins:
   - react
-  - import
   - jsx-a11y
   - prettier
 rules:
   no-console: off
   react/prop-types: off
+  import/order: error
   prettier/prettier: error
 env:
   es6: true
