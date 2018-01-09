@@ -17,6 +17,7 @@ import registerServiceWorker from './service-worker'
 const history = createBrowserHistory()
 const reducer = combineReducers({ router })
 const store = createStore(reducer, undefined, compose(applyMiddleware(routerMiddleware(history))))
+
 const AppContainer = styled.div`
   background-color: #22222a;
   color: #fefeff;
@@ -30,10 +31,17 @@ const AppContainer = styled.div`
   }
 `
 
+const options = {
+  position: 'bottom right',
+  timeout: 5000,
+  offset: '16px',
+  transition: 'scale'
+}
+
 const App = () => (
-  <ReduxProvider store={store}>
-    <ConnectedRouter history={history}>
-      <AlertProvider offset="16px" postion="bottom right" template={AlertTemplate} timeout={5000} transition="scale">
+  <AlertProvider template={AlertTemplate} {...options}>
+    <ReduxProvider store={store}>
+      <ConnectedRouter history={history}>
         <AppContainer>
           <Header />
           <Switch>
@@ -43,9 +51,9 @@ const App = () => (
             <Route component={NotFound} />
           </Switch>
         </AppContainer>
-      </AlertProvider>
-    </ConnectedRouter>
-  </ReduxProvider>
+      </ConnectedRouter>
+    </ReduxProvider>
+  </AlertProvider>
 )
 
 ReactDOM.render(<App />, document.querySelector('#root'))
