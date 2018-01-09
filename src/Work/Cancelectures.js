@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import ImageZoom from 'react-medium-image-zoom'
 import Cancelectures1 from './images/cancelectures-1.jpg'
 import Cancelectures2 from './images/cancelectures-2.jpg'
-import Cancelectures1Thumb from './images/cancelectures-1-thumb.jpg'
-import Cancelectures2Thumb from './images/cancelectures-2-thumb.jpg'
 
 const CancelecturesComponent = () => (
   <div>
@@ -26,13 +24,9 @@ const CancelecturesComponent = () => (
     <AppImages>
       <ImageZoom
         image={{
-          src: Cancelectures1Thumb,
+          src: Cancelectures1,
           alt: 'Cancelecture Main View',
           style: { width: '128px' }
-        }}
-        zoomImage={{
-          src: Cancelectures1,
-          alt: 'Cancelecture Main View'
         }}
         defaultStyles={{
           overlay: { backgroundColor: 'rgba(34, 34, 42, .8)' }
@@ -40,13 +34,9 @@ const CancelecturesComponent = () => (
       />
       <ImageZoom
         image={{
-          src: Cancelectures2Thumb,
+          src: Cancelectures2,
           alt: 'Cancelecture Setting View',
           style: { width: '128px', marginLeft: '24px' }
-        }}
-        zoomImage={{
-          src: Cancelectures2,
-          alt: 'Cancelecture Setting View'
         }}
         defaultStyles={{
           overlay: { backgroundColor: 'rgba(34, 34, 42, .8)' }
