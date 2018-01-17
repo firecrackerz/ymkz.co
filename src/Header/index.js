@@ -46,7 +46,7 @@ const HeaderTitleLink = styled(Link)`
 const HeaderTitleRole = styled.span`
   color: #63637e;
   font-size: 0.75rem;
-  padding-left: 0.5rem;
+  padding-left: 0.35rem;
   vertical-align: bottom;
 
   @media (max-width: 768px) {

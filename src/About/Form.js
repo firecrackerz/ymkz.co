@@ -97,7 +97,7 @@ export default withFormik({
 
 const InputLabel = styled.p`
   font-size: 1.1rem;
-  padding: 0.8rem 0;
+  padding: 1.5rem 0 0.75rem;
   padding-top: ${({ first }) => first && 0};
 `
 
