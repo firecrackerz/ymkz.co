@@ -1,5 +1,0 @@
----
-hooks:
-  commit-msg: commitlint --edit $GIT_PARAMS
-  pre-commit: yarn run lint
-  post-merge: "(git diff 'HEAD@{1}' --name-only | grep package.json > /dev/null) && yarn || :"

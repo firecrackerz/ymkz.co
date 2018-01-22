@@ -1,6 +1,6 @@
-<h2 align="center">portfolio</h2>
+<h1 align="center">portfolio</h1>
 
-<p align="center">portfolio site about ymkz</a>
+<h5 align="center">portfolio site about ymkz</h5>
 
 <p align="center">
    <a href="https://github.com/prettier/prettier/">
