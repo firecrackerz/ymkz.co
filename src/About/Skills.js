@@ -5,14 +5,14 @@ const SkillsComponent = () => (
   <Container>
     <Title>SKILLS</Title>
     <Skills>
-      <Skill first>ES7</Skill>
+      <Skill first>ES2017</Skill>
       <Skill>React</Skill>
+      <Skill>React Native</Skill>
       <Skill>Redux</Skill>
       <Skill>CSS Modules</Skill>
       <Skill>styled-components</Skill>
       <Skill>Webpack</Skill>
       <Skill>FuseBox</Skill>
-      <Skill>React Native</Skill>
       <Skill last>WebExtension</Skill>
     </Skills>
   </Container>
