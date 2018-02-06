@@ -69,7 +69,7 @@ const FormComponent = ({ values, touched, errors, isValid, isSubmitting, handleC
           )}
       </label>
     </div>
-    <Submit type="submit" disabled={!isValid || isSubmitting}>
+    <Submit id="submit" type="submit" disabled={!isValid || isSubmitting}>
       Send
     </Submit>
   </form>

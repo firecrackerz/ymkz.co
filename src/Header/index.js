@@ -7,14 +7,16 @@ import styled from 'styled-components'
 const Header = ({ router: { location: { pathname } }, push }) => (
   <HeaderContainer>
     <div>
-      <HeaderTitleLink to="/">ymkz</HeaderTitleLink>
+      <HeaderTitleLink id="root" to="/">
+        ymkz
+      </HeaderTitleLink>
       <HeaderTitleRole>is front-end engineer</HeaderTitleRole>
     </div>
     <HeaderNavigation>
-      <HeaderNavLink onClick={() => push('/about')} active={pathname === '/' || pathname === '/about'} first>
+      <HeaderNavLink id="about" onClick={() => push('/about')} active={pathname === '/' || pathname === '/about'} first>
         about
       </HeaderNavLink>
-      <HeaderNavLink onClick={() => push('/work')} active={pathname === '/work'} last>
+      <HeaderNavLink id="work" onClick={() => push('/work')} active={pathname === '/work'} last>
         work
       </HeaderNavLink>
     </HeaderNavigation>

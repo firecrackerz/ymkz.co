@@ -17,14 +17,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test:unit": "react-scripts test --env=jsdom",
-    "test:e2e": "wait-on http://localhost:3000 && testcafe chrome test/e2e",
-    "lint": "npm-run-all lint:*",
+    "test:e2e": "testcafe chrome,firefox test/e2e --app 'yarn run start' --app-init-delay 5000",
+    "lint": "run-p lint:*",
     "lint:js": "eslint 'src/**/*.js'",
     "lint:css": "stylelint 'src/**/*.js'",
     "fix:js": "prettier-eslint --write 'src/**/*.js'",
     "check:lint": "eslint --print-config .eslintrc.yml | eslint-config-prettier-check",
     "clean": "rimraf node_modules && yarn",
-    "clean:cache": "rimraf node_modules && yarn cache clean && yarn"
+    "clean:cache": "rimraf node_modules && yarn cache clean && yarn",
+    "ci": "run-p lint test:e2e"
   },
   "dependencies": {
     "formik": "^0.10.5",
