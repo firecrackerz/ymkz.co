@@ -20,6 +20,7 @@ jobs:
             - node_modules
       - run:
           name: Run code lint
-          command: yarn run ci
-      - store_test_results:
-          path: /tmp/e2e
+          command: yarn run lint
+      - run:
+          name: Run e2e test
+          command: yarn run test:e2e

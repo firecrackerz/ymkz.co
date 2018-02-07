@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe'
 import { getLocation } from './functions'
 
-fixture('YMKZ Portofolio E2E Test').page('http://localhost:3000/')
+fixture('ymkz portofolio E2E test').page('http://localhost:3000/')
 
 test('contact form filling test', async t => {
   await t

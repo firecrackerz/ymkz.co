@@ -24,9 +24,7 @@
     "fix:js": "prettier-eslint --write 'src/**/*.js'",
     "check:lint": "eslint --print-config .eslintrc.yml | eslint-config-prettier-check",
     "clean": "rimraf node_modules && yarn",
-    "clean:cache": "rimraf node_modules && yarn cache clean && yarn",
-    "e2e": "testcafe chrome:headless test/e2e --app 'yarn run start' --app-init-delay 5000 --reporter xunit:/tmp/e2e/result.xml",
-    "ci": "run-p lint e2e"
+    "clean:cache": "rimraf node_modules && yarn cache clean && yarn"
   },
   "dependencies": {
     "formik": "^0.10.5",
