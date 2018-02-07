@@ -25,7 +25,7 @@
     "check:lint": "eslint --print-config .eslintrc.yml | eslint-config-prettier-check",
     "clean": "rimraf node_modules && yarn",
     "clean:cache": "rimraf node_modules && yarn cache clean && yarn",
-    "e2e": "testcafe chrome:headless test/e2e --reporter xunit:/tmp/e2e/result.xml",
+    "e2e": "testcafe chrome:headless test/e2e --app 'yarn run start' --app-init-delay 5000 --reporter xunit:/tmp/e2e/result.xml",
     "ci": "run-p lint e2e"
   },
   "dependencies": {
