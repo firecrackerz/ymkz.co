@@ -16,6 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "echo 'hello world'",
     "test:unit": "react-scripts test --env=jsdom",
     "test:e2e": "testcafe chrome test/e2e --app 'yarn run start' --app-init-delay 5000",
     "lint": "run-p lint:*",

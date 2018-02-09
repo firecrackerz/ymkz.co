@@ -1,7 +1,37 @@
 ---
 version: 2
 jobs:
-  build:
+  bootstrap:
+    docker:
+      - image: circleci/node:9.4.0
+    working_directory: ~/workspace
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - yarn-{{ checksum "yarn.lock" }}
+          - yarn-
+      - run:
+          name: Install package
+          command: yarn install
+      - save_cache:
+          key: yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules
+  lint:
+    docker:
+      - image: circleci/node:9.4.0
+    working_directory: ~/workspace
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - yarn-{{ checksum "yarn.lock" }}
+          - yarn-
+      - run:
+          name: Run code lint
+          command: yarn run lint
+  acceptance:
     docker:
       - image: circleci/node:9.4.0-browsers
     working_directory: ~/workspace
@@ -9,18 +39,55 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - yarn-{{ .Environment.CACHE_KEY }}-{{ checksum "yarn.lock" }}
-          - yarn-{{ .Environment.CACHE_KEY }}-
-      - run:
-          name: Install package
-          command: yarn install
-      - save_cache:
-          key: yarn-{{ .Environment.CACHE_KEY }}-{{ checksum "yarn.lock" }}
-          paths:
-            - node_modules
-      - run:
-          name: Run code lint
-          command: yarn run lint
+          - yarn-{{ checksum "yarn.lock" }}
+          - yarn-
       - run:
           name: Run e2e test
           command: yarn run test:e2e
+  build:
+    docker:
+      - image: circleci/node:9.4.0
+    working_directory: ~/workspace
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - yarn-{{ checksum "yarn.lock" }}
+          - yarn-
+      - run:
+          name: Build
+          command: yarn run build
+  deploy:
+    docker:
+      - image: circleci/node:9.4.0
+    working_directory: ~/workspace
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - yarn-{{ checksum "yarn.lock" }}
+          - yarn-
+      - run:
+          name: Deploy
+          command: yarn run deploy
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - bootstrap
+      - lint_and_test:
+          requires:
+            - bootstrap
+      - build:
+          requires:
+            - bootstrap
+            - lint-and-test
+      - deploy:
+          requires:
+            - bootstrap
+            - lint-and-test
+            - build
+          filters:
+            branches:
+              only: master
