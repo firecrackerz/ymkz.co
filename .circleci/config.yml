@@ -55,9 +55,8 @@ jobs:
           command: |
             git config --global user.name ymkz
             git config --global user.email ymkzly@gmail.com
-            git add .
             git commit --allow-empty -m "release#${CIRCLE_BUILD_NUM} (Circle CI)[ci skip]"
-            git push git@github.com:ymkz/portfolio ${CIRCLE_BRANCH}:release
+            git push git@github.com${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} ${CIRCLE_BRANCH}:release
 
 workflows:
   version: 2
