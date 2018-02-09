@@ -56,7 +56,7 @@ jobs:
           - yarn-
       - run:
           name: Deploy
-          command: yarn run netlify deploy --path build --env production --site-id ${SITE_ID} --access-token ${ACCESS_TOKEN}
+          command: yarn run netlify deploy --env production --site-id ${SITE_ID} --access-token ${ACCESS_TOKEN}
 
 workflows:
   version: 2
