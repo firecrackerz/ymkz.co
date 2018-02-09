@@ -23,6 +23,7 @@ jobs:
       - image: circleci/node:9.4.0
     working_directory: ~/workspace
     steps:
+      - checkout
       - restore_cache:
           keys:
           - yarn-{{ checksum "yarn.lock" }}
@@ -35,6 +36,7 @@ jobs:
       - image: circleci/node:9.4.0-browsers
     working_directory: ~/workspace
     steps:
+      - checkout
       - restore_cache:
           keys:
           - yarn-{{ checksum "yarn.lock" }}
@@ -47,6 +49,7 @@ jobs:
       - image: circleci/node:9.4.0
     working_directory: ~/workspace
     steps:
+      - checkout
       - run:
           name: Deploy
           command: |
