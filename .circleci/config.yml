@@ -56,6 +56,10 @@ jobs:
       - run:
           name: Build
           command: yarn run build
+      - save_cache:
+          key: build-{{ epoch }}
+          paths:
+            - build
   deploy:
     docker:
       - image: circleci/node:9.4.0
@@ -66,9 +70,11 @@ jobs:
           keys:
           - yarn-{{ checksum "yarn.lock" }}
           - yarn-
+          - build-{{ epoch }}
+          - build-
       - run:
           name: Deploy
-          command: yarn run netlify deploy --path build --site-id ${SITE_ID} --access-token ${NETLIFY_TOKEN} --env production
+          command: yarn run netlify deploy --path build-{{ epoch }} --site-id ${SITE_ID} --access-token ${NETLIFY_TOKEN} --env production
 
 workflows:
   version: 2
