@@ -3,7 +3,7 @@ version: 2
 jobs:
   bootstrap:
     docker:
-      - image: circleci/node:9.4.0
+      - image: circleci/node:9.4.0-browsers
     working_directory: ~/workspace
     steps:
       - checkout
@@ -18,76 +18,15 @@ jobs:
           key: yarn-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-  lint:
-    docker:
-      - image: circleci/node:9.4.0
-    working_directory: ~/workspace
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
       - run:
           name: Run code lint
           command: yarn run lint
-  acceptance:
-    docker:
-      - image: circleci/node:9.4.0-browsers
-    working_directory: ~/workspace
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
       - run:
           name: Run e2e test
           command: yarn run test:e2e
-  build:
-    docker:
-      - image: circleci/node:9.4.0
-    working_directory: ~/workspace
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
       - run:
           name: Build
           command: yarn run build
-  deploy:
-    docker:
-      - image: circleci/node:9.4.0
-    working_directory: ~/workspace
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
       - run:
           name: Deploy
           command: yarn run deploy
-
-workflows:
-  version: 2
-  workflow:
-    jobs:
-      - bootstrap
-      - lint_and_test:
-          requires:
-            - bootstrap
-      - build:
-          requires:
-            - bootstrap
-            - lint-and-test
-      - deploy:
-          requires:
-            - bootstrap
-            - lint-and-test
-            - build
-          filters:
-            branches:
-              only: master
