@@ -1,4 +1,5 @@
 version: 2
+
 jobs:
   bootstrap:
     docker:
@@ -74,7 +75,7 @@ jobs:
           - build-
       - run:
           name: Deploy
-          command: yarn run netlify deploy --path build-{{ epoch }} --site-id ${SITE_ID} --access-token ${NETLIFY_TOKEN} --env production
+          command: yarn run netlify deploy --path build --site-id ${SITE_ID} --access-token ${NETLIFY_TOKEN} --env production
 
 workflows:
   version: 2
