@@ -44,20 +44,34 @@ jobs:
       - run:
           name: Run e2e test
           command: yarn run test:e2e
+  build:
+    docker:
+      - image: circleci/node:9.4.0
+    working_directory: ~/workspace
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - yarn-{{ checksum "yarn.lock" }}
+          - yarn-
+      - run:
+          name: Build
+          command: yarn run build
+      - persist_to_workspace:
+          root: ~/workspace
+          paths:
+            - build
   deploy:
     docker:
       - image: circleci/node:9.4.0
     working_directory: ~/workspace
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/workspace
       - run:
           name: Deploy
-          command: |
-            git config --global user.name ymkz
-            git config --global user.email ymkzly@gmail.com
-            git pull --rebase git@github.com:${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} release
-            git commit --allow-empty -m "release#${CIRCLE_BUILD_NUM}[ci skip]"
-            git push git@github.com:${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME} ${CIRCLE_BRANCH}:release
+          command: yarn run firebase deploy --token=${FIREBASE_TOKEN}
 
 workflows:
   version: 2
@@ -71,11 +85,17 @@ workflows:
           requires:
             - bootstrap
             - lint
+      - build:
+          requires:
+            - bootstrap
+            - lint
+            - acceptance
       - deploy:
           requires:
             - bootstrap
             - lint
             - acceptance
+            - build
           filters:
             branches:
               only: master
