@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "license": "MIT",
   "author": "ymkz",
@@ -16,13 +16,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test:unit": "react-scripts test --env=jsdom",
-    "test:e2e": "testcafe chrome test/e2e --app 'yarn run start' --app-init-delay 5000",
+    "test": "react-scripts test --env=jsdom",
+    "e2e": "testcafe chrome test/e2e --app 'yarn run start' --app-init-delay 5000",
     "lint": "run-p lint:*",
     "lint:js": "eslint 'src/**/*.js'",
+    "lint:js:fix": "prettier-eslint --write 'src/**/*.js'",
     "lint:css": "stylelint 'src/**/*.js'",
-    "fix:js": "prettier-eslint --write 'src/**/*.js'",
-    "check:lint": "eslint --print-config .eslintrc.yml | eslint-config-prettier-check",
     "clean": "rimraf node_modules && yarn",
     "clean:cache": "rimraf node_modules && yarn cache clean && yarn"
   },

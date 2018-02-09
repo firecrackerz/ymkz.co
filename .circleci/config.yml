@@ -31,7 +31,7 @@ jobs:
       - run:
           name: Run code lint
           command: yarn run lint
-  acceptance:
+  e2e:
     docker:
       - image: circleci/node:9.4.0-browsers
     working_directory: ~/workspace
@@ -43,24 +43,7 @@ jobs:
           - yarn-
       - run:
           name: Run e2e test
-          command: yarn run test:e2e
-  build:
-    docker:
-      - image: circleci/node:9.4.0
-    working_directory: ~/workspace
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
-      - run:
-          name: Build
-          command: yarn run build
-      - persist_to_workspace:
-          root: ~/workspace
-          paths:
-            - build
+          command: yarn run e2e
   deploy:
     docker:
       - image: circleci/node:9.4.0
@@ -71,8 +54,6 @@ jobs:
           keys:
           - yarn-{{ checksum "yarn.lock" }}
           - yarn-
-      - attach_workspace:
-          at: ~/workspace
       - run:
           name: Deploy
           command: yarn run netlify deploy --path build --env production --site-id ${SITE_ID} --access-token ${ACCESS_TOKEN}
@@ -85,21 +66,15 @@ workflows:
       - lint:
           requires:
             - bootstrap
-      - acceptance:
+      - e2e:
           requires:
             - bootstrap
             - lint
-      - build:
-          requires:
-            - bootstrap
-            - lint
-            - acceptance
       - deploy:
           requires:
             - bootstrap
             - lint
-            - acceptance
-            - build
+            - e2e
           filters:
             branches:
               only: master
