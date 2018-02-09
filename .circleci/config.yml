@@ -23,7 +23,6 @@ jobs:
       - image: circleci/node:9.4.0
     working_directory: ~/workspace
     steps:
-      - checkout
       - restore_cache:
           keys:
           - yarn-{{ checksum "yarn.lock" }}
@@ -36,7 +35,6 @@ jobs:
       - image: circleci/node:9.4.0-browsers
     working_directory: ~/workspace
     steps:
-      - checkout
       - restore_cache:
           keys:
           - yarn-{{ checksum "yarn.lock" }}
@@ -44,39 +42,19 @@ jobs:
       - run:
           name: Run e2e test
           command: yarn run test:e2e
-  build:
-    docker:
-      - image: circleci/node:9.4.0
-    working_directory: ~/workspace
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
-      - run:
-          name: Build
-          command: yarn run build
-      - save_cache:
-          key: build-{{ epoch }}
-          paths:
-            - build
   deploy:
     docker:
       - image: circleci/node:9.4.0
     working_directory: ~/workspace
     steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
-      - restore_cache:
-          - build-{{ epoch }}
-          - build-
       - run:
           name: Deploy
-          command: yarn run netlify deploy --path build --site-id ${SITE_ID} --access-token ${NETLIFY_TOKEN} --env production
+          command: |
+            git config --global user.name ymkz
+            git config --global user.email ymkzly@gmail.com
+            git add .
+            git commit -m "release#${CIRCLE_BUILD_NUM} (Circle CI)[ci skip]"
+            git push git@github.com:ymkz/portfolio ${CIRCLE_BRANCH}:release
 
 workflows:
   version: 2
@@ -90,17 +68,11 @@ workflows:
           requires:
             - bootstrap
             - lint
-      - build:
-          requires:
-            - bootstrap
-            - lint
-            - acceptance
       - deploy:
           requires:
             - bootstrap
             - lint
             - acceptance
-            - build
           filters:
             branches:
               only: master
