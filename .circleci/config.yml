@@ -67,6 +67,10 @@ jobs:
     working_directory: ~/workspace
     steps:
       - checkout
+      - restore_cache:
+          keys:
+          - yarn-{{ checksum "yarn.lock" }}
+          - yarn-
       - attach_workspace:
           at: ~/workspace
       - run:
