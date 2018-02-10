@@ -10,4 +10,5 @@ plugins:
 rules:
   order/properties-alphabetical-order: true
 ignoreFiles:
-  - src/service-worker.js
+  - src/serviceWorker.js
+  - src/setupTests.js
