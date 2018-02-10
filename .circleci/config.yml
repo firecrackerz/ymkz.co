@@ -99,7 +99,7 @@ workflows:
   workflow:
     jobs:
       - bootstrap
-      - coverage
+      - coverage:
           requires:
             - bootstrap
       - lint:
