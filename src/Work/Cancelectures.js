@@ -64,7 +64,7 @@ const CancelecturesComponent = () => (
 
 export default CancelecturesComponent
 
-const AppTitle = styled.div`
+export const AppTitle = styled.div`
   font-size: 6rem;
   font-weight: 900;
   padding: 72px 0 12px;
@@ -74,7 +74,7 @@ const AppTitle = styled.div`
   }
 `
 
-const AppDescription = styled.div`
+export const AppDescription = styled.div`
   font-size: 1.1rem;
   line-height: 2rem;
   padding: 24px 0;
@@ -85,20 +85,20 @@ const AppDescription = styled.div`
   }
 `
 
-const AppImages = styled.div`
+export const AppImages = styled.div`
   overflow: hidden;
   padding: 24px 0;
 `
 
-const AppLinker = styled.div`
+export const AppLinker = styled.div`
   padding: 24px 0;
 `
 
-const AppLink = styled.li`
+export const AppLink = styled.li`
   margin: 12px 0;
 `
 
-const Link = styled.a.attrs({
+export const Link = styled.a.attrs({
   target: '_blank',
   rel: 'noopener noreferrer'
 })`
