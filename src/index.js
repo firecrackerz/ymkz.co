@@ -12,7 +12,7 @@ import Header from './Header'
 import About from './About'
 import Work from './Work'
 import NotFound from './NotFound'
-import registerServiceWorker from './service-worker'
+import registerServiceWorker from './serviceWorker'
 
 const history = createBrowserHistory()
 const reducer = combineReducers({ router })

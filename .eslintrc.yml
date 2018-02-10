@@ -3,9 +3,9 @@ parser: babel-eslint
 extends:
   - eslint:recommended
   - plugin:react/recommended
+  - plugin:jsx-a11y/recommended
   - plugin:import/errors
   - plugin:import/warnings
-  - plugin:jsx-a11y/recommended
   - prettier
   - prettier/react
 plugins:
@@ -16,7 +16,7 @@ rules:
   no-console: off
   react/prop-types: off
   import/order: error
-  prettier/prettier: 
+  prettier/prettier:
     - error
     -
       singleQuote: true

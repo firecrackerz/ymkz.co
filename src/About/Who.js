@@ -13,7 +13,7 @@ const WhoComponent = () => (
 
 export default WhoComponent
 
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-flow: column nowrap;
   height: 512px;
@@ -25,7 +25,7 @@ const Container = styled.div`
   }
 `
 
-const Name = styled.p`
+export const Name = styled.p`
   color: #3e3e4e;
   font-size: 8.5rem;
   font-weight: 900;
@@ -35,7 +35,7 @@ const Name = styled.p`
   }
 `
 
-const Aka = styled.div`
+export const Aka = styled.div`
   font-size: 11rem;
   font-weight: 900;
   left: 0;

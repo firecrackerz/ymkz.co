@@ -15,7 +15,7 @@ const AboutComponent = () => (
 
 export default AboutComponent
 
-const Container = styled.div`
+export const Container = styled.div`
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
@@ -26,7 +26,7 @@ const Container = styled.div`
   }
 `
 
-const Title = styled.div`
+export const Title = styled.div`
   color: #63637e;
   font-size: 0.85rem;
   min-width: 256px;
@@ -38,7 +38,7 @@ const Title = styled.div`
   }
 `
 
-const Text = styled.p`
+export const Text = styled.p`
   font-size: 1.15rem;
   line-height: 1.85rem;
 `

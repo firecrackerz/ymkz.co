@@ -21,7 +21,7 @@ const SocialComponent = () => (
 
 export default SocialComponent
 
-const Container = styled.div`
+export const Container = styled.div`
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
@@ -32,7 +32,7 @@ const Container = styled.div`
   }
 `
 
-const Title = styled.div`
+export const Title = styled.div`
   color: #63637e;
   font-size: 0.85rem;
   min-width: 256px;
@@ -44,12 +44,12 @@ const Title = styled.div`
   }
 `
 
-const Icon = styled.img`
+export const Icon = styled.img`
   height: 32px;
   width: 32px;
 `
 
-const Link = styled.a.attrs({
+export const Link = styled.a.attrs({
   target: '_blank',
   rel: 'noopener noreferrer'
 })`

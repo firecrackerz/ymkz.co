@@ -1,10 +1,13 @@
+defaults: &defaults
+  docker:
+    - image: circleci/node:9.4.0
+  working_directory: ~/workspace
+
 version: 2
 
 jobs:
   bootstrap:
-    docker:
-      - image: circleci/node:9.4.0
-    working_directory: ~/workspace
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
@@ -19,9 +22,7 @@ jobs:
           paths:
             - node_modules
   lint:
-    docker:
-      - image: circleci/node:9.4.0
-    working_directory: ~/workspace
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
@@ -31,6 +32,17 @@ jobs:
       - run:
           name: Run code lint
           command: yarn run lint
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - yarn-{{ checksum "yarn.lock" }}
+          - yarn-
+      - run:
+          name: Run unit test
+          command: yarn run test
   e2e:
     docker:
       - image: circleci/node:9.4.0-browsers
@@ -45,9 +57,7 @@ jobs:
           name: Run e2e test
           command: yarn run e2e
   build:
-    docker:
-      - image: circleci/node:9.4.0
-    working_directory: ~/workspace
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
@@ -62,9 +72,7 @@ jobs:
           paths:
             - build
   deploy:
-    docker:
-      - image: circleci/node:9.4.0
-    working_directory: ~/workspace
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
@@ -85,6 +93,10 @@ workflows:
       - lint:
           requires:
             - bootstrap
+      - test:
+          requires:
+            - bootstrap
+            - lint
       - e2e:
           requires:
             - bootstrap
@@ -93,11 +105,13 @@ workflows:
           requires:
             - bootstrap
             - lint
+            - test
             - e2e
       - deploy:
           requires:
             - bootstrap
             - lint
+            - test
             - e2e
             - build
           filters:

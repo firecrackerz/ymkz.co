@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const SkillsComponent = () => (
   <Container>
     <Title>SKILLS</Title>
-    <Skills>
+    <SkillSet>
       <Skill first>ES2017</Skill>
       <Skill>React</Skill>
       <Skill>React Native</Skill>
@@ -14,13 +14,13 @@ const SkillsComponent = () => (
       <Skill>Webpack</Skill>
       <Skill>FuseBox</Skill>
       <Skill last>WebExtension</Skill>
-    </Skills>
+    </SkillSet>
   </Container>
 )
 
 export default SkillsComponent
 
-const Container = styled.div`
+export const Container = styled.div`
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
@@ -31,7 +31,7 @@ const Container = styled.div`
   }
 `
 
-const Title = styled.div`
+export const Title = styled.div`
   color: #63637e;
   font-size: 0.85rem;
   min-width: 256px;
@@ -43,12 +43,12 @@ const Title = styled.div`
   }
 `
 
-const Skills = styled.div`
+export const SkillSet = styled.div`
   display: flex;
   flex-flow: row wrap;
 `
 
-const Skill = styled.span`
+export const Skill = styled.span`
   display: block;
   font-size: 1.1rem;
   padding: 0.5rem 0;
