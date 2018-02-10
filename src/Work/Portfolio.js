@@ -13,7 +13,7 @@ const PortfolioComponent = () => (
       PortfolioはReactで構築されたSPAです。スタイリングはCSS ModulesやCSS in
       JSのいくつかのライブラリを試した結果、styled-componentsが現状ベストなツールだと判断し、styled-componentsを用いた完全に閉じたstyleで記述されています。
       <br />
-      デプロイに関しては、CircleCIでテストなどを走らせた後に、すべてがPassした場合にビルドしてNetlifyでデプロイするようになっています。コードはPrettierでフォーマット、ESLintでJavaScriptのコードチェック、Stylelintでstyled-componentsで記述したstyleのlint、Jestでユニットテスト、TestcafeでE2Eのストーリーテスト(もどき)を簡易的に行っています。このリポジトリは自分にとってのフロントエンドの指標的リポジトリとするべく、いろいろなツールを導入しています。
+      デプロイに関しては、CircleCIでテストなどを走らせた後に、すべてがPassした場合にビルドしてNetlifyでデプロイするようになっています。コードはPrettierでフォーマット、ESLintでJavaScriptのコードチェック、stylelintでstyled-componentsで記述したstyleのlint、Jestでユニットテスト、TestcafeでE2Eのストーリーテスト(もどき)を簡易的に行っています。このリポジトリは自分にとってのフロントエンドの指標的リポジトリとするべく、いろいろなツールを導入しています。
       <br />
       GitHubのREADMEにありますが、ビルドの状態やコードスタイルについてバッジを貼っています。
       <br />

@@ -1,6 +1,6 @@
 defaults: &defaults
   docker:
-    - image: circleci/node:9.4.0
+    - image: circleci/node:9.4.0-browsers
   working_directory: ~/workspace
 
 version: 2
@@ -21,6 +21,17 @@ jobs:
           key: yarn-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
+  coverage:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - yarn-{{ checksum "yarn.lock" }}
+          - yarn-
+      - run:
+          name: Run coverage check
+          command: yarn run coverage:coveralls
   lint:
     <<: *defaults
     steps:
@@ -44,9 +55,7 @@ jobs:
           name: Run unit test
           command: yarn run test
   e2e:
-    docker:
-      - image: circleci/node:9.4.0-browsers
-    working_directory: ~/workspace
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
