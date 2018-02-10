@@ -4,8 +4,8 @@ import Portfolio, { AppTitle } from '../Portfolio'
 
 describe('<Portfolio />', () => {
   test('should render an <div> tag', () => {
-    const renderedComponent = shallow(<Portfolio />)
-    expect(renderedComponent.type()).toEqual('div')
+    const rendered = shallow(<Portfolio />)
+    expect(rendered.type()).toEqual('div')
   })
 
   test('should render the app title', () => {

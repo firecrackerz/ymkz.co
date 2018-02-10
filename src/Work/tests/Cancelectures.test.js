@@ -4,8 +4,8 @@ import Cancelectures, { AppTitle } from '../Cancelectures'
 
 describe('<Cancelectures />', () => {
   test('should render an <div> tag', () => {
-    const renderedComponent = shallow(<Cancelectures />)
-    expect(renderedComponent.type()).toEqual('div')
+    const rendered = shallow(<Cancelectures />)
+    expect(rendered.type()).toEqual('div')
   })
 
   test('should render the app title', () => {

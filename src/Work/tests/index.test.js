@@ -7,8 +7,8 @@ import Cancelectures from '../Cancelectures'
 
 describe('<Portfolio />', () => {
   test('should render an <div> tag', () => {
-    const renderedComponent = shallow(<Work />).dive()
-    expect(renderedComponent.type()).toEqual('div')
+    const rendered = shallow(<Work />).dive()
+    expect(rendered.type()).toEqual('div')
   })
 
   test('should render the <Portfolio />', () => {

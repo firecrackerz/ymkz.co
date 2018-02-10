@@ -4,8 +4,8 @@ import Social, { Title, Icon, Link } from '../Social'
 
 describe('<Social />', () => {
   test('should render an <div> tag', () => {
-    const renderedComponent = shallow(<Social />).dive()
-    expect(renderedComponent.type()).toEqual('div')
+    const rendered = shallow(<Social />).dive()
+    expect(rendered.type()).toEqual('div')
   })
 
   test('should render the title', () => {

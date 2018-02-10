@@ -4,8 +4,8 @@ import About, { Title, Text } from '../About'
 
 describe('<About />', () => {
   test('should render an <div> tag', () => {
-    const renderedComponent = shallow(<About />).dive()
-    expect(renderedComponent.type()).toEqual('div')
+    const rendered = shallow(<About />).dive()
+    expect(rendered.type()).toEqual('div')
   })
 
   test('should render the title', () => {

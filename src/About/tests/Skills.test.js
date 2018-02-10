@@ -4,8 +4,8 @@ import Skills, { Title, SkillSet, Skill } from '../Skills'
 
 describe('<Skills />', () => {
   test('should render an <div> tag', () => {
-    const renderedComponent = shallow(<Skills />).dive()
-    expect(renderedComponent.type()).toEqual('div')
+    const rendered = shallow(<Skills />).dive()
+    expect(rendered.type()).toEqual('div')
   })
 
   test('should render the title', () => {

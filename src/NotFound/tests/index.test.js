@@ -4,8 +4,8 @@ import NotFOund, { Container } from '..'
 
 describe('<NotFOund />', () => {
   test('should render an <div> tag', () => {
-    const renderedComponent = shallow(<NotFOund />).dive()
-    expect(renderedComponent.type()).toEqual('div')
+    const rendered = shallow(<NotFOund />).dive()
+    expect(rendered.type()).toEqual('div')
   })
 
   test('should render the name', () => {

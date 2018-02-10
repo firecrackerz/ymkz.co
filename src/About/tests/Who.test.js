@@ -4,8 +4,8 @@ import Who, { Name, Aka } from '../Who'
 
 describe('<Who />', () => {
   test('should render an <div> tag', () => {
-    const renderedComponent = shallow(<Who />).dive()
-    expect(renderedComponent.type()).toEqual('div')
+    const rendered = shallow(<Who />).dive()
+    expect(rendered.type()).toEqual('div')
   })
 
   test('should render the name', () => {
