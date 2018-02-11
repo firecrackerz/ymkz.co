@@ -6,7 +6,7 @@ import Warning from './images/warning.svg'
 
 const FormComponent = ({ values, touched, errors, isValid, isSubmitting, handleChange, handleBlur, handleSubmit }) => (
   <form data-netlify="true" data-netlify-honeypot="bot-field" method="post" name="contact" onSubmit={handleSubmit}>
-    <input name="bot-field" type="hidden" value="contact" />
+    <input name="form-name" type="hidden" value="contact" />
     <div>
       <label htmlFor="name">
         <InputLabel first>Name</InputLabel>
