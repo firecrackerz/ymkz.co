@@ -102,6 +102,7 @@ const InputLabel = styled.p`
 `
 
 const Input = styled.input`
+  appearance: none;
   background-color: #3e3e4e;
   border-radius: 4px;
   color: #fefeff;
@@ -156,6 +157,7 @@ const Message = styled.span`
 `
 
 const Submit = styled.button`
+  appearance: none;
   background-color: #3e3e4e;
   border: 0;
   border-radius: 4px;

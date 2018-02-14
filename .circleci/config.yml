@@ -3,6 +3,12 @@ defaults: &defaults
     - image: circleci/node:9.4.0-browsers
   working_directory: ~/workspace
 
+runner: &runner
+  filters:
+    branches:
+      ignore:
+        - /renovate.*/
+
 version: 2
 
 jobs:
@@ -98,27 +104,33 @@ workflows:
   version: 2
   workflow:
     jobs:
-      - bootstrap
+      - bootstrap:
+          <<: *runner
       - coverage:
           requires:
             - bootstrap
+          <<: *runner
       - lint:
           requires:
             - bootstrap
+          <<: *runner
       - test:
           requires:
             - bootstrap
             - lint
+          <<: *runner
       - e2e:
           requires:
             - bootstrap
             - lint
+          <<: *runner
       - build:
           requires:
             - bootstrap
             - lint
             - test
             - e2e
+          <<: *runner
       - deploy:
           requires:
             - bootstrap
