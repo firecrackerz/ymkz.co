@@ -45,7 +45,7 @@
     "react-transition-group": "2.2.1",
     "redux": "3.7.2",
     "styled-components": "3.1.6",
-    "yup": "0.23.0"
+    "yup": "0.24.1"
   },
   "devDependencies": {
     "@commitlint/cli": "5.2.8",
