@@ -30,7 +30,7 @@
     "clean:cache": "rimraf node_modules && yarn cache clean && yarn"
   },
   "dependencies": {
-    "formik": "0.10.5",
+    "formik": "0.11.10",
     "history": "4.7.2",
     "prop-types": "15.6.0",
     "react": "16.2.0",
