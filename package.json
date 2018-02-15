@@ -48,7 +48,7 @@
     "yup": "0.23.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "5.2.8",
+    "@commitlint/cli": "6.1.0",
     "@commitlint/config-conventional": "6.1.0",
     "babel-eslint": "8.2.1",
     "babel-jest": "22.2.2",
