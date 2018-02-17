@@ -4,16 +4,17 @@ extends:
   - eslint:recommended
   - plugin:react/recommended
   - plugin:jsx-a11y/recommended
-  - plugin:import/errors
   - plugin:import/warnings
+  - plugin:import/errors
   - prettier
   - prettier/react
 plugins:
   - react
   - jsx-a11y
+  - import
   - prettier
 rules:
-  no-console: off
+  prefer-const: error
   react/prop-types: off
   import/order: error
   prettier/prettier:
@@ -31,9 +32,10 @@ globals:
   fixture: true
 parserOptions:
   sourceType: module
-  ecmaVersion: 2017
+  ecmaVersion: 2018
   ecmaFeatures:
     experimentalObjectRestSpread: true
     experimentalDecorators: true
+    impliedStrict: true
     classes: true
     jsx: true
