@@ -9,13 +9,13 @@
   <a href="https://github.com/prettier/prettier">
     <img alt="Code Style" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
   </a>
-  <a href="https://github.com/stylelint/stylelint-config-standard">
-    <img alt="stylelint" src="https://img.shields.io/badge/stylelint-standard-orange.svg?style=flat-square">
+  <a href="https://github.com/styled-components/styled-components">
+    <img alt="CSS Style" src="https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?style=flat-square">
   </a>
   <a href="https://github.com/DevExpress/testcafe">
     <img alt="E2E Test" src="https://img.shields.io/badge/tested%20with-TestCafe-2fa4cf.svg?style=flat-square">
   </a>
-  <a href="https://github.com/facebook/jest/">
+  <a href="https://github.com/facebook/jest">
     <img alt="Unit Test" src="https://img.shields.io/badge/tested_with-jest-99424f.svg?style=flat-square">
   </a>
   <a href="https://coveralls.io/github/ymkz/portfolio">
