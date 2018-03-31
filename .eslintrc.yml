@@ -1,40 +1,36 @@
----
 parser: babel-eslint
 extends:
   - eslint:recommended
   - plugin:react/recommended
   - plugin:jsx-a11y/recommended
-  - plugin:import/warnings
   - plugin:import/errors
-  - plugin:prettier/recommended
+  - plugin:import/warnings
+  - prettier
+  - prettier/react
 plugins:
   - react
   - jsx-a11y
   - import
   - prettier
 rules:
-  prefer-const: error
+  no-console: off
   react/prop-types: off
+  react/display-name: off
   import/order: error
   prettier/prettier:
     - error
     -
-      singleQuote: true
       semi: false
-      printWidth: 120
+      singleQuote: true
 env:
   es6: true
   node: true
   jest: true
   browser: true
-globals:
-  fixture: true
 parserOptions:
   sourceType: module
   ecmaVersion: 2018
   ecmaFeatures:
-    experimentalObjectRestSpread: true
     experimentalDecorators: true
-    impliedStrict: true
     classes: true
     jsx: true

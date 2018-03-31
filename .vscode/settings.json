@@ -1,15 +1,5 @@
 {
-  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
   "javascript.format.enable": false,
-  "prettier.eslintIntegration": true,
-  "prettier.stylelintIntegration": false,
-  "stylelint.enable": true,
-  "stylelint.additionalDocumentSelectors": [
-    "javascriptreact"
-  ],
-  "css.validate": false,
-  "scss.validate": false,
-  "files.associations": {
-    "*.js": "javascriptreact"
-  }
+  "prettier.eslintIntegration": true
 }

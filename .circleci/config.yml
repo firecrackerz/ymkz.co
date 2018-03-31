@@ -1,143 +1,25 @@
-defaults: &defaults
-  docker:
-    - image: circleci/node:9.4.0-browsers
-  working_directory: ~/workspace
-
-runner: &runner
-  filters:
-    branches:
-      ignore:
-        - /renovate.*/
-
 version: 2
-
 jobs:
-  bootstrap:
-    <<: *defaults
+  build:
+    docker:
+      - image: circleci/node:9.10.0
+    working_directory: ~/workspace
     steps:
       - checkout
       - restore_cache:
           keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
+          - dependencies-{{ checksum "yarn.lock" }}
+          - dependencies-
       - run:
-          name: Install package
+          name: Install packages
           command: yarn install
       - save_cache:
-          key: yarn-{{ checksum "yarn.lock" }}
+          key: dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-  coverage:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
       - run:
-          name: Run coverage check
-          command: yarn run coverage:coveralls
-  lint:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
-      - run:
-          name: Run code lint
+          name: Lint code
           command: yarn run lint
-  test:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
       - run:
-          name: Run unit test
-          command: yarn run test
-  e2e:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
-      - run:
-          name: Run e2e test
-          command: yarn run e2e
-  build:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
-      - run:
-          name: Build
-          command: yarn run build
-      - persist_to_workspace:
-          root: ~/workspace
-          paths:
-            - build
-  deploy:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-          - yarn-{{ checksum "yarn.lock" }}
-          - yarn-
-      - attach_workspace:
-          at: ~/workspace
-      - run:
-          name: Deploy
-          command: yarn run netlify deploy --path build --env production --site-id ${SITE_ID} --access-token ${ACCESS_TOKEN}
-
-workflows:
-  version: 2
-  workflow:
-    jobs:
-      - bootstrap:
-          <<: *runner
-      - coverage:
-          requires:
-            - bootstrap
-          <<: *runner
-      - lint:
-          requires:
-            - bootstrap
-          <<: *runner
-      - test:
-          requires:
-            - bootstrap
-            - lint
-          <<: *runner
-      - e2e:
-          requires:
-            - bootstrap
-            - lint
-          <<: *runner
-      - build:
-          requires:
-            - bootstrap
-            - lint
-            - test
-            - e2e
-          <<: *runner
-      - deploy:
-          requires:
-            - bootstrap
-            - lint
-            - test
-            - e2e
-            - build
-          filters:
-            branches:
-              only: master
+          name: Unit test code
+          command: CI=true yarn run test
