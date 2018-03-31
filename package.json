@@ -40,7 +40,7 @@
     "@storybook/addon-links": "3.4.0",
     "@storybook/addon-storyshots": "3.4.0",
     "@storybook/addons": "3.4.0",
-    "@storybook/react": "3.3.15",
+    "@storybook/react": "3.4.0",
     "babel-core": "6.26.0",
     "babel-eslint": "8.2.2",
     "codecov": "3.0.0",
