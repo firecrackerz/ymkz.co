@@ -1,60 +1,28 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { createBrowserHistory } from 'history'
-import { Route, Switch } from 'react-router-dom'
-import { combineReducers, compose, createStore, applyMiddleware } from 'redux'
-import { ConnectedRouter, routerMiddleware, routerReducer as router } from 'react-router-redux'
-import { Provider as ReduxProvider } from 'react-redux'
-import { Provider as AlertProvider } from 'react-alert'
-import AlertTemplate from 'react-alert-template-basic'
-import styled from 'styled-components'
-import Header from './Header'
-import About from './About'
-import Work from './Work'
-import NotFound from './NotFound'
-import registerServiceWorker from './serviceWorker'
+import { render } from 'react-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { asyncComponentLoad } from './components'
+import Header from './components/organisms/Header'
+import serviceWorker from './serviceWorker'
+import './injectStyle'
 
-const history = createBrowserHistory()
-const reducer = combineReducers({ router })
-const store = createStore(reducer, undefined, compose(applyMiddleware(routerMiddleware(history))))
+const About = asyncComponentLoad(() => import('./components/pages/About'))
+const Work = asyncComponentLoad(() => import('./components/pages/Work'))
+const NotFound = asyncComponentLoad(() => import('./components/pages/NotFound'))
 
-const AppContainer = styled.div`
-  background-color: #22222a;
-  color: #fefeff;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  padding: 0 192px;
-  width: 100vw;
-
-  @media (max-width: 768px) {
-    padding: 0 16px;
-  }
-`
-
-const options = {
-  position: 'bottom right',
-  timeout: 5000,
-  offset: '16px',
-  transition: 'scale'
-}
-
-const App = () => (
-  <AlertProvider template={AlertTemplate} {...options}>
-    <ReduxProvider store={store}>
-      <ConnectedRouter history={history}>
-        <AppContainer>
-          <Header />
-          <Switch>
-            <Route exact path="/" component={About} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/work" component={Work} />
-            <Route component={NotFound} />
-          </Switch>
-        </AppContainer>
-      </ConnectedRouter>
-    </ReduxProvider>
-  </AlertProvider>
+render(
+  <BrowserRouter>
+    <React.Fragment>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={About} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/work" component={Work} />
+        <Route component={NotFound} />
+      </Switch>
+    </React.Fragment>
+  </BrowserRouter>,
+  document.getElementById('root')
 )
 
-ReactDOM.render(<App />, document.querySelector('#root'))
-registerServiceWorker()
+serviceWorker()
