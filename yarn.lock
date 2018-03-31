@@ -223,15 +223,7 @@
     react-inspector "^2.2.2"
     uuid "^3.2.1"
 
-"@storybook/addon-links@3.3.15":
-  version "3.3.15"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.3.15.tgz#b0ad4151de729aaa134ece86947e9df951583afe"
-  dependencies:
-    "@storybook/components" "^3.3.15"
-    global "^4.3.2"
-    prop-types "^15.5.10"
-
-"@storybook/addon-links@^3.3.15":
+"@storybook/addon-links@3.4.0", "@storybook/addon-links@^3.3.15":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-3.4.0.tgz#638218a567b9318a72ab268963d7efcd47878164"
   dependencies:
@@ -276,7 +268,7 @@
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-3.4.0.tgz#130b1812cb5b5e9ea6962930da2c17265056defd"
 
-"@storybook/components@3.4.0", "@storybook/components@^3.3.15":
+"@storybook/components@3.4.0":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@storybook/components/-/components-3.4.0.tgz#b9cb9aee02b9ff9311433d8b57c60d0350b21880"
   dependencies:
