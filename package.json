@@ -16,8 +16,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --env=jsdom",
+    "test:cov": "react-scripts test --coverage --env=jsdom",
     "lint": "eslint 'src/**/*.js'",
     "lint:fix": "eslint --fix 'src/**/*.js'",
     "storybook": "start-storybook -p 9000 -s build",
@@ -43,6 +43,7 @@
     "@storybook/react": "3.3.15",
     "babel-core": "6.26.0",
     "babel-eslint": "8.2.2",
+    "codecov": "^3.0.0",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
     "eslint": "4.19.1",
