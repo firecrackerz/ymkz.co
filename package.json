@@ -17,8 +17,8 @@
   "scripts": {
     "start": "webpack-serve webpack.config.js",
     "build": "webpack --mode production",
-    "lint": "eslint 'src/**/*.js'",
-    "lint:fix": "eslint --fix 'src/**/*.js'",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
     "flow": "flow",
     "type": "flow-typed install --skip"
   },

@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const Container = styled.div`
   font-family: 'Futura', sans-serif;
   font-size: 1.3rem;
+  font-weight: 700;
   line-height: 1.9rem;
   padding-top: 1rem;
 `
