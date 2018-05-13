@@ -4,10 +4,9 @@ import styled from 'styled-components'
 import { withFormik } from 'formik'
 import type { FormikProps, FormikActions } from 'formik'
 import Yup from 'yup'
-import Caption from '~/components/atoms/Caption.js'
-import Submit from '~/components/atoms/Submit.js'
-import FormInput from '~/components/molecules/FormInput.js'
-import FormText from '~/components/molecules/FormText.js'
+import Caption from '~/components/atoms/Caption'
+import Submit from '~/components/atoms/Submit'
+import Field from '~/components/molecules/Field'
 import type { ContactBody, ContactPayload } from '~/types'
 
 const encodePayloadToBody = (data: ContactBody) =>
@@ -48,7 +47,8 @@ const Contact = ({
       name="contact"
       onSubmit={handleSubmit}
     >
-      <FormInput
+      <Field
+        type="input"
         label="Name"
         name="name"
         placeholder="John Doe"
@@ -58,7 +58,8 @@ const Contact = ({
         handleBlur={handleBlur}
         handleChange={handleChange}
       />
-      <FormInput
+      <Field
+        type="input"
         label="Email"
         name="email"
         placeholder="john@example.com"
@@ -68,7 +69,8 @@ const Contact = ({
         handleBlur={handleBlur}
         handleChange={handleChange}
       />
-      <FormText
+      <Field
+        type="textarea"
         label="Message"
         name="message"
         placeholder="What you want to message"

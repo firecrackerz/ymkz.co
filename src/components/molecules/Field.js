@@ -1,15 +1,16 @@
 // @flow
 import * as React from 'react'
 import styled from 'styled-components'
-import Error from '~/components/atoms/Error.js'
-import Label from '~/components/atoms/Label.js'
-import TextInput from '~/components/atoms/TextInput.js'
+import Error from '~/components/atoms/Error'
+import Label from '~/components/atoms/Label'
+import Input from '~/components/atoms/Input'
 
 const Container = styled.div`
   position: relative;
 `
 
-const FormInput = ({
+const Field = ({
+  type,
   label,
   name,
   placeholder,
@@ -19,6 +20,7 @@ const FormInput = ({
   handleBlur,
   handleChange
 }: {
+  type: 'input' | 'textarea',
   label: string,
   name: string,
   placeholder: string,
@@ -30,7 +32,8 @@ const FormInput = ({
 }) => (
   <Container>
     <Label htmlFor={name}>{label}</Label>
-    <TextInput
+    <Input
+      type={type}
       name={name}
       placeholder={placeholder}
       value={value}
@@ -41,4 +44,4 @@ const FormInput = ({
   </Container>
 )
 
-export default FormInput
+export default Field
