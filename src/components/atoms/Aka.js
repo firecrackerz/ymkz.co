@@ -1,7 +1,9 @@
+// @flow
 import styled from 'styled-components'
 
 const Aka = styled.p`
   color: var(--nord6);
+  font-family: 'Futura', sans-serif;
   font-size: 12rem;
   font-weight: 900;
   left: 0;

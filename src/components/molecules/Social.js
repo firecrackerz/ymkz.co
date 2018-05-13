@@ -1,10 +1,11 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'styled-components'
-import Caption from '../atoms/Caption'
-import Icon from '../atoms/Icon'
-import github from '../../images/github.svg'
-import twitter from '../../images/twitter.svg'
-import facebook from '../../images/facebook.svg'
+import Caption from '~/components/atoms/Caption.js'
+import Icon from '~/components/atoms/Icon.js'
+import github from '~/images/github.svg'
+import twitter from '~/images/twitter.svg'
+import facebook from '~/images/facebook.svg'
 
 const Container = styled.section`
   padding-bottom: 128px;

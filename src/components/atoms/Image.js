@@ -1,20 +1,33 @@
-import React from 'react'
-import ImageZoom from 'react-medium-image-zoom'
+// @flow
+import * as React from 'react'
+import styled from 'styled-components'
+import mediumZoom from 'medium-zoom'
+import type { ImageProps } from '~/types'
 
-const Image = ({ src, landscape = false, border = false, last = false }) => (
-  <ImageZoom
-    image={{
-      src: src,
-      alt: '',
-      style: {
-        width: `${landscape ? '256px' : '128px'}`,
-        border: `${border ? '1px solid var(--nord3)' : 0}`,
-        marginRight: `${last ? 0 : '24px'}`
-      }
-    }}
-    defaultStyles={{
-      overlay: { backgroundColor: 'rgb(46, 52, 64, .8)' }
-    }}
+const Container = styled.img`
+  border: ${props => (props.border ? '1px solid var(--nord3)' : 0)};
+  margin-right: ${props => (props.last ? 0 : '24px')};
+  width: ${props => (props.landscape ? '256px' : '128px')};
+`
+
+const Image = ({
+  src,
+  border,
+  landscape,
+  last
+}: ImageProps & { last: boolean }) => (
+  <Container
+    src={src}
+    border={border}
+    landscape={landscape}
+    last={last}
+    innerRef={image =>
+      mediumZoom(image, {
+        background: 'rgb(46, 52, 64, .8)',
+        scrollOffset: 0,
+        margin: 32
+      })
+    }
   />
 )
 

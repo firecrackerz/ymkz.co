@@ -1,14 +1,15 @@
-import React from 'react'
-import Portfolio from '../organisms/Portfolio'
-import Narosirase from '../organisms/Narosirase'
-import Cancelectures from '../organisms/Cancelectures'
+// @flow
+import * as React from 'react'
+import Portfolio from '~/components/organisms/Portfolio.js'
+import Narosirase from '~/components/organisms/Narosirase.js'
+import Cancelectures from '~/components/organisms/Cancelectures.js'
 
 const Work = () => (
-  <React.Fragment>
+  <>
     <Portfolio />
     <Narosirase />
     <Cancelectures />
-  </React.Fragment>
+  </>
 )
 
 export default Work

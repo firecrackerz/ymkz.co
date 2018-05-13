@@ -1,11 +1,11 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'styled-components'
-import Error from '../atoms/Error'
-import Label from '../atoms/Label'
-import TextInput from '../atoms/TextInput'
+import Error from '~/components/atoms/Error.js'
+import Label from '~/components/atoms/Label.js'
+import TextInput from '~/components/atoms/TextInput.js'
 
-const Container = styled.label`
-  display: block;
+const Container = styled.div`
   position: relative;
 `
 
@@ -18,9 +18,18 @@ const FormInput = ({
   touched,
   handleBlur,
   handleChange
+}: {
+  label: string,
+  name: string,
+  placeholder: string,
+  value: string,
+  error: ?string,
+  touched: boolean,
+  handleBlur: Function,
+  handleChange: Function
 }) => (
-  <Container htmlFor={name}>
-    <Label>{label}</Label>
+  <Container>
+    <Label htmlFor={name}>{label}</Label>
     <TextInput
       name={name}
       placeholder={placeholder}

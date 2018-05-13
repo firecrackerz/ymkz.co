@@ -1,9 +1,11 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Container = styled(Link)`
   color: var(--nord6);
+  font-family: 'Futura', sans-serif;
   font-weight: ${props => props.active};
   margin: 0 0.6rem;
   text-decoration: none;
@@ -20,7 +22,15 @@ const Container = styled(Link)`
   }
 `
 
-const Nav = ({ name, to, active }) => (
+const Nav = ({
+  name,
+  to,
+  active
+}: {
+  name: string,
+  to: string,
+  active: number
+}) => (
   <Container to={to} active={active}>
     {name}
   </Container>

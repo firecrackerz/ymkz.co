@@ -1,15 +1,13 @@
 // @flow
 import styled from 'styled-components'
 
-const Title = styled.h2`
+const Subtitle = styled.h3`
   font-family: 'Futura', sans-serif;
-  font-size: 6rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  padding-top: 100px;
   @media (max-width: 768px) {
-    font-size: 3rem;
-    padding-top: 64px;
+    font-size: 1.2rem;
   }
 `
 
-export default Title
+export default Subtitle

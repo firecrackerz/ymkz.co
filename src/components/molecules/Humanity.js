@@ -1,7 +1,8 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'styled-components'
-import Caption from '../atoms/Caption'
-import Profile from '../atoms/Profile'
+import Caption from '~/components/atoms/Caption.js'
+import Profile from '~/components/atoms/Profile.js'
 
 const Container = styled.section`
   padding-bottom: 128px;

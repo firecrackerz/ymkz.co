@@ -1,4 +1,5 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.button`
@@ -20,7 +21,13 @@ const Container = styled.button`
   }
 `
 
-const Submit = ({ isValid, isSubmitting }) => (
+const Submit = ({
+  isValid,
+  isSubmitting
+}: {
+  isValid: boolean,
+  isSubmitting: boolean
+}) => (
   <Container id="submit" type="submit" disabled={!isValid || isSubmitting}>
     Send
   </Container>

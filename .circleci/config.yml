@@ -19,7 +19,7 @@ jobs:
             - node_modules
       - run:
           name: Lint
-          command: yarn run lint
-      - run:
-          name: Unit Test
-          command: CI=true yarn run test:cov && yarn run codecov
+          command: CI=true yarn run lint
+      # - run:
+      #     name: Unit Test
+      #     command: CI=true yarn run test:cov && yarn run codecov

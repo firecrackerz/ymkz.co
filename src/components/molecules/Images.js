@@ -1,20 +1,22 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'styled-components'
-import Image from '../atoms/Image'
+import Image from '~/components/atoms/Image.js'
+import type { ImageProps } from '~/types'
 
 const Container = styled.div`
   overflow: hidden;
   padding: 24px 0;
 `
 
-const Images = ({ images }) => (
+const Images = ({ images }: { images: Array<ImageProps> }) => (
   <Container>
-    {images.map((image, index) => (
+    {images.map((image: ImageProps, index: number) => (
       <Image
-        key={`${image}-${index}`}
+        key={`${image.src}-${index}`}
         src={image.src}
-        landscape={image.landscape}
         border={image.border}
+        landscape={image.landscape}
         last={index === images.length - 1}
       />
     ))}

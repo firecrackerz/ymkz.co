@@ -1,4 +1,5 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'styled-components'
 
 const Input = styled.input`
@@ -18,7 +19,19 @@ const Input = styled.input`
   }
 `
 
-const TextInput = ({ name, placeholder, value, handleBlur, handleChange }) => (
+const TextInput = ({
+  name,
+  placeholder,
+  value,
+  handleBlur,
+  handleChange
+}: {
+  name: string,
+  placeholder: string,
+  value: string,
+  handleBlur: Function,
+  handleChange: Function
+}) => (
   <Input
     id={name}
     name={name}

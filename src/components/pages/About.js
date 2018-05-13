@@ -1,18 +1,19 @@
-import React from 'react'
-import Who from '../molecules/Who'
-import Humanity from '../molecules/Humanity'
-import Skills from '../molecules/Skills'
-import Social from '../molecules/Social'
-import Contact from '../organisms/Contact'
+// @flow
+import * as React from 'react'
+import Who from '~/components/molecules/Who.js'
+import Humanity from '~/components/molecules/Humanity.js'
+import Skills from '~/components//molecules//Skills.js'
+import Social from '~/components//molecules//Social.js'
+import Contact from '~/components/organisms/Contact.js'
 
 const About = () => (
-  <React.Fragment>
+  <>
     <Who />
     <Humanity />
     <Skills />
     <Social />
     <Contact />
-  </React.Fragment>
+  </>
 )
 
 export default About

@@ -1,7 +1,8 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'styled-components'
-import Caption from '../atoms/Caption'
-import Skill from '../atoms/Skill'
+import Caption from '~/components/atoms/Caption.js'
+import Skill from '~/components/atoms/Skill.js'
 
 const Container = styled.section`
   padding-bottom: 128px;
@@ -20,6 +21,7 @@ const Skills = () => (
       <Skill>ES2018</Skill>
       <Skill>Node.js</Skill>
       <Skill>TypeScript</Skill>
+      <Skill>Flowtype</Skill>
       <Skill>React</Skill>
       <Skill>React Native</Skill>
       <Skill>Atomic Design</Skill>

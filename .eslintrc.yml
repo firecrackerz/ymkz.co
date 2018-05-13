@@ -1,22 +1,24 @@
 parser: babel-eslint
 extends:
   - eslint:recommended
-  - plugin:react/recommended
-  - plugin:jsx-a11y/recommended
   - plugin:import/errors
   - plugin:import/warnings
+  - plugin:flowtype/recommended
+  - plugin:react/recommended
   - prettier
+  - prettier/flowtype
   - prettier/react
 plugins:
-  - react
-  - jsx-a11y
   - import
+  - flowtype
+  - react
   - prettier
 rules:
   no-console: off
+  import/order: error
+  import/newline-after-import: error
   react/prop-types: off
   react/display-name: off
-  import/order: error
   prettier/prettier:
     - error
     -
@@ -27,6 +29,13 @@ env:
   node: true
   jest: true
   browser: true
+settings:
+  flowtype:
+    onlyFilesWithFlowAnnotation: true
+  import/resolver:
+    babel-module:
+      alias:
+        ~: ./src
 parserOptions:
   sourceType: module
   ecmaVersion: 2018
