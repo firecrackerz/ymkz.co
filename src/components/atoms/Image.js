@@ -2,10 +2,11 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import mediumZoom from 'medium-zoom'
+import { color } from '~/constants'
 import type { ImageProps } from '~/types'
 
 const Container = styled.img`
-  border: ${props => (props.border ? '1px solid var(--nord3)' : 0)};
+  border: ${props => (props.border ? `1px solid ${color.lightBlack}` : 0)};
   margin-right: ${props => (props.last ? 0 : '24px')};
   width: ${props => (props.landscape ? '256px' : '128px')};
 `

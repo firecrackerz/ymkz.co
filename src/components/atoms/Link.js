@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react'
 import styled from 'styled-components'
+import { color } from '~/constants'
 import type { LinkProps } from '~/types'
 
 const Container = styled.li`
@@ -11,7 +12,7 @@ const App = styled.a.attrs({
   target: '_blank',
   rel: 'noopener noreferrer'
 })`
-  color: var(--nord6);
+  color: ${color.white};
   text-decoration: none;
 `
 

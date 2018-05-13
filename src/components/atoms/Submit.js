@@ -1,18 +1,20 @@
 // @flow
 import * as React from 'react'
 import styled from 'styled-components'
+import { color } from '~/constants'
 
 const Container = styled.button`
-  background-color: var(--nord1);
+  background-color: ${color.darkBlack};
   border: 0;
   border-radius: 4px;
-  color: var(--nord6);
+  color: ${color.white};
   font-size: 1rem;
   height: 2.5rem;
   margin-top: 1rem;
   width: 5rem;
   &:focus {
-    box-shadow: inset 0 1px 2px var(--nord1), 0 0 0 4px var(--nord2);
+    box-shadow: inset 0 1px 2px ${color.darkBlack},
+      0 0 0 4px ${color.middleBlack};
     outline: none;
   }
   &:disabled {

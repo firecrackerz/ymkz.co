@@ -1,38 +1,41 @@
 // @flow
 import * as React from 'react'
 import styled from 'styled-components'
+import { color } from '~/constants'
 
 const TextInput = styled.input`
-  background-color: var(--nord1);
+  background-color: ${color.darkBlack};
   border-radius: 4px;
-  color: var(--nord6);
+  color: ${color.white};
   font-size: 1.1rem;
   padding: 0.65rem;
   width: 100%;
   &:focus {
-    box-shadow: inset 0 1px 2px var(--nord1), 0 0 0 4px var(--nord2);
+    box-shadow: inset 0 1px 2px ${color.darkBlack},
+      0 0 0 4px ${color.middleBlack};
     outline: none;
   }
   &::placeholder {
-    color: var(--nord3);
+    color: ${color.lightBlack};
     font-size: 1rem;
   }
 `
 
 const TextArea = styled.textarea`
-  background-color: var(--nord1);
+  background-color: ${color.darkBlack};
   border-radius: 4px;
-  color: var(--nord6);
+  color: ${color.white};
   height: 12rem;
   padding: 0.65rem;
   resize: none;
   width: 100%;
   &:focus {
-    box-shadow: inset 0 1px 2px var(--nord1), 0 0 0 4px var(--nord2);
+    box-shadow: inset 0 1px 2px ${color.darkBlack},
+      0 0 0 4px ${color.middleBlack};
     outline: none;
   }
   &::placeholder {
-    color: var(--nord3);
+    color: ${color.lightBlack};
   }
 `
 

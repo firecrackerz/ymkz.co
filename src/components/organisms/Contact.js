@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { withFormik } from 'formik'
 import type { FormikProps, FormikActions } from 'formik'
 import Yup from 'yup'
+import { constraint } from '~/constants'
 import Caption from '~/components/atoms/Caption'
 import Submit from '~/components/atoms/Submit'
 import Field from '~/components/molecules/Field'
@@ -25,7 +26,7 @@ const postContactMessage = async (payload: ContactPayload) => {
 }
 
 const Container = styled.section`
-  max-width: var(--contact-max-width);
+  max-width: ${constraint.contactWidthMax};
 `
 
 const Contact = ({

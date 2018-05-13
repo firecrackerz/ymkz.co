@@ -6,8 +6,8 @@ import Header from '~/components/organisms/Header.js'
 import About from '~/components/pages/About.js'
 import Work from '~/components/pages/Work.js'
 import NotFound from '~/components/pages/NotFound.js'
+import '~/inject-global'
 import '~/service-worker'
-import '~/index.css'
 
 const container = document.querySelector('#root')
 

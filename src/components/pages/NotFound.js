@@ -1,14 +1,17 @@
 // @flow
 import * as React from 'react'
 import styled from 'styled-components'
-import Site from '~/components/atoms/Site.js'
-import Strong from '~/components/atoms/Strong.js'
-import Message from '~/components/atoms/Message.js'
+import { constraint } from '~/constants'
+import Site from '~/components/atoms/Site'
+import Strong from '~/components/atoms/Strong'
+import Message from '~/components/atoms/Message'
 
 const Container = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  height: calc(100vh - var(--header-height) - var(--bottom-padding));
+  height: calc(
+    100vh - ${constraint.headerHeight} - ${constraint.bottomPadding}
+  );
   justify-content: center;
 `
 

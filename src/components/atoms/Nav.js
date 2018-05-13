@@ -2,9 +2,10 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { color } from '~/constants'
 
 const Container = styled(Link)`
-  color: var(--nord6);
+  color: ${color.white};
   font-family: 'Futura', sans-serif;
   font-weight: ${props => props.active};
   margin: 0 0.6rem;
@@ -12,7 +13,7 @@ const Container = styled(Link)`
   &:visited,
   &:active,
   &:focus {
-    color: var(--nord6);
+    color: ${color.white};
   }
   &:first-child {
     margin-left: 0;

@@ -1,8 +1,9 @@
 // @flow
 import styled from 'styled-components'
+import { color } from '~/constants'
 
 const Name = styled.p`
-  color: var(--nord2);
+  color: ${color.middleBlack};
   font-family: 'Futura', sans-serif;
   font-size: 8.5rem;
   font-weight: 700;
