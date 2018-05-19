@@ -1,6 +1,6 @@
 <h1 align="center">portfolio</h1>
 
-<h5 align="center">portfolio site about ymkz</h5>
+<h5 align="center">The portfolio site about ymkz</h5>
 
 <p align="center">
   <a href="https://circleci.com/gh/ymkz/portfolio">
@@ -20,4 +20,4 @@
   </a>
 </p>
 
-![portfolio](resource/portfolio.jpg)
+![portfolio](assets/portfolio.jpg)

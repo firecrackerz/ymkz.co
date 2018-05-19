@@ -1,22 +1,21 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'styled-components'
 import { withFormik } from 'formik'
+import type { FormikProps, FormikActions } from 'formik'
 import Yup from 'yup'
-import Caption from '../atoms/Caption'
-import Submit from '../atoms/Submit'
-import FormInput from '../molecules/FormInput'
-import FormText from '../molecules/FormText'
+import { constraint } from '~/constants'
+import Caption from '~/components/atoms/Caption'
+import Submit from '~/components/atoms/Submit'
+import Field from '~/components/molecules/Field'
+import type { ContactBody, ContactPayload } from '~/types'
 
-const Container = styled.section`
-  max-width: var(--contact-max-width);
-`
-
-const encodePayloadToBody = data =>
+const encodePayloadToBody = (data: ContactBody) =>
   Object.keys(data)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&')
 
-const postContactMessage = async payload => {
+const postContactMessage = async (payload: ContactPayload) => {
   const option = {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -25,6 +24,10 @@ const postContactMessage = async payload => {
   await fetch('/', option).catch(() => alert('Unexpected error has occurred'))
   alert('Thank you for your contact')
 }
+
+const Container = styled.section`
+  max-width: ${constraint.contactWidthMax};
+`
 
 const Contact = ({
   values,
@@ -35,7 +38,7 @@ const Contact = ({
   handleChange,
   handleBlur,
   handleSubmit
-}) => (
+}: FormikProps<ContactPayload>) => (
   <Container>
     <Caption>CONTACT</Caption>
     <form
@@ -45,7 +48,8 @@ const Contact = ({
       name="contact"
       onSubmit={handleSubmit}
     >
-      <FormInput
+      <Field
+        type="input"
         label="Name"
         name="name"
         placeholder="John Doe"
@@ -55,7 +59,8 @@ const Contact = ({
         handleBlur={handleBlur}
         handleChange={handleChange}
       />
-      <FormInput
+      <Field
+        type="input"
         label="Email"
         name="email"
         placeholder="john@example.com"
@@ -65,7 +70,8 @@ const Contact = ({
         handleBlur={handleBlur}
         handleChange={handleChange}
       />
-      <FormText
+      <Field
+        type="textarea"
         label="Message"
         name="message"
         placeholder="What you want to message"
@@ -93,7 +99,10 @@ export default withFormik({
       .required('Email is required'),
     message: Yup.string().required('Message is required')
   }),
-  handleSubmit: async (values, { setSubmitting, resetForm }) => {
+  handleSubmit: async (
+    values: ContactPayload,
+    { setSubmitting, resetForm }: FormikActions<ContactPayload>
+  ) => {
     await postContactMessage(values)
     setSubmitting(false)
     resetForm()

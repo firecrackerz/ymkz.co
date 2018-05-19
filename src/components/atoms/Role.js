@@ -1,8 +1,10 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.span`
   font-weight: 300;
+  font-family: 'Futura', sans-serif;
   margin-left: 0.3rem;
   @media (max-width: 768px) {
     display: none;

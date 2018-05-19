@@ -1,7 +1,8 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'styled-components'
-import Name from '../atoms/Name'
-import Aka from '../atoms/Aka'
+import Name from '~/components/atoms/Name.js'
+import Aka from '~/components/atoms/Aka.js'
 
 const Container = styled.section`
   display: flex;

@@ -1,7 +1,0 @@
-{
-  "schedule": "every weekend",
-  "packagePatterns": [
-    "^eslint",
-    "^stylelint"
-  ]
-}

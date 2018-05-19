@@ -1,4 +1,5 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'styled-components'
 
 const Link = styled.a.attrs({
@@ -18,6 +19,8 @@ const Link = styled.a.attrs({
   }
 `
 
-const Icon = ({ href, image }) => <Link href={href} image={image} />
+const Icon = ({ href, image }: { href: string, image: string }) => (
+  <Link href={href} image={image} />
+)
 
 export default Icon

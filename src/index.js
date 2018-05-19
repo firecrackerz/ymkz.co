@@ -1,28 +1,31 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import { render } from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { asyncComponentLoad } from './components'
-import Header from './components/organisms/Header'
-import serviceWorker from './serviceWorker'
-import './injectStyle'
+import Header from '~/components/organisms/Header.js'
+import About from '~/components/pages/About.js'
+import Work from '~/components/pages/Work.js'
+import NotFound from '~/components/pages/NotFound.js'
+import '~/inject-global'
+import '~/service-worker'
 
-const About = asyncComponentLoad(() => import('./components/pages/About'))
-const Work = asyncComponentLoad(() => import('./components/pages/Work'))
-const NotFound = asyncComponentLoad(() => import('./components/pages/NotFound'))
+const container = document.querySelector('#root')
 
-render(
-  <BrowserRouter>
-    <React.Fragment>
-      <Header />
-      <Switch>
-        <Route exact path="/" component={About} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/work" component={Work} />
-        <Route component={NotFound} />
-      </Switch>
-    </React.Fragment>
-  </BrowserRouter>,
-  document.getElementById('root')
-)
-
-serviceWorker()
+if (container) {
+  render(
+    <BrowserRouter>
+      <>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={About} />
+          <Route path="/about" component={About} />
+          <Route path="/work" component={Work} />
+          <Route component={NotFound} />
+        </Switch>
+      </>
+    </BrowserRouter>,
+    container
+  )
+} else {
+  throw new Error('Error occurred when mounting to the DOM')
+}

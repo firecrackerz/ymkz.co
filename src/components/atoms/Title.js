@@ -1,6 +1,8 @@
+// @flow
 import styled from 'styled-components'
 
 const Title = styled.h2`
+  font-family: 'Futura', sans-serif;
   font-size: 6rem;
   font-weight: 700;
   padding-top: 100px;

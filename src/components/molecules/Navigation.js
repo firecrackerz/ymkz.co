@@ -1,13 +1,14 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled from 'styled-components'
-import Nav from '../atoms/Nav'
+import Nav from '~/components/atoms/Nav.js'
 
 const Container = styled.nav`
   display: flex;
   flex-flow: row nowrap;
 `
 
-const Navigation = ({ pathname }) => (
+const Navigation = ({ pathname }: { pathname: string }) => (
   <Container>
     <Nav
       name="about"

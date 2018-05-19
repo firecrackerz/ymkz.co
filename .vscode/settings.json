@@ -1,5 +1,11 @@
 {
+  "eslint.enable": true,
   "eslint.autoFixOnSave": true,
+  "flow.enabled": true,
+  "flow.useNPMPackagedFlow": true,
   "javascript.format.enable": false,
-  "prettier.eslintIntegration": true
+  "javascript.validate.enable": false,
+  "path-autocomplete.pathMappings": {
+    "~": "${folder}/src"
+  }
 }
