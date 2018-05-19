@@ -76,5 +76,8 @@
       "pre-commit": "yarn run lint",
       "post-merge": "(git diff 'HEAD@{1}' --name-only | grep package.json > /dev/null) && yarn install || :"
     }
+  },
+  "renovate": {
+    "schedule": "every weekend"
   }
 }
