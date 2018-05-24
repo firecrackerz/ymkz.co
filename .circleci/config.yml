@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:9.11.1@sha256:48ffa164689bae8970bbcb7dd6efc03d4b6ca8cc44b718802c2e44cdf40f6f64
+      - image: circleci/node:9.11.1@sha256:98e9b26570f26e58bc249f5009f25642f8ff976f38562ec91c4764769d5aa169
     working_directory: ~/workspace
     steps:
       - checkout
