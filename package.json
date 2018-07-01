@@ -15,8 +15,8 @@
     "url": "https://github.com/ymkz/portfolio/issues"
   },
   "scripts": {
-    "start": "webpack-serve",
-    "build": "webpack --mode production",
+    "start": "NODE_ENV=development webpack-serve",
+    "build": "NODE_ENV=production webpack --mode production",
     "lint": "tslint --project .",
     "lint:fix": "tslint --fix --project .",
     "typecheck": "tsc --noEmit"
