@@ -48,7 +48,7 @@ module.exports = {
   ]
 }
 
-module.exports.serve = {
+module.exports.serve = __DEV__ ? {
   add: app => app.use(convert(history())),
   content: [__dirname],
   dev: {
@@ -58,4 +58,4 @@ module.exports.serve = {
     key: fs.readFileSync('./localhost-key.pem'),
     cert: fs.readFileSync('./localhost.pem'),
   }
-}
+} : {}
