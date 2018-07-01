@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "minor": {
+    "groupName": "all dependencies"
+  },
+  "schedule": "every weekend",
+  "timezone": "JP"
+}

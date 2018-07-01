@@ -19,7 +19,7 @@ jobs:
             - node_modules
       - run:
           name: Lint
-          command: CI=true yarn run lint
-      # - run:
-      #     name: Unit Test
-      #     command: CI=true yarn run test:cov && yarn run codecov
+          command: yarn lint
+      - run:
+          name: Type check
+          command: yarn typecheck

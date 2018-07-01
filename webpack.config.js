@@ -1,47 +1,61 @@
+const fs = require('fs')
 const path = require('path')
-const Html = require('html-webpack-plugin')
-const Copy = require('copy-webpack-plugin')
-const Clean = require('clean-webpack-plugin')
-const Favicons = require('favicons-webpack-plugin')
-const Workbox = require('workbox-webpack-plugin')
+const PluginStylish = require('webpack-stylish')
+const PluginHtml = require('html-webpack-plugin')
+const PluginExtract = require('mini-css-extract-plugin')
+const history = require('connect-history-api-fallback')
+const convert = require('koa-connect')
+
+const __DEV__ = process.env.NODE_ENV === 'development' ? true : false
 
 module.exports = {
   mode: 'development',
-  entry: ['@babel/polyfill', path.resolve(__dirname, 'src')],
+  stats: 'none',
+  devtool: __DEV__ ? 'eval-cheap-module-source-map' : false,
+  entry: path.resolve(__dirname, 'src'),
   output: {
-    filename: 'index.js',
-    path: path.resolve(__dirname, 'build'),
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json']
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        test: /\.(ts|tsx)$/,
+        use: 'babel-loader'
       },
       {
-        test: /\.(png|jpg|svg|woff)$/,
-        use: [
-          {
-            loader: 'file-loader'
-          }
-        ]
+        test: /\.css$/,
+        use: [{ loader: PluginExtract.loader }, 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|woff)$/,
+        use: 'file-loader'
       }
     ]
   },
   plugins: [
-    new Clean('build'),
-    new Favicons('./assets/avatar.jpg'),
-    new Copy(['public']),
-    new Html({
-      template: 'src/index.html',
-      minify: true
-    }),
-    new Workbox.GenerateSW({
-      swDest: 'service-worker.js',
-      clientsClaim: true,
-      skipWaiting: true
+    new PluginStylish(),
+    new PluginExtract(),
+    new PluginHtml({
+      minify: true,
+      template: 'src/index.html'
     })
   ]
+}
+
+module.exports.serve = {
+  add: app => app.use(convert(history())),
+  content: [__dirname],
+  dev: {
+    stats: 'none'
+  },
+  https: {
+    key: fs.readFileSync('./localhost-key.pem'),
+    cert: fs.readFileSync('./localhost.pem'),
+  }
 }

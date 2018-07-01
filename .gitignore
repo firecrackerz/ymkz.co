@@ -7,7 +7,11 @@
 /coverage
 
 # production
-/build
+/dist
+
+# certification
+localhost-key.pem
+localhost.pem
 
 # misc
 .DS_Store

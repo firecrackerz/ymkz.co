@@ -12,12 +12,12 @@
   <a href="https://github.com/styled-components/styled-components">
     <img alt="styled-components" src="https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?style=flat-square">
   </a>
-  <a href="https://github.com/facebook/jest">
-    <img alt="Jest" src="https://img.shields.io/badge/tested_with-jest-99424f.svg?style=flat-square">
-  </a>
-  <a href="https://codecov.io/gh/ymkz/portfolio">
-    <img alt="Codecov" src="https://img.shields.io/codecov/c/github/ymkz/portfolio.svg?style=flat-square">
-  </a>
 </p>
 
-![portfolio](assets/portfolio.jpg)
+<!-- ![portfolio](docs/portfolio.jpg) -->
+
+# Pre-requirements
+
+- mkcert (for generate https certification file on localhost)
+  - `mkcert localhost`
+

@@ -9,13 +9,13 @@
         ]
       }
     }],
-    "@babel/preset-flow",
-    "@babel/preset-react"
+    "@babel/react",
+    "@babel/typescript"
   ],
   "plugins": [
     ["module-resolver", {
       "alias": {
-        "~": "./src"
+        "src": "./src"
       }
     }]
   ]
