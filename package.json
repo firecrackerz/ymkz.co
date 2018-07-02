@@ -15,8 +15,8 @@
     "url": "https://github.com/ymkz/portfolio/issues"
   },
   "scripts": {
-    "start": "NODE_ENV=development webpack-serve",
-    "build": "NODE_ENV=production webpack --mode production",
+    "start": "webpack-serve --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js",
     "lint": "tslint --project .",
     "lint:fix": "tslint --fix --project .",
     "typecheck": "tsc --noEmit"
@@ -61,7 +61,7 @@
     "tslint-plugin-prettier": "^1.3.0",
     "typescript": "^2.9.2",
     "webpack": "^4.13.0",
-    "webpack-cli": "^3.0.8",
+    "webpack-command": "^0.3.1",
     "webpack-serve": "^1.0.4",
     "webpack-stylish": "^0.1.8"
   },

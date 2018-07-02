@@ -1,0 +1,43 @@
+const path = require('path')
+const PluginCopy = require('copy-webpack-plugin')
+const PluginHtml = require('html-webpack-plugin')
+const PluginCss = require('mini-css-extract-plugin')
+
+module.exports = {
+  mode: 'production',
+  devtool: false,
+  entry: path.resolve(__dirname, 'src'),
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json']
+  },
+  module: {
+    rules: [
+      {
+        exclude: /node_modules/,
+        test: /\.(ts|tsx)$/,
+        use: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [{ loader: PluginCss.loader }, 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|woff)$/,
+        use: 'file-loader'
+      }
+    ]
+  },
+  plugins: [
+    new PluginCss(),
+    new PluginCopy(['src/_redirects']),
+    new PluginHtml({
+      minify: true,
+      template: path.resolve(__dirname, 'src/index.html')
+    })
+  ]
+}

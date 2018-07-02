@@ -1,18 +1,15 @@
 const fs = require('fs')
 const path = require('path')
 const PluginStylish = require('webpack-stylish')
-const PluginCopy = require('copy-webpack-plugin')
 const PluginHtml = require('html-webpack-plugin')
-const PluginExtract = require('mini-css-extract-plugin')
+const PluginCss = require('mini-css-extract-plugin')
 const history = require('connect-history-api-fallback')
 const convert = require('koa-connect')
-
-const __DEV__ = process.env.NODE_ENV === 'development' ? true : false
 
 module.exports = {
   mode: 'development',
   stats: 'none',
-  devtool: __DEV__ ? 'eval-cheap-module-source-map' : false,
+  devtool: 'eval-cheap-module-source-map',
   entry: path.resolve(__dirname, 'src'),
   output: {
     filename: '[name].bundle.js',
@@ -31,7 +28,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [{ loader: PluginExtract.loader }, 'css-loader']
+        use: [{ loader: PluginCss.loader }, 'css-loader']
       },
       {
         test: /\.(png|jpg|woff)$/,
@@ -41,16 +38,15 @@ module.exports = {
   },
   plugins: [
     new PluginStylish(),
-    new PluginExtract(),
-    new PluginCopy(['src/_redirects']),
+    new PluginCss(),
     new PluginHtml({
       minify: true,
-      template: 'src/index.html'
+      template: path.resolve(__dirname, 'src/index.html')
     })
   ]
 }
 
-module.exports.serve = __DEV__ ? {
+module.exports.serve = {
   add: app => app.use(convert(history())),
   content: [__dirname],
   dev: {
@@ -60,4 +56,4 @@ module.exports.serve = __DEV__ ? {
     key: fs.readFileSync('./localhost-key.pem'),
     cert: fs.readFileSync('./localhost.pem'),
   }
-} : {}
+}
