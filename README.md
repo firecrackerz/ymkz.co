@@ -16,7 +16,7 @@
 
 ![portfolio](docs/portfolio.jpg)
 
-# Pre-requirements
+## Pre-requirements
 
 - mkcert (for generate https certification file on localhost)
   - `mkcert localhost`

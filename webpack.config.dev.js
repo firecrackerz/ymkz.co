@@ -46,14 +46,31 @@ module.exports = {
   ]
 }
 
-module.exports.serve = {
-  add: app => app.use(convert(history())),
-  content: [__dirname],
-  dev: {
-    stats: 'none'
-  },
-  https: {
-    key: fs.readFileSync('./localhost-key.pem'),
-    cert: fs.readFileSync('./localhost.pem'),
+function exist(file) {
+  try {
+    fs.accessSync(file)
+    return true
+  } catch (err) {
+    return false
   }
 }
+
+const serve = {
+  add: app => app.use(convert(history())),
+  content: [__dirname],
+  dev: { stats: 'none' }
+}
+
+const https = {
+  key: './localhost-key.pem',
+  cert: './localhost.pem'
+}
+
+if (exist(https.key) || exist(https.cert)) {
+  serve.https = {
+    key: fs.readFileSync(https.key),
+    cert: fs.readFileSync(https.cert),
+  }
+}
+
+module.exports.serve = serve
