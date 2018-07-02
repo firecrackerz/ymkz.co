@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const PluginStylish = require('webpack-stylish')
+const PluginCopy = require('copy-webpack-plugin')
 const PluginHtml = require('html-webpack-plugin')
 const PluginExtract = require('mini-css-extract-plugin')
 const history = require('connect-history-api-fallback')
@@ -41,6 +42,7 @@ module.exports = {
   plugins: [
     new PluginStylish(),
     new PluginExtract(),
+    new PluginCopy(['src/_redirects']),
     new PluginHtml({
       minify: true,
       template: 'src/index.html'
