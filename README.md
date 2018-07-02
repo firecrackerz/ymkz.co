@@ -14,7 +14,7 @@
   </a>
 </p>
 
-<!-- ![portfolio](docs/portfolio.jpg) -->
+![portfolio](docs/portfolio.jpg)
 
 # Pre-requirements
 
