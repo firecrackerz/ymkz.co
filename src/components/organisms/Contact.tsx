@@ -22,20 +22,21 @@ function encodePayloadToBody(data: Payload) {
     .join('&')
 }
 
-async function handleSubmit(values: Values, actions: FormikProps<Values>) {
+function handleSubmit(values: Values, actions: FormikProps<Values>) {
   const payload = {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: encodePayloadToBody({ 'form-name': 'contact', ...values })
   }
-  try {
-    await fetch('/', payload)
-  } catch (error) {
-    console.log(error)
-    alert('Unexpected error has occurred')
-  }
-  alert('Thank you for your contact')
-  actions.resetForm()
+  fetch('/', payload)
+    .then(() => {
+      alert('Thank you for your contact')
+      actions.resetForm()
+    })
+    .catch(err => {
+      alert('Unexpected error has occurred')
+      console.error(err)
+    })
 }
 
 const validationSchema = Yup.object().shape({
