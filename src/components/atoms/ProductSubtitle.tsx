@@ -5,9 +5,7 @@ interface Props {
   children: React.ReactChild
 }
 
-const ProductSubtitle = ({ children }: Props) => (
-  <Container>{children}</Container>
-)
+const ProductSubtitle = ({ children }: Props) => <Container>{children}</Container>
 
 const Container = styled.h3`
   font-family: 'Futura', sans-serif;

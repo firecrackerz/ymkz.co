@@ -4,11 +4,7 @@ import styled from 'styled-components'
 import { Facebook } from 'styled-icons/fa-brands/Facebook'
 
 const IconGithub = () => (
-  <Link
-    href="https://facebook.com/ymkzly"
-    rel="noopener noreferrer"
-    target="_blank"
-  >
+  <Link href="https://facebook.com/ymkzly" rel="noopener noreferrer" target="_blank">
     <Icon />
   </Link>
 )

@@ -4,11 +4,7 @@ import styled from 'styled-components'
 import { GithubSquare } from 'styled-icons/fa-brands/GithubSquare'
 
 const IconGithub = () => (
-  <Link
-    href="https://github.com/ymkz"
-    rel="noopener noreferrer"
-    target="_blank"
-  >
+  <Link href="https://github.com/ymkz" rel="noopener noreferrer" target="_blank">
     <Icon />
   </Link>
 )

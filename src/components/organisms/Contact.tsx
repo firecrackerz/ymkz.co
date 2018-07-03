@@ -56,24 +56,9 @@ const Contact = () => (
       validationSchema={validationSchema}
       render={({ isSubmitting, isValid }: FormikProps<Values>) => (
         <Form data-netlify data-netlify-honeypot="bot-field">
-          <FormField
-            label="Name"
-            type="input"
-            name="name"
-            placeholder="John Doe"
-          />
-          <FormField
-            label="E-mail"
-            type="input"
-            name="email"
-            placeholder="john.doe@example.com"
-          />
-          <FormField
-            label="Message"
-            type="textarea"
-            name="message"
-            placeholder="What you want to message"
-          />
+          <FormField label="Name" type="input" name="name" placeholder="John Doe" />
+          <FormField label="E-mail" type="input" name="email" placeholder="john.doe@example.com" />
+          <FormField label="Message" type="textarea" name="message" placeholder="What you want to message" />
           <FormSubmit isSubmitting={isSubmitting} isValid={isValid} />
         </Form>
       )}

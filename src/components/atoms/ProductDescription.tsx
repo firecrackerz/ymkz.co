@@ -6,9 +6,7 @@ interface Props {
   children: string
 }
 
-const ProductDescription = ({ children }: Props) => (
-  <Container>{nl2br(children)}</Container>
-)
+const ProductDescription = ({ children }: Props) => <Container>{nl2br(children)}</Container>
 
 const Container = styled.div`
   letter-spacing: 0.5px;

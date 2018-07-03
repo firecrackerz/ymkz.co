@@ -2,13 +2,7 @@ import * as React from 'react'
 import { color } from 'src/constants'
 import styled from 'styled-components'
 
-const Submit = ({
-  isValid,
-  isSubmitting
-}: {
-  isValid: boolean
-  isSubmitting: boolean
-}) => (
+const Submit = ({ isValid, isSubmitting }: { isValid: boolean; isSubmitting: boolean }) => (
   <Container id="submit" type="submit" disabled={!isValid || isSubmitting}>
     Send
   </Container>
@@ -26,8 +20,7 @@ const Container = styled.button`
   margin-top: 1rem;
   width: 5rem;
   &:focus {
-    box-shadow: inset 0 1px 2px ${color.darkBlack},
-      0 0 0 4px ${color.middleBlack};
+    box-shadow: inset 0 1px 2px ${color.darkBlack}, 0 0 0 4px ${color.middleBlack};
     outline: none;
   }
   &:disabled {

@@ -8,9 +8,7 @@ interface Props {
 }
 
 const ProductImages = ({ images }: Props) => (
-  <Container>
-    {images.map(image => <ProductImage key={image.src} image={image} />)}
-  </Container>
+  <Container>{images.map(image => <ProductImage key={image.src} image={image} />)}</Container>
 )
 
 export default ProductImages

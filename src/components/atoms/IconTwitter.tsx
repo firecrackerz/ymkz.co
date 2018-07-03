@@ -4,11 +4,7 @@ import styled from 'styled-components'
 import { TwitterSquare } from 'styled-icons/fa-brands/TwitterSquare'
 
 const IconTwitter = () => (
-  <Link
-    href="https://twitter.com/ymkzly"
-    rel="noopener noreferrer"
-    target="_blank"
-  >
+  <Link href="https://twitter.com/ymkzly" rel="noopener noreferrer" target="_blank">
     <Icon />
   </Link>
 )

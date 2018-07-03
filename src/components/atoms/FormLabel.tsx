@@ -5,9 +5,7 @@ interface Props extends React.LabelHTMLAttributes<HTMLLabelElement> {
   children: React.ReactChild
 }
 
-const FormLabel = ({ children, ...attributes }: Props) => (
-  <Container {...attributes}>{children}</Container>
-)
+const FormLabel = ({ children, ...attributes }: Props) => <Container {...attributes}>{children}</Container>
 
 export default FormLabel
 

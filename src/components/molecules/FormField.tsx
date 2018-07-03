@@ -20,15 +20,8 @@ const FormField = ({ label, type, name, placeholder }: Props) => (
       render={({ field, form }: FieldProps<Values>) => (
         <React.Fragment>
           <FormLabel htmlFor={name}>{label}</FormLabel>
-          <FormInput
-            type={type}
-            id={name}
-            placeholder={placeholder}
-            {...field}
-          />
-          <FormError error={form.errors[name] && form.touched[name]}>
-            {form.errors[name]}
-          </FormError>
+          <FormInput type={type} id={name} placeholder={placeholder} {...field} />
+          <FormError error={form.errors[name] && form.touched[name]}>{form.errors[name]}</FormError>
         </React.Fragment>
       )}
     />
