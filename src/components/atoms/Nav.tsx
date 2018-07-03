@@ -6,11 +6,12 @@ import styled from 'styled-components'
 interface Props {
   to: string
   weight: number
+  onMouseOver: () => void
   children: React.ReactChild
 }
 
-const Nav = ({ weight, to, children }: Props) => (
-  <Container weight={weight} to={to}>
+const Nav = ({ weight, to, onMouseOver, children }: Props) => (
+  <Container weight={weight} to={to} onMouseOver={onMouseOver}>
     {children}
   </Container>
 )

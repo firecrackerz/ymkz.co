@@ -13,6 +13,7 @@
     "@babel/typescript"
   ],
   "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
     ["module-resolver", {
       "alias": {
         "src": "./src"
