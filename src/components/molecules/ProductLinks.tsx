@@ -8,9 +8,7 @@ interface Props {
 }
 
 const ProductLinks = ({ links }: Props) => (
-  <Container>
-    {links.map(link => <ProductLink key={link.url} link={link} />)}
-  </Container>
+  <Container>{links.map(link => <ProductLink key={link.url} link={link} />)}</Container>
 )
 
 export default ProductLinks

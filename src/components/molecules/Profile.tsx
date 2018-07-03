@@ -10,8 +10,7 @@ const Profile = () => (
       <React.Fragment>
         I&apos;m a front-end engineer nearby UI/UX engineering.<br />
         And I&apos;m a student, major in Computer Science.<br />
-        Studying Human-Computer Interaction with Eye-Tracking and
-        Augmented-Reality.<br />
+        Studying Human-Computer Interaction with Eye-Tracking and Augmented-Reality.<br />
         22y/o, based in Matsue, I like padding, building UI and FPS Game.<br />
       </React.Fragment>
     </Intro>

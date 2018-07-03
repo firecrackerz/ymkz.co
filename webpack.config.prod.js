@@ -32,9 +32,17 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    splitChunks: {
+      name: 'vendor',
+      chunks: 'initial',
+    }
+  },
   plugins: [
     new PluginCss(),
-    new PluginCopy(['src/_redirects']),
+    new PluginCopy([
+      'src/_redirects'
+    ]),
     new PluginHtml({
       minify: true,
       template: path.resolve(__dirname, 'src/index.html')

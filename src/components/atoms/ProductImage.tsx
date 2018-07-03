@@ -15,9 +15,7 @@ const ProductImage = ({ image }: Props) => (
       style: {
         border: image.dark ? `1px solid ${color.lightBlack}` : 0,
         marginRight: constraint.imageGutter,
-        width: image.landscape
-          ? constraint.imageWidthLandscape
-          : constraint.imageWidthPortrait
+        width: image.landscape ? constraint.imageWidthLandscape : constraint.imageWidthPortrait
       }
     }}
     defaultStyles={{

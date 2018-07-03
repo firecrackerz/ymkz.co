@@ -9,10 +9,7 @@ interface Props {
 
 const Navigation = ({ pathname }: Props) => (
   <Container>
-    <Nav
-      weight={pathname === '/' || pathname === '/about' ? 700 : 300}
-      to="/about"
-    >
+    <Nav weight={pathname === '/' || pathname === '/about' ? 700 : 300} to="/about">
       about
     </Nav>
     <Nav weight={pathname === '/act' ? 700 : 300} to="/act">

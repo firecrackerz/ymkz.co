@@ -1,10 +1,10 @@
 const fs = require('fs')
 const path = require('path')
+const convert = require('koa-connect')
+const history = require('connect-history-api-fallback')
 const PluginStylish = require('webpack-stylish')
 const PluginHtml = require('html-webpack-plugin')
 const PluginCss = require('mini-css-extract-plugin')
-const history = require('connect-history-api-fallback')
-const convert = require('koa-connect')
 
 module.exports = {
   mode: 'development',

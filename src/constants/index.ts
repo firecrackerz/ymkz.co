@@ -61,10 +61,7 @@ export const cancelectures: ProductData = {
   subtitle: 'A canceled rectures list viewer for Shimane Univ.',
   description:
     'Cancelecturesは島根大学の休講情報を手軽に確認するためのアプリケーションです。\n\n島根大学の休講情報は大学のWebサイト上で公開されていますが、深くネストした場所にあり毎回確認しにいくのが面倒でした。 面倒故に確認をせず授業に行ったら休講で無駄足だったみたいな自分の経験から、ワンクリックで確認できるようになれば便利なのにという思いから開発されました。 最初は自分のよくアクセスする Google Chrome ブラウザの拡張機能として開発しました。 Chromeの拡張機能を選んだ理由は簡単な構成で開発できること、 自分の現在のスキルセットにちょっと足すだけで実装できそうだったからです。結果初版は数日もかからず完成し、念のため大学に確認をとった上で公開することができました。\n\nその後React Nativeというものに出会い、 また拡張機能として開発した時のコードが既に古臭いものになりつつあるのを感じ、 よりモダンな実装でスマートフォンのアプリという形で実装してみたいと思い、 React Nativeを用いたアプリ版Cancelecturesを開発しました。アプリ版は拡張機能版で友人や知り合いから頂いたフィードバックを元にシンプルで見やすいUIを実装できたと思います。またコードの記述も自分の満足いくようなものができたと思っています。',
-  images: [
-    { src: image_cancelectures_native_1 },
-    { src: image_cancelectures_native_2 }
-  ],
+  images: [{ src: image_cancelectures_native_1 }, { src: image_cancelectures_native_2 }],
   links: [
     {
       name: 'Repository - GitHub(ymkz/cancelectures)',
@@ -72,8 +69,7 @@ export const cancelectures: ProductData = {
     },
     {
       name: 'Chrome Web Store - Cancelectures',
-      url:
-        'https://chrome.google.com/webstore/detail/cancelectures/klfpecdgfnpijehpdelicgmojhbnmnim'
+      url: 'https://chrome.google.com/webstore/detail/cancelectures/klfpecdgfnpijehpdelicgmojhbnmnim'
     },
     {
       name: 'Repository - GitHub(ymkz/cancelectures_native)',
