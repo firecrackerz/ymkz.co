@@ -25,7 +25,7 @@
 ## Insecurity
 
 - `dynamic import()` vs `prerender` vs `Server-Side Rendering`
-  - 今のところは`prerender`方式の[GoogleChromeLabs/prerender-loader: 📰 Painless universal pre-rendering for Webpack.](https://github.com/GoogleChromeLabs/prerender-loader)が動かないこと、`Server-Side Rendering`方式の[Next.js](https://nextjs.org/)はコントロールしきれないこともあり、最もコントロールしやすい`dynamic import()`方式de
+  - 今のところは`prerender`方式の[GoogleChromeLabs/prerender-loader: 📰 Painless universal pre-rendering for Webpack.](https://github.com/GoogleChromeLabs/prerender-loader)が動かないこと、`Server-Side Rendering`方式の[Next.js](https://nextjs.org/)はコントロールしきれないこともあり、最もコントロールしやすい`dynamic import()`方式で
   [jamiebuilds/react-loadable: A higher order component for loading components with promises.](https://github.com/jamiebuilds/react-loadable)を採用している
 - Propsの型とか渡し方が不安
   - HTMLAttributes握りつぶしてる

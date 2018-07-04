@@ -28,7 +28,7 @@ export const portfolio: ProductData = {
   title: 'Portfolio',
   subtitle: 'The portfolio site about ymkz.',
   description:
-    'このサイトであるPortfolioは自分のポートフォリオのようなものであり、 個人的なフロントエンドのまとめリポジトリのようなものです。\n\nPortfolioはTypeScriptで記述されReactで構築されたSPAです。スタイリングはstyled-componentsを用いたCSS in JSで名前の衝突を避けつつ管理しやすいCSSを目指しています。また勉強のためにAtomic Designなディレクトリ構造を採用しています。\n\nNetlifyにホスティングすることで運用しています。。Netlifyを用いているためPRの時点でDeploy Previewsが確認できるため、問題がなければmasterにmergeすることでproductionにデプロイされます。\nこのプロジェクトは自分にとってのフロントエンドの指標的リポジトリとするべく、いろいろなツールを導入しています。',
+    'このサイトであるPortfolioは自分のポートフォリオのようなものであり、 個人的なフロントエンドのまとめリポジトリのようなものです。\n\nPortfolioはTypeScriptで記述されReactで構築されたSPAです。スタイリングはstyled-componentsを用いたCSS in JSで名前の衝突を避けつつ管理しやすいCSSを目指しています。また勉強のためにAtomic Designなディレクトリ構造を採用しています。\n\nNetlifyにホスティングすることで運用しています。Netlifyを用いているためPRの時点でDeploy Previewsが確認できるため、問題がなければmasterにmergeすることでproductionにデプロイされます。\nこのプロジェクトは自分にとってのフロントエンドの指標的リポジトリとするべく、いろいろなツールを導入しています。',
   images: [{ src: image_portfolio_1, dark: true, landscape: true }],
   links: [
     {
