@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { color } from 'src/constants'
+import { color, constraint } from 'src/constants'
 import styled, { keyframes } from 'styled-components'
-import { Spinner } from 'styled-icons/fa-solid/Spinner'
+import { DataUsage } from 'styled-icons/material/DataUsage'
 
 const Loading = () => (
   <Container>
-    <Icon />
+    <Icon size={constraint.iconSize} />
   </Container>
 )
 
@@ -31,9 +31,7 @@ const Container = styled.div`
   width: 100vw;
 `
 
-const Icon = Spinner.extend`
+const Icon = DataUsage.extend`
   animation: ${spin} 2.5s linear infinite;
   color: ${color.white};
-  height: 42px;
-  width: 42px;
 `

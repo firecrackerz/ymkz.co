@@ -18,6 +18,7 @@ export const constraint = {
   bottomPadding: '128px',
   contentWidth: '720px',
   headerHeight: '100px',
+  iconSize: 42,
   mobilePadding: '16px',
   imageGutter: '24px',
   imageWidthLandscape: '256px',
