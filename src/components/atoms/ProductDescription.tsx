@@ -10,7 +10,7 @@ const ProductDescription = ({ children }: Props) => <Container>{nl2br(children)}
 
 const Container = styled.div`
   letter-spacing: 0.5px;
-  line-height: 1.8rem;
+  line-height: 1.8;
   padding: 24px 0;
 `
 

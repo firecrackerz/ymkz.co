@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { color } from 'src/constants'
 import styled from 'styled-components'
 
 interface Props {
@@ -10,7 +11,8 @@ const Profile = ({ children }: Props) => <Container>{children}</Container>
 export default Profile
 
 const Container = styled.small`
-  margin-left: 4px;
+  color: ${color.white};
   font-family: 'Futura';
   font-weight: 300;
+  margin-left: 4px;
 `

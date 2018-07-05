@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { color } from 'src/constants'
 import styled from 'styled-components'
 
 interface Props extends React.LabelHTMLAttributes<HTMLLabelElement> {
@@ -10,6 +11,7 @@ const FormLabel = ({ children, ...attributes }: Props) => <Container {...attribu
 export default FormLabel
 
 const Container = styled.label`
+  color: ${color.white};
   display: block;
   font-family: 'Futura';
   font-weight: 300;
