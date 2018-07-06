@@ -1,7 +1,7 @@
 import { Pathname } from 'history'
 import * as React from 'react'
 import Nav from 'src/components/atoms/Nav'
-import { About, Act, Work } from 'src/components/pages'
+import * as routes from 'src/routes'
 import styled from 'styled-components'
 
 interface Props {
@@ -10,13 +10,13 @@ interface Props {
 
 const Navigation = ({ pathname }: Props) => (
   <Container>
-    <Nav weight={pathname === '/' || pathname === '/about' ? 700 : 300} to="/about" onMouseOver={About.preload}>
+    <Nav weight={pathname === '/' || pathname === '/about' ? 700 : 300} to="/about" onMouseOver={routes.About.load}>
       about
     </Nav>
-    <Nav weight={pathname === '/act' ? 700 : 300} to="/act" onMouseOver={Act.preload}>
+    <Nav weight={pathname === '/act' ? 700 : 300} to="/act" onMouseOver={routes.Act.load}>
       act
     </Nav>
-    <Nav weight={pathname === '/work' ? 700 : 300} to="/work" onMouseOver={Work.preload}>
+    <Nav weight={pathname === '/work' ? 700 : 300} to="/work" onMouseOver={routes.Work.load}>
       work
     </Nav>
   </Container>
