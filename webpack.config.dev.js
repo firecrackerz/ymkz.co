@@ -40,7 +40,6 @@ module.exports = {
     new PluginStylish(),
     new PluginCss(),
     new PluginHtml({
-      minify: true,
       template: path.resolve(__dirname, 'src/index.html')
     })
   ]
