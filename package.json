@@ -42,7 +42,6 @@
     "@babel/preset-typescript": "7.0.0-beta.52",
     "@commitlint/cli": "7.0.0",
     "@commitlint/config-conventional": "7.0.1",
-    "@types/history": "4.6.2",
     "@types/react": "16.4.6",
     "@types/react-dom": "16.0.6",
     "@types/react-loadable": "5.4.0",
