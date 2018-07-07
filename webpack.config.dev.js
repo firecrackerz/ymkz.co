@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const webpack = require('webpack')
 const convert = require('koa-connect')
 const history = require('connect-history-api-fallback')
 const PluginStylish = require('webpack-stylish')
@@ -37,6 +38,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      DEVELOPMENT: JSON.stringify(true),
+      PRODUCTION: JSON.stringify(false)
+    }),
     new PluginStylish(),
     new PluginCss(),
     new PluginHtml({
