@@ -1,9 +1,7 @@
 const path = require('path')
-const webpack = require('webpack')
 const PluginCopy = require('copy-webpack-plugin')
 const PluginHtml = require('html-webpack-plugin')
 const PluginCss = require('mini-css-extract-plugin')
-const PluginOffline = require('offline-plugin')
 
 module.exports = {
   mode: 'production',
@@ -41,10 +39,6 @@ module.exports = {
     }
   },
   plugins: [
-    new webpack.DefinePlugin({
-      DEVELOPMENT: JSON.stringify(false),
-      PRODUCTION: JSON.stringify(true)
-    }),
     new PluginCss(),
     new PluginCopy([
       'src/_redirects'
@@ -52,7 +46,6 @@ module.exports = {
     new PluginHtml({
       minify: true,
       template: path.resolve(__dirname, 'src/index.html')
-    }),
-    new PluginOffline()
+    })
   ]
 }
