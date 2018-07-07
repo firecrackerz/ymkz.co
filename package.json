@@ -57,6 +57,7 @@
     "husky": "1.0.0-rc.12",
     "koa-connect": "2.0.1",
     "mini-css-extract-plugin": "0.4.1",
+    "offline-plugin": "^5.0.5",
     "prettier": "1.13.7",
     "tslint": "5.10.0",
     "tslint-config-prettier": "1.13.0",
