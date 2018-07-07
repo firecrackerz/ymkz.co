@@ -1,4 +1,3 @@
-import * as OfflinePluginRuntime from 'offline-plugin/runtime'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
@@ -6,11 +5,6 @@ import Header from 'src/components/organisms/Header'
 import Container from 'src/components/templates/Container'
 import 'src/index.css'
 import * as routes from 'src/routes'
-
-// @ts-ignore
-if (PRODUCTION) {
-  OfflinePluginRuntime.install()
-}
 
 const App = () => (
   <BrowserRouter>
