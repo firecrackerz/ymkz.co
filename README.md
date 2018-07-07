@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://circleci.com/gh/ymkz/portfolio">
-    <img alt="Circle CI" src="https://img.shields.io/circleci/project/github/ymkz/portfolio.svg?style=flat-square">
+    <img alt="CircleCI" src="https://img.shields.io/circleci/project/github/ymkz/portfolio/master.svg?style=flat-square">
   </a>
   <a href="https://github.com/prettier/prettier">
     <img alt="Prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
@@ -14,7 +14,7 @@
   </a>
 </p>
 
-![portfolio](docs/portfolio.jpg)
+![portfolio](src/images/portfolio_1.jpg)
 
 ## Pre-requirements
 
@@ -25,8 +25,9 @@
 ## Insecurity
 
 - `dynamic import()` vs `prerender` vs `Server-Side Rendering`
-  - 今のところは`prerender`方式の[GoogleChromeLabs/prerender-loader: 📰 Painless universal pre-rendering for Webpack.](https://github.com/GoogleChromeLabs/prerender-loader)が動かないこと、`Server-Side Rendering`方式の[Next.js](https://nextjs.org/)はコントロールしきれないこともあり、最もコントロールしやすい`dynamic import()`方式で
-  [jamiebuilds/react-loadable: A higher order component for loading components with promises.](https://github.com/jamiebuilds/react-loadable)を採用している
+  - `prerender`方式の[GoogleChromeLabs/prerender-loader: 📰 Painless universal pre-rendering for Webpack.](https://github.com/GoogleChromeLabs/prerender-loader)が動かない
+  - `Server-Side Rendering`方式の[Next.js](https://nextjs.org/)はコントロールしきれない不安
+  - 最もコントロールしやすい`dynamic import()`方式で[smooth-code/loadable-components: React code splitting made easy ✂️✨](https://github.com/smooth-code/loadable-components)を採用している
 - Propsの型とか渡し方が不安
   - HTMLAttributes握りつぶしてる
   - `atoms/FormLabel`とか`atoms/Nav`あたりを参照

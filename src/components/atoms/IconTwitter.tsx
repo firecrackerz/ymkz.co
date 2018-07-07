@@ -1,11 +1,11 @@
 import * as React from 'react'
-import { color } from 'src/constants'
+import { color, constraint } from 'src/constants'
 import styled from 'styled-components'
 import { TwitterSquare } from 'styled-icons/fa-brands/TwitterSquare'
 
 const IconTwitter = () => (
   <Link href="https://twitter.com/ymkzly" rel="noopener noreferrer" target="_blank">
-    <Icon />
+    <TwitterSquare size={constraint.iconSize} color={color.white} />
   </Link>
 )
 
@@ -18,10 +18,4 @@ const Link = styled.a`
   &:not(:first-child) {
     margin-left: 16px;
   }
-`
-
-const Icon = TwitterSquare.extend`
-  color: ${color.white};
-  width: 42px;
-  height: 42px;
 `

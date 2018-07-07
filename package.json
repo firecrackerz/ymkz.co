@@ -23,9 +23,9 @@
   },
   "dependencies": {
     "formik": "^0.11.11",
+    "loadable-components": "^2.2.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-loadable": "^5.4.0",
     "react-medium-image-zoom": "^3.0.12",
     "react-nl2br": "^0.4.0",
     "react-router-dom": "^4.3.1",
