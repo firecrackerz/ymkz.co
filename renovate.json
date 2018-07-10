@@ -1,10 +1,10 @@
 {
+  "automerge": true,
+  "automergeType": "branch-push",
   "extends": [
     "config:base"
   ],
-  "minor": {
-    "groupName": "all dependencies"
-  },
-  "schedule": "every weekend",
-  "timezone": "Asia/Tokyo"
+  "major": {
+    "automerge": false
+  }
 }
