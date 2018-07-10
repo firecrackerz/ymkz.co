@@ -41,7 +41,7 @@ module.exports = {
   plugins: [
     new PluginCss(),
     new PluginCopy([
-      'src/_redirects'
+      'public'
     ]),
     new PluginHtml({
       minify: true,
