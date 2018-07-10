@@ -15,7 +15,7 @@ const App = () => (
         <Route path="/about" component={routes.About} />
         <Route path="/work" component={routes.Work} />
         <Route path="/act" component={routes.Act} />
-        <Route render={routes.NotFondRedirectToRoot} />
+        <Route render={routes.NotFoundRedirectToRoot} />
       </Switch>
     </Container>
   </BrowserRouter>
