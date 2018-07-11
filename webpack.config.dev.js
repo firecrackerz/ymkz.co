@@ -57,7 +57,7 @@ function exist(file) {
 const serve = {
   add: app => app.use(convert(history())),
   content: [__dirname],
-  dev: { stats: 'none' }
+  devMiddleware: { stats: 'none' }
 }
 
 const https = {
