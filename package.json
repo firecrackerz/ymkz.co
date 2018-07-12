@@ -22,7 +22,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "formik": "0.11.11",
+    "formik": "1.0.1",
     "loadable-components": "2.2.2",
     "react": "16.4.1",
     "react-dom": "16.4.1",
