@@ -21,6 +21,17 @@
     "lint:fix": "tslint --fix --project .",
     "typecheck": "tsc --noEmit"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint --edit $GIT_PARAMS",
+      "pre-commit": "yarn lint && yarn typecheck"
+    }
+  },
   "dependencies": {
     "formik": "0.11.11",
     "loadable-components": "2.2.2",
@@ -66,17 +77,5 @@
     "webpack-command": "0.4.1",
     "webpack-serve": "2.0.2",
     "webpack-stylish": "0.1.8"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint --edit $GIT_PARAMS",
-      "pre-commit": "yarn lint && yarn typecheck",
-      "post-merge": "(git diff 'HEAD@{1}' --name-only | grep package.json > /dev/null) && yarn || :"
-    }
   }
 }
