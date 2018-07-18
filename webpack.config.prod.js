@@ -27,7 +27,7 @@ module.exports = {
         use: [{ loader: PluginCss.loader }, 'css-loader']
       },
       {
-        test: /\.(png|jpg|woff)$/,
+        test: /\.(png|jpg|jpeg|gif|ttf|otf|woff)$/,
         use: 'file-loader'
       }
     ]

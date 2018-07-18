@@ -14,7 +14,7 @@
     "sourceMap": true,
     "target": "esnext",
     "paths": {
-      "src/*": ["src/*"]
+      "src*": ["src*"]
     }
   },
   "exclude": ["node_modules"]
