@@ -37,7 +37,7 @@
     "loadable-components": "2.2.2",
     "react": "16.4.1",
     "react-dom": "16.4.1",
-    "react-medium-image-zoom": "3.0.12",
+    "react-medium-image-zoom": "3.0.13",
     "react-nl2br": "0.4.0",
     "react-router-dom": "4.3.1",
     "react-vertical-timeline-component": "2.1.3",
