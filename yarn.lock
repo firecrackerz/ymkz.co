@@ -815,9 +815,9 @@
     "@types/uglify-js" "*"
     source-map "^0.6.0"
 
-"@types/yup@0.24.7":
-  version "0.24.7"
-  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.24.7.tgz#d3b6d7c5d4faf9419005a889ce4d3fddfc0e77ed"
+"@types/yup@0.24.8":
+  version "0.24.8"
+  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.24.8.tgz#f9cf8a4398af03b96ae9fbde8b93f2538748d5d2"
 
 "@webassemblyjs/ast@1.5.13":
   version "1.5.13"
