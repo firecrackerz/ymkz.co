@@ -33,7 +33,7 @@
     }
   },
   "dependencies": {
-    "formik": "1.0.2",
+    "formik": "1.0.3",
     "loadable-components": "2.2.2",
     "react": "16.4.2",
     "react-dom": "16.4.2",
