@@ -65,7 +65,7 @@
     "css-loader": "1.0.0",
     "file-loader": "2.0.0",
     "html-webpack-plugin": "3.2.0",
-    "husky": "1.0.0-rc.13",
+    "husky": "1.0.0-rc.14",
     "koa-connect": "2.0.1",
     "mini-css-extract-plugin": "0.4.2",
     "prettier": "1.13.7",
