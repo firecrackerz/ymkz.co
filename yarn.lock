@@ -4431,9 +4431,9 @@ react-router@^4.3.1:
     prop-types "^15.6.1"
     warning "^4.0.1"
 
-react-vertical-timeline-component@2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/react-vertical-timeline-component/-/react-vertical-timeline-component-2.3.0.tgz#cf27f322231f5021f5c5569699efc1216ac95f69"
+react-vertical-timeline-component@2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/react-vertical-timeline-component/-/react-vertical-timeline-component-2.3.1.tgz#7b6a45d44cc72b91de50c240011a16402acef0fd"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.1"
