@@ -12,7 +12,7 @@ import Image from 'src/components/atoms/Image'
 
 const Portfolio: React.SFC = () => (
   <Section id="portfolio">
-    <Title>Portfolio</Title>
+    <Title>Protfolio</Title>
     <Description>The portfolio site about ymkz.</Description>
     <Content>
       <Text>
@@ -25,7 +25,7 @@ const Portfolio: React.SFC = () => (
     </Content>
     <Content as="ul">
       <ListItem>
-        <Link href="https://github.com/ymkz/portfolio">Repository - GitHub(ymkz/portfolio)</Link>
+        <Link href="https://github.com/ymkz/ymkz.co">Repository - GitHub(ymkz/ymkz.co)</Link>
       </ListItem>
     </Content>
     <Row space={16}>
