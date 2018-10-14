@@ -4,6 +4,7 @@ const copy = require('copy-webpack-plugin')
 const html = require('html-webpack-plugin')
 const clean = require('clean-webpack-plugin')
 const css = require('mini-css-extract-plugin')
+const workbox = require('workbox-webpack-plugin')
 
 const config = {
   mode: 'production',
@@ -45,7 +46,8 @@ const config = {
     new clean(['build']),
     new copy(['public']),
     new css(),
-    new html({ minify: true, template: path.resolve(__dirname, 'src/index.html') })
+    new html({ minify: true, template: path.resolve(__dirname, 'src/index.html') }),
+    new workbox.GenerateSW()
   ]
 }
 
