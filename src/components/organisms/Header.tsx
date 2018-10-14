@@ -19,7 +19,7 @@ const Header = () => (
       <NavLink to="/" onMouseOver={Routes.About.load}>
         ymkz
       </NavLink>
-      <Text size="small" family="futura" weight="thin">
+      <Text family="futura" weight="thin">
         is frontend engineer
       </Text>
     </Row>

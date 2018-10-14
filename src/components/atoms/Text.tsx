@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { colors } from 'src/helpers/constants'
 
 enum FontSize {
-  small = '0.85rem',
   large = '1.15rem',
   subtitle = '1.6rem',
   title = '4.5rem'
@@ -18,7 +17,7 @@ enum FontFamily {
 }
 
 interface TextProps {
-  size?: 'small' | 'large' | 'subtitle' | 'title'
+  size?: 'large' | 'subtitle' | 'title'
   weight?: 'bold' | 'thin'
   family?: 'futura'
 }
