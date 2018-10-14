@@ -9,28 +9,28 @@ const Skills: React.SFC = () => (
       SKILLS
     </Text>
     <Row space={32}>
-      <Text family="futura" size="large">
+      <Text family="futura" size="large" weight="thin">
         ES2018
       </Text>
-      <Text family="futura" size="large">
+      <Text family="futura" size="large" weight="thin">
         Node.js
       </Text>
-      <Text family="futura" size="large">
+      <Text family="futura" size="large" weight="thin">
         TypeScript
       </Text>
-      <Text family="futura" size="large">
+      <Text family="futura" size="large" weight="thin">
         React
       </Text>
-      <Text family="futura" size="large">
+      <Text family="futura" size="large" weight="thin">
         React Native
       </Text>
-      <Text family="futura" size="large">
+      <Text family="futura" size="large" weight="thin">
         Redux
       </Text>
-      <Text family="futura" size="large">
+      <Text family="futura" size="large" weight="thin">
         CSS in JS
       </Text>
-      <Text family="futura" size="large">
+      <Text family="futura" size="large" weight="thin">
         Webpack
       </Text>
     </Row>
