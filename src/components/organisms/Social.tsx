@@ -15,13 +15,13 @@ const Social: React.SFC = () => (
     </Text>
     <Row space={32}>
       <Link href="https://github.com/ymkz">
-        <Icon src={github} />
+        <Icon src={github} alt="Link to GitHub" />
       </Link>
       <Link href="https://twitter.com/ymkzly">
-        <Icon src={twitter} />
+        <Icon src={twitter} alt="Link to Twitter" />
       </Link>
       <Link href="https://facebook.com/ymkzly">
-        <Icon src={facebook} />
+        <Icon src={facebook} alt="Link to Facebook" />
       </Link>
     </Row>
   </Section>
