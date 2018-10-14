@@ -9,7 +9,8 @@ enum FontSize {
 }
 
 enum FontWeight {
-  bold = 700
+  bold = 700,
+  thin = 300
 }
 
 enum FontFamily {
@@ -18,7 +19,7 @@ enum FontFamily {
 
 interface TextProps {
   size?: 'small' | 'large' | 'subtitle' | 'title'
-  weight?: 'bold'
+  weight?: 'bold' | 'thin'
   family?: 'futura'
 }
 
