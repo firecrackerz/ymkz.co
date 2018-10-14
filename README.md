@@ -1,33 +1,38 @@
-<h1 align="center">portfolio</h1>
+<h1 align="center">ymkz.co</h1>
 
-<h5 align="center">The portfolio site about ymkz</h5>
+<h5 align="center">The portfolio site about ymkz.</h5>
 
 <p align="center">
-  <a href="https://circleci.com/gh/ymkz/portfolio">
-    <img alt="CircleCI" src="https://img.shields.io/circleci/project/github/ymkz/portfolio/master.svg?style=flat-square">
+  <a href="https://circleci.com/gh/ymkz/ymkz.co">
+    <img alt="CircleCI" src="https://flat.badgen.net/circleci/github/ymkz/ymkz.co">
+  </a>
+  <a href="https://github.com/Microsoft/TypeScript">
+    <img alt="TypeScript" src="https://flat.badgen.net/badge/powered%20by/TypeScript/294E80">
+  </a>
+  <a href="https://github.com/eslint/eslint">
+    <img alt="ESLint" src="https://flat.badgen.net/badge/lint%20with/eslint/4b32c3">
   </a>
   <a href="https://github.com/prettier/prettier">
-    <img alt="Prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square">
+    <img alt="Prettier" src="https://flat.badgen.net/badge/format%20with/prettier/ff69b4">
   </a>
   <a href="https://github.com/styled-components/styled-components">
-    <img alt="styled-components" src="https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?style=flat-square">
+    <img alt="styled-components" src="https://flat.badgen.net/badge/styled%20with/styled-components/orange">
+  </a>
+  <a href="https://github.com/facebook/jest">
+    <img alt="Jest" src="https://flat.badgen.net/badge/tested%20with/jest/99424f">
+  </a>
+  <a href="https://codecov.io/gh/ymkz/ymkz.co">
+    <img alt="Codecov" src="https://flat.badgen.net/codecov/c/github/ymkz/ymkz.co">
   </a>
 </p>
 
-![portfolio](src/images/portfolio_1.jpg)
+## Dev stacks
 
-## Pre-requirements
-
-- mkcert (for generate https certification file on localhost __if you were required__)
-  - `mkcert localhost`
-  - if not exist file, skip certification and start with `http://localhost`
-
-## Insecurity
-
-- `dynamic import()` vs `prerender` vs `Server-Side Rendering`
-  - `prerender`方式の[GoogleChromeLabs/prerender-loader: 📰 Painless universal pre-rendering for Webpack.](https://github.com/GoogleChromeLabs/prerender-loader)が動かない
-  - `Server-Side Rendering`方式の[Next.js](https://nextjs.org/)はコントロールしきれない不安
-  - 最もコントロールしやすい`dynamic import()`方式で[smooth-code/loadable-components: React code splitting made easy ✂️✨](https://github.com/smooth-code/loadable-components)を採用している
-- Propsの型とか渡し方が不安
-  - HTMLAttributes握りつぶしてる
-  - `atoms/FormLabel`とか`atoms/Nav`あたりを参照
+- React
+- TypeScript
+- Code Splitting
+- CSS in JS
+- Webpack
+- Jest
+- ESLint for TypeScript
+- Prettier

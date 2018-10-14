@@ -1,27 +1,37 @@
-import { Location } from 'history'
 import * as React from 'react'
-import { withRouter } from 'react-router-dom'
-import Heading from 'src/components/molecules/Heading'
-import Navigation from 'src/components/molecules/Navigation'
-import { constraint } from 'src/constants'
+import * as Routes from 'src/routes'
 import styled from 'styled-components'
+import { isActive } from 'src/helpers/functions'
+import Row from 'src/components/templates/Row'
+import NavLink from 'src/components/atoms/NavLink'
+import Text from 'src/components/atoms/Text'
 
-interface Props {
-  location: Location
-}
+const Container = styled.header`
+  align-items: center;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+`
 
-const Header = ({ location }: Props) => (
+const Header = () => (
   <Container>
-    <Heading />
-    <Navigation pathname={location.pathname} />
+    <Row space={4}>
+      <NavLink to="/" onMouseOver={Routes.About.load}>
+        ymkz
+      </NavLink>
+      <Text size="small" family="futura">
+        is frontend engineer
+      </Text>
+    </Row>
+    <Row space={16}>
+      <NavLink to="/about" isActive={isActive('/about')} onMouseOver={Routes.About.load}>
+        about
+      </NavLink>
+      <NavLink to="/work" isActive={isActive('/work')} onMouseOver={Routes.Work.load}>
+        work
+      </NavLink>
+    </Row>
   </Container>
 )
 
-export default withRouter(Header)
-
-const Container = styled.header`
-  display: flex;
-  align-items: center;
-  height: ${constraint.headerHeight};
-  justify-content: space-between;
-`
+export default Header

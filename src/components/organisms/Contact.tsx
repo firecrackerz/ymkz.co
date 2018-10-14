@@ -1,18 +1,22 @@
-import { Form, Formik, FormikProps } from 'formik'
 import * as React from 'react'
-import Caption from 'src/components/atoms/Caption'
-import FormSubmit from 'src/components/atoms/FormSubmit'
-import FormField from 'src/components/molecules/FormField'
-import styled from 'styled-components'
 import * as Yup from 'yup'
+import { ErrorMessage, Formik, Field, Form, FormikProps, FormikActions, FieldProps } from 'formik'
+import styled from 'styled-components'
+import Section from 'src/components/templates/Section'
+import Text from 'src/components/atoms/Text'
+import Label from 'src/components/atoms/Label'
+import Input from 'src/components/atoms/Input'
+import Textarea from 'src/components/atoms/Textarea'
+import Button from 'src/components/atoms/Button'
 
-export interface Values {
+interface Values {
   name: string
   email: string
   message: string
 }
 
 interface Payload extends Values {
+  [key: string]: string
   'form-name': 'contact'
 }
 
@@ -22,52 +26,99 @@ function encodePayloadToBody(data: Payload) {
     .join('&')
 }
 
-function handleSubmit(values: Values, actions: FormikProps<Values>) {
-  const payload = {
+function handleSubmit(values: Values, actions: FormikActions<Values>) {
+  const request = {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: encodePayloadToBody({ 'form-name': 'contact', ...values })
   }
-  fetch('/', payload)
+
+  fetch('/', request)
     .then(() => {
       alert('Thank you for your contact')
       actions.resetForm()
+      actions.setSubmitting(false)
     })
-    .catch(err => {
+    .catch(error => {
       alert('Unexpected error has occurred')
-      console.error(err)
+      console.error(error)
     })
 }
 
-const validationSchema = Yup.object().shape({
+const contactValidator = Yup.object().shape({
   name: Yup.string().required('Name is required'),
   email: Yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),
+    .required('Email is required')
+    .email('Invalid email address'),
   message: Yup.string().required('Message is required')
 })
 
+const FieldContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+`
+
 const Contact = () => (
-  <Container>
-    <Caption>CONTACT</Caption>
+  <Section>
+    <Text family="futura" size="subtitle" weight="bold">
+      CONTACT
+    </Text>
     <Formik
       initialValues={{ name: '', email: '', message: '' }}
+      validationSchema={contactValidator}
       onSubmit={handleSubmit}
-      validationSchema={validationSchema}
-      render={({ isSubmitting, isValid }: FormikProps<Values>) => (
-        <Form data-netlify data-netlify-honeypot="bot-field">
-          <FormField label="Name" type="input" name="name" placeholder="John Doe" />
-          <FormField label="E-mail" type="input" name="email" placeholder="john.doe@example.com" />
-          <FormField label="Message" type="textarea" name="message" placeholder="What you want to message" />
-          <FormSubmit isSubmitting={isSubmitting} isValid={isValid} />
+    >
+      {({ isSubmitting, isValid }: FormikProps<Values>) => (
+        <Form>
+          <Field name="name">
+            {({ field }: FieldProps<Values>) => (
+              <FieldContainer>
+                <Label htmlFor={field.name}>Name</Label>
+                <Input id={field.name} placeholder="John Doe" {...field} />
+                <ErrorMessage
+                  name={field.name}
+                  render={(message: string) => <Text>{message}</Text>}
+                />
+              </FieldContainer>
+            )}
+          </Field>
+          <Field name="email">
+            {({ field }: FieldProps<Values>) => (
+              <FieldContainer>
+                <Label htmlFor={field.name}>E-mail</Label>
+                <Input id={field.name} placeholder="john.doe@example.com" {...field} />
+                <ErrorMessage
+                  name={field.name}
+                  render={(message: string) => <Text>{message}</Text>}
+                />
+              </FieldContainer>
+            )}
+          </Field>
+          <Field name="message">
+            {({ field }: FieldProps<Values>) => (
+              <FieldContainer>
+                <Label htmlFor={field.name}>Message</Label>
+                <Textarea
+                  id={field.name}
+                  placeholder="What you want to message"
+                  rows={8}
+                  {...field}
+                />
+                <ErrorMessage
+                  name={field.name}
+                  render={(message: string) => <Text>{message}</Text>}
+                />
+              </FieldContainer>
+            )}
+          </Field>
+          <Button type="submit" disabled={!isValid || isSubmitting}>
+            Send
+          </Button>
         </Form>
       )}
-    />
-  </Container>
+    </Formik>
+  </Section>
 )
 
 export default Contact
-
-const Container = styled.section`
-  padding-bottom: 128px;
-`

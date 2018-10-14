@@ -1,33 +1,35 @@
 const path = require('path')
-const PluginCopy = require('copy-webpack-plugin')
-const PluginHtml = require('html-webpack-plugin')
-const PluginCss = require('mini-css-extract-plugin')
+const stylish = require('webpack-stylish')
+const copy = require('copy-webpack-plugin')
+const html = require('html-webpack-plugin')
+const clean = require('clean-webpack-plugin')
+const css = require('mini-css-extract-plugin')
 
-module.exports = {
+const config = {
   mode: 'production',
-  devtool: false,
+  stats: 'errors-only',
   entry: path.resolve(__dirname, 'src'),
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: '[name]-[contenthash].bundle.js',
+    path: path.resolve(__dirname, 'build'),
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.ts', '.tsx', '.mjs', '.js', '.jsx', '.json']
   },
   module: {
     rules: [
       {
         exclude: /node_modules/,
-        test: /\.(ts|tsx)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         use: 'babel-loader'
       },
       {
         test: /\.css$/,
-        use: [{ loader: PluginCss.loader }, 'css-loader']
+        use: [css.loader, 'css-loader']
       },
       {
-        test: /\.(png|jpg|jpeg|gif|ttf|otf|woff)$/,
+        test: /\.(png|jpg|jpeg|gif|svg|ttf|otf|woff)$/,
         use: 'file-loader'
       }
     ]
@@ -35,17 +37,16 @@ module.exports = {
   optimization: {
     splitChunks: {
       name: 'vendor',
-      chunks: 'initial',
+      chunks: 'all'
     }
   },
   plugins: [
-    new PluginCss(),
-    new PluginCopy([
-      'public'
-    ]),
-    new PluginHtml({
-      minify: true,
-      template: path.resolve(__dirname, 'src/index.html')
-    })
+    new stylish(),
+    new clean(['build']),
+    new copy(['public']),
+    new css(),
+    new html({ minify: true, template: path.resolve(__dirname, 'src/index.html') })
   ]
 }
+
+module.exports = config
