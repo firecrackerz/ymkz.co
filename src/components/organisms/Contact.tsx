@@ -70,7 +70,7 @@ const Contact = () => (
       onSubmit={handleSubmit}
     >
       {({ isSubmitting, isValid }: FormikProps<Values>) => (
-        <Form>
+        <Form data-netlify data-netlify-honeypot="bot-field">
           <Field name="name">
             {({ field }: FieldProps<Values>) => (
               <FieldContainer>
