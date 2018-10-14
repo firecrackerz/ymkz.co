@@ -16,7 +16,7 @@
     <img alt="Prettier" src="https://flat.badgen.net/badge/format%20with/prettier/ff69b4">
   </a>
   <a href="https://github.com/styled-components/styled-components">
-    <img alt="styled-components" src="https://flat.badgen.net/badge/styled%20with/styled-components/orange">
+    <img alt="styled-components" src="https://flat.badgen.net/badge/styled%20with/styled-components/da936a">
   </a>
   <a href="https://github.com/facebook/jest">
     <img alt="Jest" src="https://flat.badgen.net/badge/tested%20with/jest/99424f">
