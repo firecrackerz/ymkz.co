@@ -4,7 +4,7 @@ const html = require('html-webpack-plugin')
 const css = require('mini-css-extract-plugin')
 const notifier = require('webpack-build-notifier')
 
-const config = {
+module.exports = {
   mode: 'development',
   devtool: '#eval-cheap-module-source-map',
   entry: path.resolve(__dirname, 'src'),
@@ -45,5 +45,3 @@ const config = {
     stats: 'errors-only'
   }
 }
-
-module.exports = config

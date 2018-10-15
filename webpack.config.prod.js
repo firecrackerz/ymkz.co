@@ -7,7 +7,7 @@ const css = require('mini-css-extract-plugin')
 const webapp = require('webapp-webpack-plugin')
 const workbox = require('workbox-webpack-plugin')
 
-const config = {
+module.exports = {
   mode: 'production',
   stats: 'errors-only',
   entry: path.resolve(__dirname, 'src'),
@@ -38,7 +38,6 @@ const config = {
   },
   optimization: {
     splitChunks: {
-      name: 'vendor',
       chunks: 'all'
     }
   },
@@ -67,5 +66,3 @@ const config = {
     new workbox.GenerateSW()
   ]
 }
-
-module.exports = config

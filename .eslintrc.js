@@ -1,6 +1,6 @@
 const package = require('./package.json')
 
-const config = {
+module.exports = {
   env: {
     browser: true,
     jest: true,
@@ -34,5 +34,3 @@ const config = {
     }
   }
 }
-
-module.exports = config

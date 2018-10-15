@@ -1,4 +1,4 @@
-const config = {
+module.exports = {
   collectCoverageFrom: ['src/**/*.ts', 'src/**/*.tsx'],
   moduleFileExtensions: ['ts', 'tsx', 'mjs', 'js', 'jsx', 'json'],
   moduleNameMapper: {
@@ -11,5 +11,3 @@ const config = {
     '.+\\.(css|png|jpg|jpeg|gif|svg|ttf|otf|woff)$': 'jest-transform-stub'
   }
 }
-
-module.exports = config
