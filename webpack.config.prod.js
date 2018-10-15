@@ -4,6 +4,7 @@ const copy = require('copy-webpack-plugin')
 const html = require('html-webpack-plugin')
 const clean = require('clean-webpack-plugin')
 const css = require('mini-css-extract-plugin')
+const webapp = require('webapp-webpack-plugin')
 const workbox = require('workbox-webpack-plugin')
 
 const config = {
@@ -46,7 +47,22 @@ const config = {
     new clean(['build']),
     new copy(['public']),
     new css(),
-    new html({ minify: true, template: path.resolve(__dirname, 'src/index.html') }),
+    new html({
+      minify: true,
+      template: path.resolve(__dirname, 'src/index.html')
+    }),
+    new webapp({
+      logo: path.resolve(__dirname, 'resource/icon.jpg'),
+      favicons: {
+        lang: 'ja',
+        background: '#2e3440',
+        theme_color: '#2e3440',
+        icons: {
+          coast: false,
+          yandex: false
+        }
+      }
+    }),
     new workbox.GenerateSW()
   ]
 }
