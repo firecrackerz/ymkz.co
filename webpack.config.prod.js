@@ -49,7 +49,8 @@ const config = {
     new css(),
     new html({
       minify: true,
-      template: path.resolve(__dirname, 'src/index.html')
+      template: path.resolve(__dirname, 'src/index.html'),
+      title: 'YMKZ | Portfolio'
     }),
     new webapp({
       logo: path.resolve(__dirname, 'resource/icon.jpg'),
