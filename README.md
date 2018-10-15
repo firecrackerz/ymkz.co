@@ -1,7 +1,8 @@
+<div align="center">
+  <img src="resource/icon.jpg" alt="" title="icon" width="150px">
+</div>
 <h1 align="center">ymkz.co</h1>
-
 <h5 align="center">The portfolio site about ymkz.</h5>
-
 <p align="center">
   <a href="https://circleci.com/gh/ymkz/ymkz.co">
     <img alt="CircleCI" src="https://flat.badgen.net/circleci/github/ymkz/ymkz.co">
