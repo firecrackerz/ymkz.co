@@ -47,7 +47,7 @@ module.exports = {
     new copy(['public']),
     new css(),
     new html({
-      minify: true,
+      meta: { description: 'The portfolio site about ymkz.' },
       template: path.resolve(__dirname, 'src/index.html'),
       title: 'YMKZ | Portfolio'
     }),

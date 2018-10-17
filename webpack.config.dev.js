@@ -36,7 +36,11 @@ module.exports = {
   plugins: [
     new stylish(),
     new css(),
-    new html({ template: path.resolve(__dirname, 'src/index.html') }),
+    new html({
+      meta: { description: 'The portfolio site about ymkz.' },
+      template: path.resolve(__dirname, 'src/index.html'),
+      title: '[DEV] YMKZ | Portfolio'
+    }),
     new notifier({ suppressSuccess: true })
   ],
   devServer: {
