@@ -3,6 +3,7 @@ const stylish = require('webpack-stylish')
 const html = require('html-webpack-plugin')
 const css = require('mini-css-extract-plugin')
 const notifier = require('webpack-build-notifier')
+const typecheck = require('fork-ts-checker-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -41,7 +42,12 @@ module.exports = {
       template: path.resolve(__dirname, 'src/index.html'),
       title: '[DEV] YMKZ | Portfolio'
     }),
-    new notifier({ suppressSuccess: true })
+    new typecheck({
+      reportFiles: ['src/**/*.{ts,tsx}']
+    }),
+    new notifier({
+      suppressSuccess: true
+    })
   ],
   devServer: {
     historyApiFallback: true,

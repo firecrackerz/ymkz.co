@@ -6,6 +6,7 @@ const clean = require('clean-webpack-plugin')
 const css = require('mini-css-extract-plugin')
 const webapp = require('webapp-webpack-plugin')
 const workbox = require('workbox-webpack-plugin')
+const typecheck = require('fork-ts-checker-webpack-plugin')
 
 module.exports = {
   mode: 'production',
@@ -62,6 +63,9 @@ module.exports = {
           yandex: false
         }
       }
+    }),
+    new typecheck({
+      reportFiles: ['src/**/*.{ts,tsx}']
     }),
     new workbox.GenerateSW()
   ]
