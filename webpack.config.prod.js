@@ -14,7 +14,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'src'),
   output: {
     filename: '[name]-[contenthash].bundle.js',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
   },
   resolve: {
@@ -44,7 +44,7 @@ module.exports = {
   },
   plugins: [
     new stylish(),
-    new clean(['build']),
+    new clean(['dist']),
     new copy(['public']),
     new css(),
     new html({
