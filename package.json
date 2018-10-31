@@ -97,7 +97,7 @@
     "opn-cli": "3.1.0",
     "prettier": "1.14.3",
     "raf": "3.4.0",
-    "typescript": "3.1.4",
+    "typescript": "3.1.5",
     "typescript-eslint-parser": "20.1.1",
     "webapp-webpack-plugin": "2.3.1",
     "webpack": "4.23.1",
