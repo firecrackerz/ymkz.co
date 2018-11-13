@@ -45,6 +45,7 @@ const TitleMobile = styled.div`
 const Motto = styled.div`
   font-family: Futura;
   font-size: 1.25rem;
+  font-weight: 300;
   margin-top: -1.5rem;
   margin-left: 0.5rem;
   animation: ${fade} 0.75s ease normal;
@@ -53,6 +54,7 @@ const Motto = styled.div`
 const MottoMobile = styled.div`
   font-family: Futura;
   font-size: 1.2rem;
+  font-weight: 300;
   animation: ${fade} 0.75s ease normal;
 `
 

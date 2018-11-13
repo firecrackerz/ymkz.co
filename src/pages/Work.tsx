@@ -28,14 +28,14 @@ const Container = styled('div')`
   max-width: 768px;
   padding: 96px 16px;
   @media (max-width: 767px) {
-    padding: 48px 16px;
+    padding: 64px 16px;
   }
 `
 
 const Content = styled('div')`
   padding: 96px 0;
   @media (max-width: 767px) {
-    padding: 48px 0;
+    padding: 64px 0;
   }
 `
 
