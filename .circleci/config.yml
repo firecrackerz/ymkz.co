@@ -1,28 +1,24 @@
 version: 2
+
 jobs:
   build:
-    docker:
-      - image: circleci/node:10-browsers
     working_directory: ~/workspace
+    docker:
+      - image: circleci/node:11-browsers
     steps:
       - checkout
       - restore_cache:
           keys:
             - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
       - run:
-          name: Install packages
           command: yarn install
       - save_cache:
           key: dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
       - run:
-          name: Lint
           command: yarn lint
       - run:
-          name: Typecheck
-          command: yarn type
+          command: yarn typecheck
       - run:
-          name: Test
-          command: yarn test:ci
+          command: yarn test

@@ -1,26 +1,25 @@
-import 'src/index.css'
-import 'src/serviceworker'
 import * as React from 'react'
-import * as ReactDOM from 'react-dom'
-import * as Routes from 'src/routes'
+import { render } from 'react-dom'
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
-import Layout from 'src/components/templates/Layout'
-import Header from 'src/components/organisms/Header'
+import Header from 'src/components/Header'
+import 'src/helpers/globalstyle'
+import 'src/helpers/serviceworker'
+import * as Routes from 'src/routes'
 
-const App: React.SFC = () => (
-  <Layout>
+function App() {
+  return (
     <BrowserRouter>
-      <React.Fragment>
+      <React.Suspense fallback={null}>
         <Header />
         <Switch>
-          <Route exact path="/" component={Routes.About} />
-          <Route exact path="/about" component={Routes.About} />
-          <Route exact path="/work" component={Routes.Work} />
+          <Route exact path="/" render={() => <Routes.Home />} />
+          <Route exact path="/about" render={() => <Routes.About />} />
+          <Route exact path="/work" render={() => <Routes.Work />} />
           <Redirect to="/" />
         </Switch>
-      </React.Fragment>
+      </React.Suspense>
     </BrowserRouter>
-  </Layout>
-)
+  )
+}
 
-ReactDOM.render(<App />, document.querySelector('#app'))
+render(<App />, document.querySelector('#app'))

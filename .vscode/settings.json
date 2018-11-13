@@ -1,20 +1,12 @@
 {
   "editor.formatOnSave": true,
-  "eslint.enable": true,
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    {
-      "language": "typescript",
-      "autoFix": true
-    },
-    {
-      "language": "typescriptreact",
-      "autoFix": true
-    }
-  ],
+  "editor.rulers": [100],
   "javascript.format.enable": false,
   "markdown.preview.breaks": true,
   "path-autocomplete.pathMappings": {
     "src": "${folder}/src"
-  }
+  },
+  "tslint.enable": true,
+  "tslint.autoFixOnSave": true,
+  "tslint.packageManager": "yarn"
 }
