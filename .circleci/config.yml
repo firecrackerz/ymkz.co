@@ -1,28 +1,38 @@
-version: 2
-jobs:
-  build:
+version: 2.1
+
+description: A continuous integration for website about ymkz.
+
+commands:
+  install:
+    steps:
+      - run: yarn install
+  lint:
+    steps:
+      - run: yarn run lint
+  typecheck:
+    steps:
+      - run: yarn run typecheck
+  test:
+    steps:
+      - run: yarn run test
+
+executors:
+  default:
     docker:
-      - image: circleci/node:10-browsers
-    working_directory: ~/workspace
+      - image: circleci/node:11-browsers
+
+jobs:
+  hello-build:
+    executor: default
     steps:
       - checkout
       - restore_cache:
-          keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-            - dependencies-
-      - run:
-          name: Install packages
-          command: yarn install
+          key: dependencies-{{ checksum "yarn.lock" }}
+      - install
       - save_cache:
           key: dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-      - run:
-          name: Lint
-          command: yarn lint
-      - run:
-          name: Typecheck
-          command: yarn type
-      - run:
-          name: Test
-          command: yarn test:ci
+      - lint
+      - typecheck
+      - test
