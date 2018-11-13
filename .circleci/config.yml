@@ -1,42 +1,24 @@
-version: 2.1
-
-executors:
-  default:
-    working_directory: ~/workspace
-    docker:
-      - image: circleci/node:11-browsers
-
-commands:
-  install:
-    steps:
-      - run: yarn install
-  lint:
-    steps:
-      - run: yarn run lint
-  typecheck:
-    steps:
-      - run: yarn run typecheck
-  test:
-    steps:
-      - run: yarn run test
+version: 2
 
 jobs:
   build:
-    executor: default
+    working_directory: ~/workspace
+    docker:
+      - image: circleci/node:11-browsers
     steps:
       - checkout
       - restore_cache:
-          key: dependencies-{{ checksum "yarn.lock" }}
-      - install
+          keys:
+            - dependencies-{{ checksum "yarn.lock" }}
+      - run:
+          command: yarn install
       - save_cache:
           key: dependencies-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
-      - lint
-      - typecheck
-      - test
-
-workflows:
-  normal:
-    jobs:
-      - build
+      - run:
+          command: yarn lint
+      - run:
+          command: yarn typecheck
+      - run:
+          command: yarn test
