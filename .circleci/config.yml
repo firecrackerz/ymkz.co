@@ -1,6 +1,10 @@
 version: 2.1
 
-description: A continuous integration for website about ymkz.
+executors:
+  default:
+    working_directory: ~/workspace
+    docker:
+      - image: circleci/node:11-browsers
 
 commands:
   install:
@@ -16,13 +20,8 @@ commands:
     steps:
       - run: yarn run test
 
-executors:
-  default:
-    docker:
-      - image: circleci/node:11-browsers
-
 jobs:
-  hello-build:
+  build:
     executor: default
     steps:
       - checkout
@@ -36,3 +35,8 @@ jobs:
       - lint
       - typecheck
       - test
+
+workflows:
+  normal:
+    jobs:
+      - build
