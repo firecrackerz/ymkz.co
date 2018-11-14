@@ -1,12 +1,15 @@
 {
   "rulesDirectory": ["tslint-plugin-prettier"],
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": ["tslint:recommended", "tslint-react", "tslint-clean-code", "tslint-config-prettier"],
   "rules": {
     "interface-name": false,
     "jsx-no-lambda": false,
     "jsx-boolean-value": false,
     "member-access": false,
+    "newspaper-order": true,
     "no-console": false,
+    "no-feature-envy": true,
+    "no-for-each-push": true,
     "object-literal-sort-keys": false,
     "prettier": true
   }

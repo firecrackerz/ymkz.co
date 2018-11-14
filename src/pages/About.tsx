@@ -19,12 +19,6 @@ interface Payload extends Values {
   'form-name': 'contact'
 }
 
-function encodePayloadToBody(data: Payload) {
-  return Object.keys(data)
-    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join('&')
-}
-
 function handleSubmit(values: Values, actions: FormikActions<Values>) {
   const request = {
     method: 'POST',
@@ -42,6 +36,12 @@ function handleSubmit(values: Values, actions: FormikActions<Values>) {
       alert('Unexpected error has occurred')
       console.error(error)
     })
+}
+
+function encodePayloadToBody(data: Payload) {
+  return Object.keys(data)
+    .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+    .join('&')
 }
 
 const initialValues: Values = {
