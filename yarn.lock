@@ -1239,10 +1239,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/yup@0.26.1":
-  version "0.26.1"
-  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.1.tgz#2e5f7f36e3f27aa72e4727bafd53b2e1a44ec969"
-  integrity sha512-iK/FYmlhQOE6xHUB/dsXeCp4UWmJeI1ZxlLe+2u8KmCy+si1TDu+3+ioEO90rNgTAjm25Cwr+C0t5n8rFnE/NA==
+"@types/yup@0.26.2":
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.2.tgz#823f43bfb29cb4fd2af395c3eb8f30929f4e9d53"
+  integrity sha512-SNVcc8qPUZVi6UiH3xxlCahgjfgx7nDWIJ76KKML2QWB0uRbvCXMsjBNwx5pwdcL4v7fFsDRLoQnOQ7XWayBUg==
 
 "@webassemblyjs/ast@1.7.11":
   version "1.7.11"
