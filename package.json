@@ -101,7 +101,7 @@
     "tslint-plugin-prettier": "2.0.1",
     "tslint-react": "3.6.0",
     "typescript": "3.1.6",
-    "webapp-webpack-plugin": "2.3.1",
+    "webapp-webpack-plugin": "2.4.0",
     "webpack": "4.26.0",
     "webpack-build-notifier": "0.1.30",
     "webpack-cli": "3.1.2",
