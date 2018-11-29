@@ -1,24 +1,55 @@
-version: 2
-
-jobs:
-  build:
-    working_directory: ~/workspace
+version: 2.1
+executors:
+  default:
     docker:
       - image: circleci/node:11-browsers
+        environment:
+          HUSKY_SKIP_INSTALL: true
+    working_directory: ~/app
+jobs:
+  checkout_code:
+    executor: default
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - dependencies-{{ checksum "yarn.lock" }}
-      - run:
-          command: yarn install
       - save_cache:
-          key: dependencies-{{ checksum "yarn.lock" }}
+          key: app-code-{{ .Environment.CIRCLE_SHA1 }}
+          paths: ~/app
+  install_dependencies:
+    executor: default
+    steps:
+      - restore_cache:
+          key: app-code-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: app-deps-{{ checksum "yarn.lock" }}
+      - run: yarn install
+      - save_cache:
+          key: app-deps-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
+  check_code:
+    executor: default
+    steps:
+      - restore_cache:
+          key: app-code-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: app-deps-{{ checksum "yarn.lock" }}
       - run:
+          name: Lint
           command: yarn lint
       - run:
+          name: Typecheck
           command: yarn typecheck
       - run:
-          command: yarn test
+          name: Unit test
+          command: yarn test:ci
+workflows:
+  version: 2
+  test:
+    jobs:
+      - checkout_code
+      - install_dependencies:
+          requires:
+            - checkout_code
+      - check_code:
+          requires:
+            - install_dependencies

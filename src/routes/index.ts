@@ -1,20 +1,14 @@
-import { lazy } from 'react'
+import loadable from '@loadable/component'
 
-export const Home = lazy(() =>
-  import(/* webpackChunkName: "home" */
-  /* webpackPrefetch: true */
-  /* webpackPreload: true */
-  'src/pages/Home')
+export const Home = loadable(() =>
+  import(/* webpackChunkName: "home", webpackPreload: true */ 'src/pages/Home')
 )
-export const About = lazy(() =>
-  import(/* webpackChunkName: "about" */
-  /* webpackPrefetch: true */
-  /* webpackPreload: true */
-  'src/pages/About')
+export const About = loadable(() =>
+  import(/* webpackChunkName: "about", webpackPreload: true */ 'src/pages/About')
 )
-export const Work = lazy(() =>
-  import(/* webpackChunkName: "work" */
-  /* webpackPrefetch: true */
-  /* webpackPreload: true */
-  'src/pages/Work')
+export const Work = loadable(() =>
+  import(/* webpackChunkName: "work", webpackPreload: true */ 'src/pages/Work')
+)
+export const NotFound = loadable(() =>
+  import(/* webpackChunkName: "notfound", webpackPreload: true */ 'src/pages/NotFound')
 )

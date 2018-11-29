@@ -1,4 +1,4 @@
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 import { NavLink as RouterNavLink } from 'react-router-dom'
 import { colors } from 'src/helpers/constants'
 

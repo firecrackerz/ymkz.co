@@ -1,5 +1,5 @@
+import styled from '@emotion/styled'
 import * as React from 'react'
-import { css, default as styled } from 'react-emotion'
 import MediaQuery from 'react-responsive'
 import { match as Match } from 'react-router-dom'
 import NavLink from 'src/components/NavLink'
@@ -9,11 +9,7 @@ function isActive(match: Match) {
   return !!match
 }
 
-const activeClassName = css`
-  font-weight: 700 !important;
-`
-
-const Container = styled.div`
+const Container = styled('div')`
   height: 100px;
   display: flex;
   align-items: center;
@@ -24,15 +20,15 @@ const Container = styled.div`
   }
 `
 
-const Text = styled.div`
+const Text = styled('div')`
   font-family: Futura;
 `
 
-function Header() {
+export default function Header() {
   return (
     <Container>
       <Row space={4}>
-        <NavLink to="/" isActive={isActive} activeClassName={activeClassName}>
+        <NavLink to="/" isActive={isActive} activeStyle={{ fontWeight: 700 }}>
           ymkz
         </NavLink>
         <MediaQuery minDeviceWidth={767}>
@@ -40,15 +36,13 @@ function Header() {
         </MediaQuery>
       </Row>
       <Row space={20}>
-        <NavLink to="/about" isActive={isActive} activeClassName={activeClassName}>
+        <NavLink to="/about" isActive={isActive} activeStyle={{ fontWeight: 700 }}>
           about
         </NavLink>
-        <NavLink to="/work" isActive={isActive} activeClassName={activeClassName}>
+        <NavLink to="/work" isActive={isActive} activeStyle={{ fontWeight: 700 }}>
           work
         </NavLink>
       </Row>
     </Container>
   )
 }
-
-export default Header

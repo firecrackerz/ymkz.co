@@ -1,6 +1,6 @@
+import styled from '@emotion/styled'
 import { ErrorMessage, Field, FieldProps, Form, Formik, FormikActions, FormikProps } from 'formik'
 import * as React from 'react'
-import styled from 'react-emotion'
 import Row from 'src/components/Row'
 import { colors } from 'src/helpers/constants'
 import facebook from 'src/images/icon_facebook.svg'
@@ -58,7 +58,7 @@ const contactValidator = Yup.object().shape({
   message: Yup.string().required('Message is required')
 })
 
-const Container = styled.div`
+const Container = styled('div')`
   margin: 0 auto;
   max-width: 768px;
   padding: 96px 16px;
@@ -67,39 +67,39 @@ const Container = styled.div`
   }
 `
 
-const Content = styled.div`
+const Content = styled('div')`
   padding: 96px 0;
   @media (max-width: 767px) {
     padding: 64px 0;
   }
 `
 
-const Title = styled.div`
+const Title = styled('div')`
   font-family: Futura;
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 1rem;
 `
 
-const Text = styled.div`
+const Text = styled('div')`
   font-family: Futura;
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.4;
 `
 
-const Link = styled.a`
+const Link = styled('a')`
   color: ${colors.white};
   height: 48px;
   width: 48px;
 `
 
-const Icon = styled.img`
+const Icon = styled('img')`
   height: 48px;
   width: 48px;
 `
 
-const Label = styled.label`
+const Label = styled('label')`
   display: block;
   font-family: Futura;
   font-weight: 300;
@@ -107,7 +107,7 @@ const Label = styled.label`
   margin-bottom: 0.2rem;
 `
 
-const Input = styled.input`
+const Input = styled('input')`
   background-color: ${colors.black.dark};
   border: 0;
   border-radius: 4px;
@@ -124,7 +124,7 @@ const Input = styled.input`
   }
 `
 
-const Textarea = styled.textarea`
+const Textarea = styled('textarea')`
   background-color: ${colors.black.dark};
   border: 0;
   border-radius: 4px;
@@ -142,12 +142,12 @@ const Textarea = styled.textarea`
   }
 `
 
-const ErrorText = styled.div`
+const ErrorText = styled('div')`
   font-size: 0.85rem;
   margin-top: 0.2rem;
 `
 
-const Button = styled.button`
+const Button = styled('button')`
   background-color: ${colors.black.dark};
   border: 0;
   border-radius: 4px;
@@ -166,7 +166,7 @@ const Button = styled.button`
   }
 `
 
-function About() {
+export default function About() {
   return (
     <Container>
       <Content>
@@ -263,5 +263,3 @@ function About() {
     </Container>
   )
 }
-
-export default About

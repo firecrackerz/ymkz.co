@@ -1,6 +1,6 @@
+import styled from '@emotion/styled'
 import AnchorJS from 'anchor-js'
 import * as React from 'react'
-import styled, { css } from 'react-emotion'
 import Row from 'src/components/Row'
 import { colors } from 'src/helpers/constants'
 import cancelectures_native_1 from 'src/images/cancelectures_native_1.jpg'
@@ -9,14 +9,10 @@ import narosirase_1 from 'src/images/narosirase_1.jpg'
 import narosirase_2 from 'src/images/narosirase_2.jpg'
 import portfolio_1 from 'src/images/portfolio_1.jpg'
 
-const anchorClass = css`
-  color: ${colors.black.light};
-`
-
 const anchors = new AnchorJS({
   icon: '#',
   placement: 'left',
-  class: anchorClass
+  class: 'anchorjs'
 })
 
 interface Props {
@@ -63,7 +59,7 @@ const Description = styled('div')`
   line-height: 1.4;
 `
 
-const Link = styled.a`
+const Link = styled('a')`
   color: ${colors.white.default};
   line-height: 1.4;
   text-decoration-line: none;
@@ -72,17 +68,17 @@ const Link = styled.a`
   }
 `
 
-const Image = styled.img`
+const Image = styled('img')`
   border: 1px solid ${colors.black.light};
   width: ${(props: Props) => (props.orientation === 'landscape' ? 256 : 128)}px;
 `
 
-const Ul = styled.ul`
+const Ul = styled('ul')`
   margin: 1.4rem 0 1.6rem;
   padding-left: 1.4rem;
 `
 
-function Work() {
+export default function Work() {
   React.useEffect(() => {
     anchors
       .add('#portfolio')
@@ -175,5 +171,3 @@ function Work() {
     </Container>
   )
 }
-
-export default Work

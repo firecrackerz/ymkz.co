@@ -1,11 +1,8 @@
 {
   "editor.formatOnSave": true,
+  "editor.lineNumbers": "off",
   "editor.rulers": [100],
-  "javascript.format.enable": false,
   "markdown.preview.breaks": true,
-  "path-autocomplete.pathMappings": {
-    "src": "${folder}/src"
-  },
   "tslint.enable": true,
   "tslint.autoFixOnSave": true,
   "tslint.packageManager": "yarn"

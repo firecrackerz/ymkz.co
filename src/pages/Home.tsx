@@ -1,5 +1,6 @@
+import { keyframes } from '@emotion/core'
+import styled from '@emotion/styled'
 import * as React from 'react'
-import { default as styled, keyframes } from 'react-emotion'
 import MediaQuery from 'react-responsive'
 import Typing from 'react-typing-animation'
 
@@ -12,7 +13,7 @@ const fade = keyframes`
   }
 `
 
-const Container = styled.div`
+const Container = styled('div')`
   width: 100vw;
   height: calc(100vh - 100px);
   padding-bottom: 100px;
@@ -21,7 +22,7 @@ const Container = styled.div`
   justify-content: center;
 `
 
-const ContainerMobile = styled.div`
+const ContainerMobile = styled('div')`
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -29,20 +30,20 @@ const ContainerMobile = styled.div`
   padding: 0 16px 100px;
 `
 
-const Title = styled.div`
+const Title = styled('div')`
   font-family: Futura;
   font-size: 7rem;
   font-weight: 700;
 `
 
-const TitleMobile = styled.div`
+const TitleMobile = styled('div')`
   font-family: Futura;
   font-size: 5rem;
   font-weight: 700;
   margin-top: -1.4rem;
 `
 
-const Motto = styled.div`
+const Motto = styled('div')`
   font-family: Futura;
   font-size: 1.25rem;
   font-weight: 300;
@@ -51,14 +52,14 @@ const Motto = styled.div`
   animation: ${fade} 0.75s ease normal;
 `
 
-const MottoMobile = styled.div`
+const MottoMobile = styled('div')`
   font-family: Futura;
   font-size: 1.2rem;
   font-weight: 300;
   animation: ${fade} 0.75s ease normal;
 `
 
-function Home() {
+export default function Home() {
   const [ready, setReady] = React.useState(false)
   return (
     <MediaQuery minDeviceWidth={767}>
@@ -109,5 +110,3 @@ function Home() {
     </MediaQuery>
   )
 }
-
-export default Home

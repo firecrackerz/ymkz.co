@@ -9,7 +9,7 @@ module.exports = function(api) {
         plugins: [['emotion', { sourceMap: true, autoLabel: true }]]
       },
       test: {
-        plugins: [['emotion']]
+        plugins: [['emotion', { sourceMap: true, autoLabel: true }]]
       }
     },
     presets: [
@@ -18,9 +18,9 @@ module.exports = function(api) {
       '@babel/preset-typescript'
     ],
     plugins: [
-      '@babel/plugin-syntax-dynamic-import',
       '@babel/plugin-proposal-object-rest-spread',
       '@babel/plugin-proposal-class-properties',
+      '@babel/plugin-syntax-dynamic-import',
       [
         'module-resolver',
         {

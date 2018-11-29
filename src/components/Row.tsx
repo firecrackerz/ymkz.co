@@ -1,10 +1,10 @@
-import styled from 'react-emotion'
+import styled from '@emotion/styled'
 
 interface Props {
   space?: number
 }
 
-const Row = styled.div`
+const Row = styled('div')`
   align-items: center;
   display: flex;
   flex-flow: row wrap;

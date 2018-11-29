@@ -43,4 +43,8 @@ export default injectGlobal`
     margin: 0;
     -webkit-overflow-scrolling: touch;
   }
+
+  .anchorjs {
+    color: #4c566a;
+  }
 `

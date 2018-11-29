@@ -1,9 +1,7 @@
 const path = require('path')
-const stylish = require('webpack-stylish')
 const html = require('html-webpack-plugin')
 const notifier = require('webpack-build-notifier')
 const typecheck = require('fork-ts-checker-webpack-plugin')
-const pkg = require('../package.json')
 
 const __rootdir = process.cwd()
 
@@ -33,11 +31,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new stylish(),
     new html({
-      meta: { description: pkg.app.description },
+      meta: { description: 'The portfolio site about ymkz.' },
       template: path.resolve(__rootdir, 'src/index.html'),
-      title: `[DEV] ${pkg.app.title}`
+      title: 'YMKZ | Portfolio'
     }),
     new typecheck({
       reportFiles: ['src/**/*.{ts,tsx}'],

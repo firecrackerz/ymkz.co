@@ -1,17 +1,15 @@
 const path = require('path')
-const stylish = require('webpack-stylish')
 const html = require('html-webpack-plugin')
+const copy = require('copy-webpack-plugin')
 const clean = require('clean-webpack-plugin')
 const webapp = require('webapp-webpack-plugin')
 const workbox = require('workbox-webpack-plugin')
 const typecheck = require('fork-ts-checker-webpack-plugin')
-const pkg = require('../package.json')
 
 const __rootdir = process.cwd()
 
 module.exports = {
   mode: 'production',
-  stats: 'errors-only',
   entry: path.resolve(__rootdir, 'src'),
   output: {
     filename: '[name]-[contenthash].bundle.js',
@@ -40,12 +38,12 @@ module.exports = {
     }
   },
   plugins: [
-    new stylish(),
     new clean([path.resolve(__rootdir, 'dist')], { root: path.resolve(__rootdir) }),
+    new copy([path.resolve(__rootdir, 'public')]),
     new html({
-      meta: { description: pkg.app.description },
+      meta: { description: 'The portfolio site about ymkz.' },
       template: path.resolve(__rootdir, 'src/index.html'),
-      title: `${pkg.app.title}`
+      title: 'YMKZ | Portfolio'
     }),
     new webapp({
       logo: path.resolve(__rootdir, 'resource/icon.jpg'),
@@ -53,10 +51,7 @@ module.exports = {
         lang: 'ja',
         background: '#2e3440',
         theme_color: '#2e3440',
-        icons: {
-          coast: false,
-          yandex: false
-        }
+        icons: { coast: false, yandex: false }
       }
     }),
     new typecheck({
