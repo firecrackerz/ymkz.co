@@ -25,9 +25,9 @@
   <a href="https://github.com/facebook/jest">
     <img alt="Jest" src="https://flat.badgen.net/badge/tested%20with/jest/99424f">
   </a>
-  <!-- <a href="https://codecov.io/gh/ymkz/ymkz.co">
+  <a href="https://codecov.io/gh/ymkz/ymkz.co">
     <img alt="Codecov" src="https://flat.badgen.net/codecov/c/github/ymkz/ymkz.co">
-  </a> -->
+  </a>
   <a href="https://github.com/commitizen/cz-cli">
     <img alt="commitizen" src="https://flat.badgen.net/badge/commitizen/friendly/60d437">
   </a>
