@@ -58,6 +58,104 @@ const contactValidator = Yup.object().shape({
   message: Yup.string().required('Message is required')
 })
 
+export default function About() {
+  return (
+    <Container>
+      <Content>
+        <Title>PROFILE</Title>
+        <Text>I&apos;m Kazuya Yamashita a.k.a ymkz.</Text>
+        <Text>Work as a Frontend engineer nearby UI/UX engineering.</Text>
+        <Text>
+          Majored in computer science, studying Human-Computer Interaction with face/eye-tracking.
+        </Text>
+        <Text>22y/o, based in Matsue, I like padding, building UI and FPS Game.</Text>
+      </Content>
+      <Content>
+        <Title>SKILLS</Title>
+        <Row space={32}>
+          <Text>HTML5</Text>
+          <Text>CSS3</Text>
+          <Text>ES2018</Text>
+          <Text>Node.js</Text>
+          <Text>TypeScript</Text>
+          <Text>React</Text>
+          <Text>React Native</Text>
+          <Text>Redux</Text>
+          <Text>Webpack</Text>
+        </Row>
+      </Content>
+      <Content>
+        <Title>SOCIAL</Title>
+        <Row space={24}>
+          <Link href="https://twitter.com/ymkzly" rel="noopener noreferrer" target="_blank">
+            <Icon src={twitter} alt="Link to Twitter" />
+          </Link>
+          <Link href="https://facebook.com/ymkzly" rel="noopener noreferrer" target="_blank">
+            <Icon src={facebook} alt="Link to Facebook" />
+          </Link>
+          <Link href="https://github.com/ymkz" rel="noopener noreferrer" target="_blank">
+            <Icon src={github} alt="Link to GitHub" />
+          </Link>
+        </Row>
+      </Content>
+      <Content>
+        <Title>CONTACT</Title>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={contactValidator}
+          onSubmit={handleSubmit}
+        >
+          {({ isSubmitting, isValid }: FormikProps<Values>) => (
+            <Form data-netlify data-netlify-honeypot="bot-field">
+              <Field name="name">
+                {({ field }: FieldProps<Values>) => (
+                  <React.Fragment>
+                    <Label htmlFor={field.name}>Name</Label>
+                    <Input id={field.name} placeholder="John Doe" {...field} />
+                    <ErrorMessage name={field.name}>
+                      {(message: string) => <ErrorText>{message}</ErrorText>}
+                    </ErrorMessage>
+                  </React.Fragment>
+                )}
+              </Field>
+              <Field name="email">
+                {({ field }: FieldProps<Values>) => (
+                  <React.Fragment>
+                    <Label htmlFor={field.name}>Email</Label>
+                    <Input id={field.name} placeholder="john.doe@example.com" {...field} />
+                    <ErrorMessage name={field.name}>
+                      {(message: string) => <ErrorText>{message}</ErrorText>}
+                    </ErrorMessage>
+                  </React.Fragment>
+                )}
+              </Field>
+              <Field name="message">
+                {({ field }: FieldProps<Values>) => (
+                  <React.Fragment>
+                    <Label htmlFor={field.name}>Message</Label>
+                    <Textarea
+                      id={field.name}
+                      placeholder="What you want to tell me"
+                      rows={8}
+                      {...field}
+                    />
+                    <ErrorMessage name={field.name}>
+                      {(message: string) => <ErrorText>{message}</ErrorText>}
+                    </ErrorMessage>
+                  </React.Fragment>
+                )}
+              </Field>
+              <Button type="submit" disabled={!isValid || isSubmitting}>
+                Send
+              </Button>
+            </Form>
+          )}
+        </Formik>
+      </Content>
+    </Container>
+  )
+}
+
 const Container = styled('div')`
   margin: 0 auto;
   max-width: 768px;
@@ -165,101 +263,3 @@ const Button = styled('button')`
     opacity: 0.5;
   }
 `
-
-export default function About() {
-  return (
-    <Container>
-      <Content>
-        <Title>PROFILE</Title>
-        <Text>I&apos;m Kazuya Yamashita a.k.a ymkz.</Text>
-        <Text>Work as a Frontend engineer nearby UI/UX engineering.</Text>
-        <Text>
-          Majored in computer science, studying Human-Computer Interaction with face/eye-tracking.
-        </Text>
-        <Text>22y/o, based in Matsue, I like padding, building UI and FPS Game.</Text>
-      </Content>
-      <Content>
-        <Title>SKILLS</Title>
-        <Row space={32}>
-          <Text>HTML5</Text>
-          <Text>CSS3</Text>
-          <Text>ES2018</Text>
-          <Text>Node.js</Text>
-          <Text>TypeScript</Text>
-          <Text>React</Text>
-          <Text>React Native</Text>
-          <Text>Redux</Text>
-          <Text>Webpack</Text>
-        </Row>
-      </Content>
-      <Content>
-        <Title>SOCIAL</Title>
-        <Row space={24}>
-          <Link href="https://twitter.com/ymkzly" rel="noopener noreferrer" target="_blank">
-            <Icon src={twitter} alt="Link to Twitter" />
-          </Link>
-          <Link href="https://facebook.com/ymkzly" rel="noopener noreferrer" target="_blank">
-            <Icon src={facebook} alt="Link to Facebook" />
-          </Link>
-          <Link href="https://github.com/ymkz" rel="noopener noreferrer" target="_blank">
-            <Icon src={github} alt="Link to GitHub" />
-          </Link>
-        </Row>
-      </Content>
-      <Content>
-        <Title>CONTACT</Title>
-        <Formik
-          initialValues={initialValues}
-          validationSchema={contactValidator}
-          onSubmit={handleSubmit}
-        >
-          {({ isSubmitting, isValid }: FormikProps<Values>) => (
-            <Form data-netlify data-netlify-honeypot="bot-field">
-              <Field name="name">
-                {({ field }: FieldProps<Values>) => (
-                  <React.Fragment>
-                    <Label htmlFor={field.name}>Name</Label>
-                    <Input id={field.name} placeholder="John Doe" {...field} />
-                    <ErrorMessage name={field.name}>
-                      {(message: string) => <ErrorText>{message}</ErrorText>}
-                    </ErrorMessage>
-                  </React.Fragment>
-                )}
-              </Field>
-              <Field name="email">
-                {({ field }: FieldProps<Values>) => (
-                  <React.Fragment>
-                    <Label htmlFor={field.name}>Email</Label>
-                    <Input id={field.name} placeholder="john.doe@example.com" {...field} />
-                    <ErrorMessage name={field.name}>
-                      {(message: string) => <ErrorText>{message}</ErrorText>}
-                    </ErrorMessage>
-                  </React.Fragment>
-                )}
-              </Field>
-              <Field name="message">
-                {({ field }: FieldProps<Values>) => (
-                  <React.Fragment>
-                    <Label htmlFor={field.name}>Message</Label>
-                    <Textarea
-                      id={field.name}
-                      placeholder="What you want to tell me"
-                      rows={8}
-                      {...field}
-                    />
-                    <ErrorMessage name={field.name}>
-                      {(message: string) => <ErrorText>{message}</ErrorText>}
-                    </ErrorMessage>
-                  </React.Fragment>
-                )}
-              </Field>
-              <Button type="submit" disabled={!isValid || isSubmitting}>
-                Send
-              </Button>
-            </Form>
-          )}
-        </Formik>
-      </Content>
-    </Container>
-  )
-}

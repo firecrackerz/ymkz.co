@@ -19,65 +19,6 @@ interface Props {
   orientation: 'landscape' | 'portrait'
 }
 
-const Container = styled('div')`
-  margin: 0 auto;
-  max-width: 768px;
-  padding: 96px 16px;
-  @media (max-width: 767px) {
-    padding: 64px 16px;
-  }
-`
-
-const Content = styled('div')`
-  padding: 96px 0;
-  @media (max-width: 767px) {
-    padding: 64px 0;
-  }
-`
-
-const Title = styled('div')`
-  font-family: Futura;
-  font-size: 4.2rem;
-  font-weight: 700;
-  @media (max-width: 767px) {
-    font-size: 2.8rem;
-  }
-`
-
-const Subtitle = styled('div')`
-  font-family: Futura;
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin: -1rem 0 1rem;
-  @media (max-width: 767px) {
-    font-size: 1.2rem;
-    margin: -0.5rem 0 1rem;
-  }
-`
-
-const Description = styled('div')`
-  line-height: 1.4;
-`
-
-const Link = styled('a')`
-  color: ${colors.white.default};
-  line-height: 1.4;
-  text-decoration-line: none;
-  &:hover {
-    text-decoration-line: underline;
-  }
-`
-
-const Image = styled('img')`
-  border: 1px solid ${colors.black.light};
-  width: ${(props: Props) => (props.orientation === 'landscape' ? 256 : 128)}px;
-`
-
-const Ul = styled('ul')`
-  margin: 1.4rem 0 1.6rem;
-  padding-left: 1.4rem;
-`
-
 export default function Work() {
   React.useEffect(() => {
     anchors
@@ -171,3 +112,62 @@ export default function Work() {
     </Container>
   )
 }
+
+const Container = styled('div')`
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 96px 16px;
+  @media (max-width: 767px) {
+    padding: 64px 16px;
+  }
+`
+
+const Content = styled('div')`
+  padding: 96px 0;
+  @media (max-width: 767px) {
+    padding: 64px 0;
+  }
+`
+
+const Title = styled('div')`
+  font-family: Futura;
+  font-size: 4.2rem;
+  font-weight: 700;
+  @media (max-width: 767px) {
+    font-size: 2.8rem;
+  }
+`
+
+const Subtitle = styled('div')`
+  font-family: Futura;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: -1rem 0 1rem;
+  @media (max-width: 767px) {
+    font-size: 1.2rem;
+    margin: -0.5rem 0 1rem;
+  }
+`
+
+const Description = styled('div')`
+  line-height: 1.4;
+`
+
+const Link = styled('a')`
+  color: ${colors.white.default};
+  line-height: 1.4;
+  text-decoration-line: none;
+  &:hover {
+    text-decoration-line: underline;
+  }
+`
+
+const Image = styled('img')`
+  border: 1px solid ${colors.black.light};
+  width: ${(props: Props) => (props.orientation === 'landscape' ? 256 : 128)}px;
+`
+
+const Ul = styled('ul')`
+  margin: 1.4rem 0 1.6rem;
+  padding-left: 1.4rem;
+`

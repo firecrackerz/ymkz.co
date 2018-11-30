@@ -1,12 +1,35 @@
 import styled from '@emotion/styled'
 import * as React from 'react'
-import MediaQuery from 'react-responsive'
 import { match as Match } from 'react-router-dom'
 import NavLink from 'src/components/NavLink'
 import Row from 'src/components/Row'
+import { useWindowWidth } from 'src/helpers/functions'
 
 function isActive(match: Match) {
   return !!match
+}
+
+export default function Header() {
+  const width = useWindowWidth()
+
+  return (
+    <Container>
+      <Row space={4}>
+        <NavLink to="/" isActive={isActive} activeStyle={{ fontWeight: 700 }}>
+          ymkz
+        </NavLink>
+        {width > 767 && <Text>is frontend engineer</Text>}
+      </Row>
+      <Row space={20}>
+        <NavLink to="/about" isActive={isActive} activeStyle={{ fontWeight: 700 }}>
+          about
+        </NavLink>
+        <NavLink to="/work" isActive={isActive} activeStyle={{ fontWeight: 700 }}>
+          work
+        </NavLink>
+      </Row>
+    </Container>
+  )
 }
 
 const Container = styled('div')`
@@ -23,26 +46,3 @@ const Container = styled('div')`
 const Text = styled('div')`
   font-family: Futura;
 `
-
-export default function Header() {
-  return (
-    <Container>
-      <Row space={4}>
-        <NavLink to="/" isActive={isActive} activeStyle={{ fontWeight: 700 }}>
-          ymkz
-        </NavLink>
-        <MediaQuery minDeviceWidth={767}>
-          {matches => matches && <Text>is frontend engineer</Text>}
-        </MediaQuery>
-      </Row>
-      <Row space={20}>
-        <NavLink to="/about" isActive={isActive} activeStyle={{ fontWeight: 700 }}>
-          about
-        </NavLink>
-        <NavLink to="/work" isActive={isActive} activeStyle={{ fontWeight: 700 }}>
-          work
-        </NavLink>
-      </Row>
-    </Container>
-  )
-}
