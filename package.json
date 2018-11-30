@@ -65,7 +65,7 @@
     "@types/react-dom": "16.0.11",
     "@types/react-responsive": "3.0.2",
     "@types/react-router-dom": "4.3.1",
-    "@types/webpack": "4.4.19",
+    "@types/webpack": "4.4.20",
     "@types/webpack-dev-server": "3.1.1",
     "@types/yup": "0.26.2",
     "babel-core": "7.0.0-bridge.0",
