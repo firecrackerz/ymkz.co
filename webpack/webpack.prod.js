@@ -1,5 +1,4 @@
 const path = require('path')
-const zopfli = require('@gfx/zopfli')
 const html = require('html-webpack-plugin')
 const copy = require('copy-webpack-plugin')
 const clean = require('clean-webpack-plugin')
