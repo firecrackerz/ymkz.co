@@ -5,7 +5,7 @@ const copy = require('copy-webpack-plugin')
 const clean = require('clean-webpack-plugin')
 const webapp = require('webapp-webpack-plugin')
 const workbox = require('workbox-webpack-plugin')
-const compression = require('compression-webpack-plugin')
+// const compression = require('compression-webpack-plugin')
 const typecheck = require('fork-ts-checker-webpack-plugin')
 
 const __rootdir = process.cwd()
@@ -60,15 +60,16 @@ module.exports = {
     new typecheck({
       reportFiles: ['src/**/*.{ts,tsx}'],
       tslint: true
-    }),
-    new compression({
-      exclude: /service-worker/,
-      compressionOptions: {
-        numiterations: 15
-      },
-      algorithm(input, compressionOptions, callback) {
-        return zopfli.gzip(input, compressionOptions, callback)
-      }
     })
+    // new compression({
+    //   test: /\.js(\?.*)?$/i,
+    //   exclude: /service-worker/,
+    //   compressionOptions: {
+    //     numiterations: 15
+    //   },
+    //   algorithm(input, compressionOptions, callback) {
+    //     return zopfli.gzip(input, compressionOptions, callback)
+    //   }
+    // })
   ]
 }
