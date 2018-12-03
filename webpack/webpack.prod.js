@@ -1,9 +1,11 @@
 const path = require('path')
+const zopfli = require('@gfx/zopfli')
 const html = require('html-webpack-plugin')
 const copy = require('copy-webpack-plugin')
 const clean = require('clean-webpack-plugin')
 const webapp = require('webapp-webpack-plugin')
 const workbox = require('workbox-webpack-plugin')
+const compression = require('compression-webpack-plugin')
 const typecheck = require('fork-ts-checker-webpack-plugin')
 
 const __rootdir = process.cwd()
@@ -57,6 +59,15 @@ module.exports = {
     new typecheck({
       reportFiles: ['src/**/*.{ts,tsx}'],
       tslint: true
+    }),
+    new compression({
+      filename: '[path].gz[query]',
+      compressionOptions: {
+        numiterations: 15
+      },
+      algorithm(input, compressionOptions, callback) {
+        return zopfli.gzip(input, compressionOptions, callback)
+      }
     }),
     new workbox.GenerateSW()
   ]
