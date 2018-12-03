@@ -5,7 +5,6 @@ const copy = require('copy-webpack-plugin')
 const clean = require('clean-webpack-plugin')
 const webapp = require('webapp-webpack-plugin')
 const workbox = require('workbox-webpack-plugin')
-// const compression = require('compression-webpack-plugin')
 const typecheck = require('fork-ts-checker-webpack-plugin')
 
 const __rootdir = process.cwd()
@@ -42,7 +41,6 @@ module.exports = {
   plugins: [
     new clean([path.resolve(__rootdir, 'dist')], { root: path.resolve(__rootdir) }),
     new copy([path.resolve(__rootdir, 'public')]),
-    new workbox.GenerateSW(),
     new html({
       meta: { description: 'The portfolio site about ymkz.' },
       template: path.resolve(__rootdir, 'src/index.html'),
@@ -60,16 +58,7 @@ module.exports = {
     new typecheck({
       reportFiles: ['src/**/*.{ts,tsx}'],
       tslint: true
-    })
-    // new compression({
-    //   test: /\.js(\?.*)?$/i,
-    //   exclude: /service-worker/,
-    //   compressionOptions: {
-    //     numiterations: 15
-    //   },
-    //   algorithm(input, compressionOptions, callback) {
-    //     return zopfli.gzip(input, compressionOptions, callback)
-    //   }
-    // })
+    }),
+    new workbox.GenerateSW()
   ]
 }
