@@ -952,7 +952,7 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.2.tgz#63985d3d8b02530e0869962f4da09142ee8e200e"
   integrity sha512-n/VQ4mbfr81aqkx/XmVicOLjviMuy02eenSdJY33SVA7S2J42EU0P1H0mOogfYedb3wXA0d/LVtBrgTSm04WEA==
 
-"@gfx/zopfli@^1.0.10":
+"@gfx/zopfli@1.0.10":
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/@gfx/zopfli/-/zopfli-1.0.10.tgz#8cccfcbd670f676cb240812bcf8380c9a66da367"
   integrity sha512-PAR3ICucog1HV+hDVF+VYNfnvB/JmE4C8YqxhMMEuxyycFthrv6hIEeCoNsRVF3J+SEtNLWRPTOXgcvQkZIM5A==
@@ -3015,7 +3015,7 @@ compressible@~2.0.14:
   dependencies:
     mime-db ">= 1.36.0 < 2"
 
-compression-webpack-plugin@^2.0.0:
+compression-webpack-plugin@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/compression-webpack-plugin/-/compression-webpack-plugin-2.0.0.tgz#46476350c1eb27f783dccc79ac2f709baa2cffbc"
   integrity sha512-bDgd7oTUZC8EkRx8j0sjyCfeiO+e5sFcfgaFcjVhfQf5lLya7oY2BczxcJ7IUuVjz5m6fy8IECFmVFew3xLk8Q==
