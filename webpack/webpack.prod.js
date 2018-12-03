@@ -42,6 +42,7 @@ module.exports = {
   plugins: [
     new clean([path.resolve(__rootdir, 'dist')], { root: path.resolve(__rootdir) }),
     new copy([path.resolve(__rootdir, 'public')]),
+    new workbox.GenerateSW(),
     new html({
       meta: { description: 'The portfolio site about ymkz.' },
       template: path.resolve(__rootdir, 'src/index.html'),
@@ -61,14 +62,13 @@ module.exports = {
       tslint: true
     }),
     new compression({
-      filename: '[path].gz[query]',
+      exclude: /service-worker/,
       compressionOptions: {
         numiterations: 15
       },
       algorithm(input, compressionOptions, callback) {
         return zopfli.gzip(input, compressionOptions, callback)
       }
-    }),
-    new workbox.GenerateSW()
+    })
   ]
 }
