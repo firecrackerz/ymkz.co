@@ -86,7 +86,7 @@
     "npm-run-all": "4.1.5",
     "opn-cli": "4.0.0",
     "prettier": "1.15.3",
-    "react-snap": "1.21.0",
+    "react-snap": "1.22.0",
     "tslint": "5.11.0",
     "tslint-clean-code": "0.2.9",
     "tslint-config-prettier": "1.17.0",
