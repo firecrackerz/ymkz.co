@@ -95,7 +95,7 @@
     "typescript": "3.2.1",
     "typesync": "0.4.0",
     "webapp-webpack-plugin": "2.4.0",
-    "webpack": "4.27.0",
+    "webpack": "4.27.1",
     "webpack-build-notifier": "0.1.30",
     "webpack-cli": "3.1.2",
     "webpack-dev-server": "3.1.10",
