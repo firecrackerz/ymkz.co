@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import * as React from 'react'
-import Navlink from 'src/components/Navlinks'
+import Navlink from 'src/components/Navlink'
 import Row from 'src/components/Row'
 
 export default function Header() {
