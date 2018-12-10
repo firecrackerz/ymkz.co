@@ -3,7 +3,6 @@ const html = require('html-webpack-plugin')
 const copy = require('copy-webpack-plugin')
 const clean = require('clean-webpack-plugin')
 const webapp = require('webapp-webpack-plugin')
-const workbox = require('workbox-webpack-plugin')
 const typecheck = require('fork-ts-checker-webpack-plugin')
 
 const __rootdir = process.cwd()
@@ -57,7 +56,6 @@ module.exports = {
     new typecheck({
       reportFiles: ['src/**/*.{ts,tsx}'],
       tslint: true
-    }),
-    new workbox.GenerateSW()
+    })
   ]
 }

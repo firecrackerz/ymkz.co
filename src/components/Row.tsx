@@ -4,7 +4,7 @@ interface Props {
   space?: number
 }
 
-const Row = styled('div')`
+export default styled('div')`
   align-items: center;
   display: flex;
   flex-flow: row wrap;
@@ -12,5 +12,3 @@ const Row = styled('div')`
     margin-right: ${(props: Props) => (props.space ? props.space : 0)}px;
   }
 `
-
-export default Row

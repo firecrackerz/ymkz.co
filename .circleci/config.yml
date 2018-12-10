@@ -39,9 +39,6 @@ jobs:
       - run:
           name: Typecheck
           command: yarn typecheck
-      - run:
-          name: Unit test
-          command: yarn test:ci
 workflows:
   version: 2
   test:

@@ -2,8 +2,7 @@ import * as React from 'react'
 import { hydrate, render } from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Header from 'src/components/Header'
-import 'src/helpers/globalstyle'
-import 'src/helpers/serviceworker'
+import 'src/localization'
 import * as Routes from 'src/routes'
 
 const app = document.querySelector('#app') as HTMLElement

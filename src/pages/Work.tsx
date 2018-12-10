@@ -1,18 +1,13 @@
 import styled from '@emotion/styled'
-import AnchorJS from 'anchor-js'
+import Anchor from 'anchor-js'
 import * as React from 'react'
+import { useEffect } from 'react'
 import Row from 'src/components/Row'
-import { colors } from 'src/helpers/constants'
-import cancelectures_native_1 from 'src/images/cancelectures_native_1.jpg'
-import cancelectures_native_2 from 'src/images/cancelectures_native_2.jpg'
-import narosirase_1 from 'src/images/narosirase_1.jpg'
-import narosirase_2 from 'src/images/narosirase_2.jpg'
-import portfolio_1 from 'src/images/portfolio_1.jpg'
 
-const anchors = new AnchorJS({
+const anchor = new Anchor({
   icon: '#',
   placement: 'left',
-  class: 'anchorjs'
+  class: 'anchor'
 })
 
 interface Props {
@@ -20,12 +15,13 @@ interface Props {
 }
 
 export default function Work() {
-  React.useEffect(() => {
-    anchors
+  useEffect(() => {
+    anchor
       .add('#portfolio')
       .add('#narosirase')
       .add('#cancelectures')
-  })
+  }, [])
+
   return (
     <Container>
       <Content>
@@ -35,8 +31,7 @@ export default function Work() {
           このサイトであるPortfolioは自分についてや作ってきたものをまとめるために作成しました。
         </Description>
         <Description>
-          Reactを用いたSPAとして構築され、TypeScriptで開発しています。またCSS&nbsp;in&nbsp;JSを用いてスタイルの管理を簡便かつ管理しやすいように意識しています。ホスティングはNetlifyで、PRを作成したらDeploy
-          Previewsで確認し、masterにマージすることでデプロイされるという構成です。
+          Reactを用いたSPAとして構築され、TypeScriptで開発しています。またCSS&nbsp;in&nbsp;JSを用いてスタイルの管理を簡便かつ管理しやすいように意識しています。ホスティングはNetlifyで、PRを作成したらDeploy&nbsp;Previewsで確認し、masterにマージすることでデプロイされるという構成です。
         </Description>
         <Ul>
           <li>
@@ -45,7 +40,7 @@ export default function Work() {
             </Link>
           </li>
         </Ul>
-        <Image orientation="landscape" src={portfolio_1} alt="portfolio_1" />
+        <Image orientation="landscape" src="/images/portfolio_1.jpg" alt="portfolio_1" />
       </Content>
       <Content>
         <Title id="narosirase">Narosirase</Title>
@@ -69,8 +64,8 @@ export default function Work() {
           </li>
         </Ul>
         <Row space={16}>
-          <Image orientation="portrait" src={narosirase_1} alt="narosirase_1" />
-          <Image orientation="portrait" src={narosirase_2} alt="narosirase_2" />
+          <Image orientation="portrait" src="/images/narosirase_1.jpg" alt="narosirase_1" />
+          <Image orientation="portrait" src="/images/narosirase_2.jpg" alt="narosirase_2" />
         </Row>
       </Content>
       <Content>
@@ -105,8 +100,16 @@ export default function Work() {
           </li>
         </Ul>
         <Row space={16}>
-          <Image orientation="portrait" src={cancelectures_native_1} alt="cancelectures_native_1" />
-          <Image orientation="portrait" src={cancelectures_native_2} alt="cancelectures_native_2" />
+          <Image
+            orientation="portrait"
+            src="/images/cancelectures_native_1.jpg"
+            alt="cancelectures_native_1"
+          />
+          <Image
+            orientation="portrait"
+            src="/images/cancelectures_native_2.jpg"
+            alt="cancelectures_native_2"
+          />
         </Row>
       </Content>
     </Container>
@@ -117,33 +120,34 @@ const Container = styled('div')`
   margin: 0 auto;
   max-width: 768px;
   padding: 96px 16px;
-  @media (max-width: 767px) {
-    padding: 64px 16px;
+  @media (max-width: 1024px) {
+    padding: 0 16px 64px;
   }
 `
 
 const Content = styled('div')`
-  padding: 96px 0;
-  @media (max-width: 767px) {
-    padding: 64px 0;
+  padding-bottom: 96px;
+  @media (max-width: 1024px) {
+    padding-bottom: 64px;
   }
 `
 
 const Title = styled('div')`
-  font-family: Futura;
+  font-family: 'Renner*';
   font-size: 4.2rem;
   font-weight: 700;
-  @media (max-width: 767px) {
+  padding-top: 96px;
+  @media (max-width: 1024px) {
     font-size: 2.8rem;
   }
 `
 
 const Subtitle = styled('div')`
-  font-family: Futura;
+  font-family: 'Renner*';
   font-size: 1.4rem;
   font-weight: 700;
   margin: -1rem 0 1rem;
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     font-size: 1.2rem;
     margin: -0.5rem 0 1rem;
   }
@@ -154,7 +158,7 @@ const Description = styled('div')`
 `
 
 const Link = styled('a')`
-  color: ${colors.white.default};
+  color: #eceff4;
   line-height: 1.4;
   text-decoration-line: none;
   &:hover {
@@ -163,7 +167,7 @@ const Link = styled('a')`
 `
 
 const Image = styled('img')`
-  border: 1px solid ${colors.black.light};
+  border: 1px solid #4c566a;
   width: ${(props: Props) => (props.orientation === 'landscape' ? 256 : 128)}px;
 `
 

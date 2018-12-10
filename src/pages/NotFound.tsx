@@ -1,22 +1,16 @@
 import styled from '@emotion/styled'
 import * as React from 'react'
-import NavLink from 'src/components/NavLink'
 
 export default function NotFound() {
   React.useEffect(() => {
     const title = document.title
-    document.title = '404 Not Found YMKZ | Portfolio'
+    document.title = '404 | Not Found'
     return () => (document.title = title)
   })
 
   return (
     <Container>
-      <div>
-        <Title>404 Not Found</Title>
-        <Message>
-          ←back&nbsp;to&nbsp;<NavLink to="/">home</NavLink>.
-        </Message>
-      </div>
+      <Title>404&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Not Found</Title>
     </Container>
   )
 }
@@ -31,13 +25,7 @@ const Container = styled('div')`
 `
 
 const Title = styled('div')`
-  font-family: Futura;
+  font-family: 'Renner*';
   font-size: 1.25rem;
-  font-weight: 700;
-`
-
-const Message = styled('div')`
-  font-family: Futura;
-  font-size: 1rem;
   font-weight: 300;
 `

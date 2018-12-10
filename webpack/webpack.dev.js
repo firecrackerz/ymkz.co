@@ -45,6 +45,7 @@ module.exports = {
     })
   ],
   devServer: {
+    contentBase: path.resolve(__rootdir, 'public'),
     historyApiFallback: true,
     open: true,
     stats: 'errors-only'

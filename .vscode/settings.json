@@ -3,6 +3,7 @@
   "editor.lineNumbers": "off",
   "editor.rulers": [100],
   "markdown.preview.breaks": true,
+  "prettier.tslintIntegration": true,
   "tslint.enable": true,
   "tslint.autoFixOnSave": true,
   "tslint.packageManager": "yarn"
