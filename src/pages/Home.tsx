@@ -32,9 +32,6 @@ const Container = styled('div')`
 const Wrapper = styled('div')`
   display: flex;
   flex-flow: column;
-  @media (max-width: 767px) {
-    margin-top: -16rem;
-  }
 `
 
 const Content = styled('div')`
