@@ -20,7 +20,7 @@
   "dependencies": {
     "@emotion/core": "10.0.4",
     "@emotion/styled": "10.0.4",
-    "@loadable/component": "5.2.1",
+    "@loadable/component": "5.2.2",
     "anchor-js": "4.1.1",
     "formik": "1.4.0",
     "i18next": "12.1.0",
