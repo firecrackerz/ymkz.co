@@ -1,4 +1,5 @@
 export interface Values {
+  [key: string]: string
   name: string
   email: string
   message: string

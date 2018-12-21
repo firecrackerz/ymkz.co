@@ -1,14 +1,19 @@
-import loadable from '@loadable/component'
+import * as Navi from 'navi'
+import Home from '../pages/Home'
 
-export const Home = loadable(() =>
-  import(/* webpackChunkName: "home", webpackPreload: true */ 'src/pages/Home')
-)
-export const About = loadable(() =>
-  import(/* webpackChunkName: "about", webpackPreload: true */ 'src/pages/About')
-)
-export const Work = loadable(() =>
-  import(/* webpackChunkName: "work", webpackPreload: true */ 'src/pages/Work')
-)
-export const NotFound = loadable(() =>
-  import(/* webpackChunkName: "notfound", webpackPreload: true */ 'src/pages/NotFound')
-)
+export default Navi.createSwitch({
+  paths: {
+    '/': Navi.createPage({
+      title: 'YMKZ',
+      content: Home
+    }),
+    '/about': Navi.createPage({
+      title: 'About - YMKZ',
+      getContent: () => import('../pages/About')
+    }),
+    '/work': Navi.createPage({
+      title: 'Work - YMKZ',
+      getContent: () => import('../pages/Work')
+    })
+  }
+})

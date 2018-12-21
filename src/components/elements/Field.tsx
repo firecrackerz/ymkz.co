@@ -1,7 +1,8 @@
 import styled from '@emotion/styled'
-import { ErrorMessage, Field, FieldProps } from 'formik'
+import * as Formik from 'formik'
 import * as React from 'react'
-import { Values } from 'src/types/interface'
+import { colors } from '../../constants'
+import { Values } from '../../types'
 
 interface Props {
   name: string
@@ -10,23 +11,23 @@ interface Props {
   type: 'input' | 'textarea'
 }
 
-export default function FormField({ name, type, label, placeholder }: Props) {
+export default function Field({ name, type, label, placeholder }: Props) {
   return (
-    <Field name={name}>
-      {({ field }: FieldProps<Values>) => (
-        <>
+    <Formik.Field name={name}>
+      {({ field }: Formik.FieldProps<Values>) => (
+        <React.Fragment>
           <Label htmlFor={field.name}>{label}</Label>
           {type === 'input' ? (
             <Input id={field.name} placeholder={placeholder} {...field} />
           ) : (
             <Textarea id={field.name} placeholder={placeholder} rows={8} {...field} />
           )}
-          <ErrorMessage name={field.name}>
+          <Formik.ErrorMessage name={field.name}>
             {(message: string) => <ErrorText>{message}</ErrorText>}
-          </ErrorMessage>
-        </>
+          </Formik.ErrorMessage>
+        </React.Fragment>
       )}
-    </Field>
+    </Formik.Field>
   )
 }
 
@@ -34,15 +35,15 @@ const Label = styled('label')`
   display: block;
   font-family: 'Renner*';
   font-weight: 300;
-  margin-top: 0.6rem;
+  margin-top: 0.7rem;
   margin-bottom: 0.2rem;
 `
 
 const Input = styled('input')`
-  background-color: #3b4252;
+  background-color: ${colors.dark};
   border: 0;
   border-radius: 4px;
-  color: #eceff4;
+  color: ${colors.white};
   font-size: 1rem;
   padding: 0.6rem;
   width: 100%;
@@ -51,15 +52,15 @@ const Input = styled('input')`
     outline: none;
   }
   &::placeholder {
-    color: #4c566a;
+    color: ${colors.light};
   }
 `
 
 const Textarea = styled('textarea')`
-  background-color: #3b4252;
+  background-color: ${colors.dark};
   border: 0;
   border-radius: 4px;
-  color: #eceff4;
+  color: ${colors.white};
   font-size: 1rem;
   padding: 0.5rem;
   resize: vertical;
@@ -69,11 +70,12 @@ const Textarea = styled('textarea')`
     outline: none;
   }
   &::placeholder {
-    color: #4c566a;
+    color: ${colors.light};
   }
 `
 
 const ErrorText = styled('div')`
+  color: ${colors.error};
   font-size: 0.85rem;
   margin-top: 0.2rem;
 `

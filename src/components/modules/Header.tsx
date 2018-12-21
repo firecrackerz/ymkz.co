@@ -1,0 +1,47 @@
+import styled from '@emotion/styled'
+import * as React from 'react'
+import { isMobileOnly } from 'react-device-detect'
+import { NavConsumer } from 'react-navi'
+import Row from '../abstracts/Row'
+import Navlink from '../elements/Navlink'
+
+export default function Header() {
+  return (
+    <NavConsumer>
+      {({ url }) => (
+        <Container>
+          <Row space={16}>
+            <Logo src="/images/icon_logo.png" alt="" height={24} width={24} />
+            <Navlink href="/" pathname={url.pathname}>
+              ymkz
+            </Navlink>
+          </Row>
+          <Row space={isMobileOnly ? 16 : 24}>
+            <Navlink href="/about/" pathname={url.pathname}>
+              about
+            </Navlink>
+            <Navlink href="/work/" pathname={url.pathname}>
+              work
+            </Navlink>
+          </Row>
+        </Container>
+      )}
+    </NavConsumer>
+  )
+}
+
+const Container = styled('header')`
+  align-items: center;
+  display: flex;
+  height: 64px;
+  justify-content: space-between;
+  padding: 0 48px;
+  @media (max-width: 767px) {
+    padding: 0 16px;
+  }
+`
+
+const Logo = styled('img')`
+  height: 24px;
+  width: 24px;
+`

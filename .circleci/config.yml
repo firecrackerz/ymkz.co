@@ -35,10 +35,20 @@ jobs:
           key: app-deps-{{ checksum "yarn.lock" }}
       - run:
           name: Lint
-          command: yarn lint
+          command: yarn run lint
       - run:
           name: Typecheck
-          command: yarn typecheck
+          command: yarn run typecheck
+  build_code:
+    executor: default
+    steps:
+      - restore_cache:
+          key: app-code-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: app-deps-{{ checksum "yarn.lock" }}
+      - run:
+          name: Build
+          command: yarn run build
 workflows:
   version: 2
   test:
@@ -48,5 +58,8 @@ workflows:
           requires:
             - checkout_code
       - check_code:
+          requires:
+            - install_dependencies
+      - biuld_code:
           requires:
             - install_dependencies

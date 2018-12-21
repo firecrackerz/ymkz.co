@@ -1,30 +1,27 @@
+import * as Navi from 'navi'
 import * as React from 'react'
-import { hydrate, render } from 'react-dom'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Header from 'src/components/Header'
-import 'src/localization'
-import * as Routes from 'src/routes'
+import * as ReactDOM from 'react-dom'
+import * as ReactNavi from 'react-navi'
+import Header from './components/modules/Header'
+import routes from './routes'
 
-const app = document.querySelector('#app') as HTMLElement
-
-function App() {
+function App({ navigation }: { navigation: Navi.BrowserNavigation<{}> }) {
   return (
-    <BrowserRouter>
-      <React.Suspense fallback={null}>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={Routes.Home} />
-          <Route exact path="/about" component={Routes.About} />
-          <Route exact path="/work" component={Routes.Work} />
-          <Route component={Routes.NotFound} />
-        </Switch>
-      </React.Suspense>
-    </BrowserRouter>
+    <ReactNavi.NavProvider navigation={navigation}>
+      <Header />
+      <ReactNavi.NavRoute />
+    </ReactNavi.NavProvider>
   )
 }
 
-if (app.hasChildNodes()) {
-  hydrate(<App />, app)
-} else {
-  render(<App />, app)
-}
+Navi.app({
+  exports: App,
+  pages: routes,
+  main: async () => {
+    const navigation = Navi.createBrowserNavigation({ pages: routes })
+    await navigation.steady()
+    const __PRODUCTION__ = process.env.NODE_ENV === 'production'
+    const renderer = __PRODUCTION__ ? ReactDOM.hydrate : ReactDOM.render
+    renderer(<App navigation={navigation} />, document.querySelector('#root'))
+  }
+})

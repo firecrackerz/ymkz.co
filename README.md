@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="resource/icon.jpg" alt="" title="icon" width="150px">
+  <img src="resource/logo.png" alt="" title="icon" width="150px">
   <h1 align="center">ymkz.co</h1>
   <sup align="center">The portfolio site about ymkz.</sup>
   <br />
@@ -28,18 +28,17 @@
   <!-- <a href="https://codecov.io/gh/ymkz/ymkz.co">
     <img alt="Codecov" src="https://flat.badgen.net/codecov/c/github/ymkz/ymkz.co">
   </a> -->
-  <a href="https://github.com/commitizen/cz-cli">
+  <!-- <a href="https://github.com/commitizen/cz-cli">
     <img alt="commitizen" src="https://flat.badgen.net/badge/commitizen/friendly/60d437">
-  </a>
+  </a> -->
 </p>
 
-## Dev stacks
+## Tech stacks
 
 - React
 - TypeScript
 - Code Splitting
 - CSS in JS
 - Webpack
-- Jest
 - TSLint
 - Prettier

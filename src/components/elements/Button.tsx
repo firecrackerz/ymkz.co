@@ -1,10 +1,11 @@
 import styled from '@emotion/styled'
+import { colors } from '../../constants'
 
 export default styled('button')`
-  background-color: #3b4252;
+  background-color: ${colors.dark};
   border: 0;
   border-radius: 4px;
-  color: #eceff4;
+  color: ${colors.white};
   font-size: 1rem;
   margin-top: 1rem;
   padding: 0.5rem 1.5rem;

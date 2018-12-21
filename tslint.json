@@ -9,8 +9,5 @@
     "no-console": false,
     "object-literal-sort-keys": false,
     "prettier": true
-  },
-  "linterOptions": {
-    "exclude": ["**/*.json"]
   }
 }
