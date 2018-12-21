@@ -1,6 +1,5 @@
 import styled from '@emotion/styled/macro'
 import * as React from 'react'
-import { isMobileOnly } from 'react-device-detect'
 import { NavConsumer } from 'react-navi'
 import Row from '../abstracts/Row'
 import Navlink from '../elements/Navlink'
@@ -16,7 +15,7 @@ export default function Header() {
               ymkz
             </Navlink>
           </Row>
-          <Row space={isMobileOnly ? 16 : 24}>
+          <Row space={16}>
             <Navlink href="/about/" pathname={url.pathname}>
               about
             </Navlink>

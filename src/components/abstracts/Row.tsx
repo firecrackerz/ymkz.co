@@ -5,6 +5,6 @@ export default styled('div')`
   display: flex;
   flex-flow: row wrap;
   & > *:not(:last-child) {
-    margin-right: ${(props: { space?: number }) => (props.space ? props.space : 0)}px;
+    margin-right: ${({ space }: { space?: number }) => (space ? space : 0)}px;
   }
 `
