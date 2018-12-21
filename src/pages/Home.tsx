@@ -31,20 +31,22 @@ const Container = styled('div')`
   }
 `
 
-const Greeting = styled('div')`
+const Greeting = styled('h1')`
   font-family: 'Renner*';
   font-size: 7rem;
   font-weight: 900;
+  margin: 0;
   @media (max-width: 767px) {
     font-size: 5rem;
     line-height: 1;
   }
 `
 
-const Message = styled('div')`
+const Message = styled('p')`
   font-family: 'Renner*';
   font-size: 1.35rem;
   font-weight: 300;
+  margin: 0;
   margin-left: 0.5rem;
   margin-top: -1.25rem;
   @media (max-width: 767px) {
