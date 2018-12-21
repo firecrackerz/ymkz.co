@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled/macro'
 import * as React from 'react'
 import { MobileOnlyView } from 'react-device-detect'
 

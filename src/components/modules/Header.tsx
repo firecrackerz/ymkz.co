@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled/macro'
 import * as React from 'react'
 import { isMobileOnly } from 'react-device-detect'
 import { NavConsumer } from 'react-navi'
@@ -11,7 +11,7 @@ export default function Header() {
       {({ url }) => (
         <Container>
           <Row space={16}>
-            <Logo src="/images/icon_logo.png" alt="" height={24} width={24} />
+            <img src="/images/icon_logo.png" alt="" height={24} width={24} />
             <Navlink href="/" pathname={url.pathname}>
               ymkz
             </Navlink>
@@ -39,9 +39,4 @@ const Container = styled('header')`
   @media (max-width: 767px) {
     padding: 0 16px;
   }
-`
-
-const Logo = styled('img')`
-  height: 24px;
-  width: 24px;
 `

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled/macro'
 
 export default styled('img')`
   border: 1px solid #4c566a;

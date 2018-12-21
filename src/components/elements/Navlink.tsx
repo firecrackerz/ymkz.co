@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled/macro'
 import * as React from 'react'
 import { NavLink } from 'react-navi'
 import { colors } from '../../constants'

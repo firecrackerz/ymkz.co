@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled/macro'
 import { colors } from '../../constants'
 
 export default styled('button')`

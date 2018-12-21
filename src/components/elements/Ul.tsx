@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled/macro'
 
 export default styled('ul')`
   margin: 1.4rem 0 1.6rem;

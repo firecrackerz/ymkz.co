@@ -1,4 +1,4 @@
-import styled from '@emotion/styled'
+import styled from '@emotion/styled/macro'
 
 export default styled('div')`
   font-family: 'Renner*';
