@@ -60,6 +60,6 @@ workflows:
       - check_code:
           requires:
             - install_dependencies
-      - biuld_code:
+      - build_code:
           requires:
             - install_dependencies
