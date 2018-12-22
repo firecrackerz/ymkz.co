@@ -4,7 +4,7 @@ import * as ReactDOM from 'react-dom'
 import * as ReactNavi from 'react-navi'
 import Header from './components/modules/Header'
 import routes from './routes'
-import * as ServiceWorker from './serviceWorker'
+import * as ServiceWorker from './service-worker'
 
 function App({ navigation }: { navigation: Navi.BrowserNavigation<{}> }) {
   return (
