@@ -9,13 +9,13 @@ interface Props {
   children: React.ReactChild
 }
 
-export default function Navlink(props: Props) {
+export default function NavLink(props: Props) {
   return (
     <NavAnchor
       precache
       disabled={props.pathname === props.href}
       active={props.pathname === props.href || props.href === '/'}
-      activeClassName="activeNavlink"
+      activeClassName="activeNavLink"
       href={props.href}
     >
       {props.children}
@@ -31,7 +31,7 @@ const NavAnchor = styled(ReactNavi.NavLink)`
   &:hover {
     text-decoration-line: underline;
   }
-  &.activeNavlink {
+  &.activeNavLink {
     cursor: auto;
     font-weight: bold;
     text-decoration-line: none;
