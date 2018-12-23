@@ -1,6 +1,6 @@
 import styled from '@emotion/styled/macro'
 import * as React from 'react'
-import { NavLink } from 'react-navi'
+import * as ReactNavi from 'react-navi'
 import { colors } from '../../constants'
 
 interface Props {
@@ -23,7 +23,7 @@ export default function Navlink(props: Props) {
   )
 }
 
-const NavAnchor = styled(NavLink)`
+const NavAnchor = styled(ReactNavi.NavLink)`
   color: ${colors.white};
   font-family: 'Renner*';
   font-weight: 300;

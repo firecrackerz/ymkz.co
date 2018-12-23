@@ -10,7 +10,7 @@ function App({ navigation }: { navigation: Navi.BrowserNavigation<{}> }) {
   return (
     <ReactNavi.NavProvider navigation={navigation}>
       <Header />
-      <ReactNavi.NavRoute />
+      <ReactNavi.NavContent />
     </ReactNavi.NavProvider>
   )
 }
