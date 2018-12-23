@@ -1,12 +1,12 @@
 import styled from '@emotion/styled/macro'
 import * as React from 'react'
-import { NavConsumer } from 'react-navi'
+import * as ReactNavi from 'react-navi'
 import Row from '../abstracts/Row'
 import Navlink from '../elements/Navlink'
 
 export default function Header() {
   return (
-    <NavConsumer>
+    <ReactNavi.NavRoute>
       {({ url }) => (
         <Container>
           <Row space={16}>
@@ -25,7 +25,7 @@ export default function Header() {
           </Row>
         </Container>
       )}
-    </NavConsumer>
+    </ReactNavi.NavRoute>
   )
 }
 
