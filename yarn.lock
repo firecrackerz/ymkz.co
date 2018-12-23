@@ -7079,12 +7079,11 @@ navi-scripts@0.10.1:
     raf "^3.4.0"
     serve-static "^1.11.2"
 
-navi@0.9.2:
-  version "0.9.2"
-  resolved "https://registry.yarnpkg.com/navi/-/navi-0.9.2.tgz#684b40660b27ba15951699ffc343bbc30fd27e69"
-  integrity sha512-BTGSWTUAM9dQS6iTM8bRWC7gWQulOEqKFcusaaPnMBHPKvwu/AzMk+gQt7WXxonhmsVjcH1HtN8oIa0XG8Tk1w==
+navi@0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/navi/-/navi-0.10.0.tgz#77a4e97c98c929c5cd346dfe4316ca9c33530054"
+  integrity sha512-JVUKQ6D6ZSOCigEbrBVy5ejXeo7gM64zmL8Yc9Jp5Wt5H5fxv/HZPjBW2TUshzo2UuzpUZi4DV1dZ/ZyEwUCWA==
   dependencies:
-    "@types/history" "^4.6.2"
     history "^4.7.2"
 
 needle@^2.2.1:
