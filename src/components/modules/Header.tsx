@@ -2,7 +2,7 @@ import styled from '@emotion/styled/macro'
 import * as React from 'react'
 import * as ReactNavi from 'react-navi'
 import Row from '../abstracts/Row'
-import Navlink from '../elements/Navlink'
+import NavLink from '../elements/NavLink'
 
 export default function Header() {
   return (
@@ -11,17 +11,17 @@ export default function Header() {
         <Container>
           <Row space={16}>
             <img src="/images/icon_logo.png" alt="" height={24} width={24} />
-            <Navlink href="/" pathname={url.pathname}>
+            <NavLink href="/" pathname={url.pathname}>
               ymkz
-            </Navlink>
+            </NavLink>
           </Row>
           <Row space={16}>
-            <Navlink href="/about/" pathname={url.pathname}>
+            <NavLink href="/about/" pathname={url.pathname}>
               about
-            </Navlink>
-            <Navlink href="/work/" pathname={url.pathname}>
+            </NavLink>
+            <NavLink href="/work/" pathname={url.pathname}>
               work
-            </Navlink>
+            </NavLink>
           </Row>
         </Container>
       )}
