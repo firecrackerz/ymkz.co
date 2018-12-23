@@ -1,25 +1,19 @@
 import styled from '@emotion/styled/macro'
 import * as React from 'react'
 import { MobileOnlyView } from 'react-device-detect'
-import { Helmet } from 'react-helmet'
 
 export default function Home() {
   return (
-    <React.Fragment>
-      <Helmet>
-        <link rel="canonical" href="http://ymkz.co/" />
-      </Helmet>
-      <Container>
-        <Greeting>
-          Hi,&nbsp;
-          <MobileOnlyView render={<br />} />
-          I'm&nbsp;
-          <MobileOnlyView render={<br />} />
-          ymkz
-        </Greeting>
-        <Message>--- Play games, seriously</Message>
-      </Container>
-    </React.Fragment>
+    <Container>
+      <Greeting>
+        Hi,&nbsp;
+        <MobileOnlyView render={<br />} />
+        I'm&nbsp;
+        <MobileOnlyView render={<br />} />
+        ymkz
+      </Greeting>
+      <Message>--- Play games, seriously</Message>
+    </Container>
   )
 }
 
