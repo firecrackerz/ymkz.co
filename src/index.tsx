@@ -15,7 +15,7 @@ function App({ navigation }: { navigation: Navi.BrowserNavigation<{}> }) {
   )
 }
 
-ServiceWorker.unregister()
+ServiceWorker.register()
 
 Navi.app({
   exports: App,
