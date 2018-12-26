@@ -5,12 +5,13 @@ import { colors } from '../../constants'
 interface Props {
   src: string
   href: string
+  alt: string
 }
 
-export default function LinkIcon(props: Props) {
+export default function LinkIcon({ href, src, alt }: Props) {
   return (
-    <Link href={props.href} rel="noopener noreferrer" target="_blank">
-      <Icon src={props.src} alt="" />
+    <Link href={href} rel="noopener noreferrer" target="_blank">
+      <Icon src={src} alt={alt} />
     </Link>
   )
 }

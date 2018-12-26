@@ -9,9 +9,21 @@ export default function Profile() {
     <Content>
       <Title>SOCIAL</Title>
       <Row space={24}>
-        <LinkIcon src="/images/icon_github.svg" href="https://github.com/ymkz" />
-        <LinkIcon src="/images/icon_twitter.svg" href="https://twitter.com/ymkzly" />
-        <LinkIcon src="/images/icon_facebook.svg" href="https://facebook.com/ymkzly" />
+        <LinkIcon
+          src="/images/icon_github.svg"
+          href="https://github.com/ymkz"
+          alt="Link to GitHub"
+        />
+        <LinkIcon
+          src="/images/icon_twitter.svg"
+          href="https://twitter.com/ymkzly"
+          alt="Link to Twitter"
+        />
+        <LinkIcon
+          src="/images/icon_facebook.svg"
+          href="https://facebook.com/ymkzly"
+          alt="Link to Facebook"
+        />
       </Row>
     </Content>
   )
