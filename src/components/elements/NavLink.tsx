@@ -25,7 +25,7 @@ export default function NavLink(props: Props) {
 
 const NavAnchor = styled(ReactNavi.NavLink)`
   color: ${colors.white};
-  font-family: 'Renner*';
+  font-family: 'Jost*';
   font-weight: 300;
   text-decoration-line: none;
   &:hover {

@@ -32,7 +32,7 @@ const Container = styled('div')`
 `
 
 const Greeting = styled('h1')`
-  font-family: 'Renner*';
+  font-family: 'Jost*';
   font-size: 7rem;
   font-weight: 900;
   margin: 0;
@@ -43,7 +43,7 @@ const Greeting = styled('h1')`
 `
 
 const Message = styled('p')`
-  font-family: 'Renner*';
+  font-family: 'Jost*';
   font-size: 1.35rem;
   font-weight: 300;
   margin: 0;

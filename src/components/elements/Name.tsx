@@ -1,7 +1,7 @@
 import styled from '@emotion/styled/macro'
 
 export default styled('h1')`
-  font-family: 'Renner*';
+  font-family: 'Jost*';
   font-size: 4.2rem;
   font-weight: 700;
   margin: 0;

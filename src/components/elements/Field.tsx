@@ -33,7 +33,7 @@ export default function Field({ name, type, label, placeholder }: Props) {
 
 const Label = styled('label')`
   display: block;
-  font-family: 'Renner*';
+  font-family: 'Jost*';
   font-weight: 300;
   margin-top: 0.7rem;
   margin-bottom: 0.2rem;
