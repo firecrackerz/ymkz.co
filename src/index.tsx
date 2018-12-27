@@ -6,7 +6,7 @@ import Header from './components/modules/Header'
 import routes from './routes'
 import * as ServiceWorker from './service-worker'
 
-function App({ navigation }: { navigation: Navi.BrowserNavigation<{}> }) {
+function App({ navigation }: { navigation: Navi.Navigation }) {
   return (
     <ReactNavi.NavProvider navigation={navigation}>
       <Header />
@@ -14,8 +14,6 @@ function App({ navigation }: { navigation: Navi.BrowserNavigation<{}> }) {
     </ReactNavi.NavProvider>
   )
 }
-
-ServiceWorker.register()
 
 Navi.app({
   exports: App,
@@ -26,5 +24,6 @@ Navi.app({
     const __PRODUCTION__ = process.env.NODE_ENV === 'production'
     const renderer = __PRODUCTION__ ? ReactDOM.hydrate : ReactDOM.render
     renderer(<App navigation={navigation} />, document.querySelector('#root'))
+    ServiceWorker.register()
   }
 })
