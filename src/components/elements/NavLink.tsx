@@ -12,7 +12,7 @@ export default styled(NavLink)`
   }
   &.activeNavLink {
     cursor: auto;
-    font-weight: bold;
+    font-weight: 700;
     text-decoration-line: none;
   }
 `
