@@ -9,6 +9,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && navi-scripts build",
+    "serve": "navi-scripts serve",
     "test": "react-scripts test",
     "typecheck": "tsc",
     "lint": "tslint --project .",
