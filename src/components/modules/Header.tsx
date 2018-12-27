@@ -1,5 +1,6 @@
 import styled from '@emotion/styled/macro'
 import * as React from 'react'
+import { constraints } from '../../constants'
 import Row from '../abstracts/Row'
 import NavLink from '../elements/NavLink'
 
@@ -27,10 +28,10 @@ export default function Header() {
 const Container = styled('header')`
   align-items: center;
   display: flex;
-  height: 64px;
+  height: ${constraints.headerHeightPx};
   justify-content: space-between;
   padding: 0 48px;
-  @media (max-width: 767px) {
+  @media (max-width: ${constraints.mobileWidthPx}) {
     padding: 0 16px;
   }
 `

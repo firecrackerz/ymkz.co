@@ -1,6 +1,7 @@
 import styled from '@emotion/styled/macro'
 import * as React from 'react'
 import { MobileOnlyView } from 'react-device-detect'
+import { constraints } from '../constants'
 
 export default function Home() {
   return (
@@ -21,11 +22,11 @@ const Container = styled('div')`
   display: flex;
   flex-flow: column;
   justify-content: center;
-  height: calc(100vh - 64px);
+  height: calc(100vh - ${constraints.headerHeightPx});
   margin: 0 auto;
-  max-width: 767px;
-  padding: 0 16px 64px;
-  @media (max-width: 767px) {
+  max-width: ${constraints.mobileWidthPx};
+  padding: 0 16px ${constraints.headerHeightPx};
+  @media (max-width: ${constraints.mobileWidthPx}) {
     justify-content: flex-start;
     padding: 64px 16px 0;
   }
@@ -36,7 +37,7 @@ const Greeting = styled('h1')`
   font-size: 7rem;
   font-weight: 900;
   margin: 0;
-  @media (max-width: 767px) {
+  @media (max-width: ${constraints.mobileWidthPx}) {
     font-size: 5rem;
     line-height: 1;
   }
@@ -49,7 +50,7 @@ const Message = styled('p')`
   margin: 0;
   margin-left: 0.5rem;
   margin-top: -1.25rem;
-  @media (max-width: 767px) {
+  @media (max-width: ${constraints.mobileWidthPx}) {
     font-size: 1.1rem;
     margin-left: 0;
     margin-top: 1.5rem;
