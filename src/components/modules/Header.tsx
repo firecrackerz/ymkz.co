@@ -1,31 +1,26 @@
 import styled from '@emotion/styled/macro'
 import * as React from 'react'
-import * as ReactNavi from 'react-navi'
 import Row from '../abstracts/Row'
 import NavLink from '../elements/NavLink'
 
 export default function Header() {
   return (
-    <ReactNavi.NavRoute>
-      {({ url }) => (
-        <Container>
-          <Row space={16}>
-            <img src="/images/icon_logo.png" alt="" height={24} width={24} />
-            <NavLink href="/" pathname={url.pathname}>
-              ymkz
-            </NavLink>
-          </Row>
-          <Row space={16}>
-            <NavLink href="/about/" pathname={url.pathname}>
-              about
-            </NavLink>
-            <NavLink href="/work/" pathname={url.pathname}>
-              work
-            </NavLink>
-          </Row>
-        </Container>
-      )}
-    </ReactNavi.NavRoute>
+    <Container>
+      <Row space={16}>
+        <img src="/images/icon_logo.png" alt="logo" height={24} width={24} />
+        <NavLink exact precache href="/" activeClassName="activeNavLink">
+          ymkz
+        </NavLink>
+      </Row>
+      <Row space={16}>
+        <NavLink exact precache href="/about/" activeClassName="activeNavLink">
+          about
+        </NavLink>
+        <NavLink exact precache href="/work/" activeClassName="activeNavLink">
+          work
+        </NavLink>
+      </Row>
+    </Container>
   )
 }
 
