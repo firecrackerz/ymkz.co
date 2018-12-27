@@ -1,19 +1,9 @@
 import * as Navi from 'navi'
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import * as ReactNavi from 'react-navi'
-import Header from './components/modules/Header'
+import App from './app'
 import routes from './routes'
 import * as ServiceWorker from './service-worker'
-
-function App({ navigation }: { navigation: Navi.Navigation }) {
-  return (
-    <ReactNavi.NavProvider navigation={navigation}>
-      <Header />
-      <ReactNavi.NavContent />
-    </ReactNavi.NavProvider>
-  )
-}
 
 Navi.app({
   exports: App,
