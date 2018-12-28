@@ -1,8 +1,7 @@
 import { FormikActions } from 'formik'
-import { useEffect, useState } from 'react'
 import { Payload, Values } from '../types'
 
-function encodePayloadToBody(data: Payload): string {
+export function encodePayloadToBody(data: Payload): string {
   return Object.keys(data)
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&')
@@ -27,15 +26,16 @@ export function handleSubmitContact(values: Values, actions: FormikActions<Value
     })
 }
 
-export function useWindowWidth() {
-  const [width, setWidth] = useState(window.innerWidth)
-  useEffect(
-    () => {
-      const handleResize = () => setWidth(window.innerWidth)
-      window.addEventListener('resize', handleResize)
-      return () => window.removeEventListener('resize', handleResize)
-    },
-    [width]
-  )
-  return width
-}
+// import { useEffect, useState } from 'react'
+// export function useWindowWidth() {
+//   const [width, setWidth] = useState(window.innerWidth)
+//   useEffect(
+//     () => {
+//       const handleResize = () => setWidth(window.innerWidth)
+//       window.addEventListener('resize', handleResize)
+//       return () => window.removeEventListener('resize', handleResize)
+//     },
+//     [width]
+//   )
+//   return width
+// }

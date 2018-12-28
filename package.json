@@ -11,6 +11,7 @@
     "build": "react-scripts build && navi-scripts build",
     "serve": "navi-scripts serve",
     "test": "react-scripts test",
+    "coverage": "react-scripts test --coverage",
     "typecheck": "tsc",
     "lint": "tslint --project .",
     "lint:fix": "tslint --fix --project .",
