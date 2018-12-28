@@ -39,6 +39,9 @@ jobs:
       - run:
           name: Typecheck
           command: yarn run typecheck
+      - run:
+          name: Test
+          command: yarn run coverage && yarn run codecov
   build_code:
     executor: default
     steps:

@@ -22,12 +22,12 @@
   <a href="https://github.com/emotion-js/emotion">
     <img src="https://flat.badgen.net/badge/styled%20with/emotion/48c8e8">
   </a>
-  <!-- <a href="https://github.com/facebook/jest">
-    <img alt="Jest" src="https://flat.badgen.net/badge/tested%20with/jest/99424f">
-  </a> -->
-  <!-- <a href="https://codecov.io/gh/ymkz/ymkz.co">
-    <img alt="Codecov" src="https://flat.badgen.net/codecov/c/github/ymkz/ymkz.co">
-  </a> -->
+  <a href="https://github.com/facebook/jest">
+    <img src="https://flat.badgen.net/badge/tested%20with/jest/99424f">
+  </a>
+  <a href="https://codecov.io/gh/ymkz/ymkz.co">
+    <img src="https://flat.badgen.net/codecov/c/github/ymkz/ymkz.co">
+  </a>
 </p>
 
 ## Tech stacks
