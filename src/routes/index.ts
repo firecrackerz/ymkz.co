@@ -1,11 +1,10 @@
 import * as Navi from 'navi'
-import Home from '../pages/Home'
 
 export default Navi.createSwitch({
   paths: {
     '/': Navi.createPage({
-      title: 'YMKZ',
-      content: Home
+      title: 'Home - YMKZ',
+      getContent: () => import('../pages/Home')
     }),
     '/about': Navi.createPage({
       title: 'About - YMKZ',
