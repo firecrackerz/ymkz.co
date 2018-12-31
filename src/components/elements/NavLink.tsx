@@ -10,9 +10,10 @@ export default styled(NavLink)`
   &:hover {
     text-decoration-line: underline;
   }
-  &.activeNavLink {
+  &.active {
     cursor: auto;
     font-weight: 700;
+    pointer-events: none;
     text-decoration-line: none;
   }
 `
