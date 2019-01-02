@@ -20,7 +20,7 @@ const Container = styled('div')`
 
 const Text = styled('p')`
   color: ${colors.white};
-  font-family: 'Jost*';
+  font-family: 'Jost';
   font-weight: 300;
   margin: 0;
 `

@@ -4,7 +4,7 @@ import { colors } from '../../constants'
 
 export default styled(NavLink)`
   color: ${colors.white};
-  font-family: 'Jost*';
+  font-family: 'Jost';
   font-weight: ${props => (props.href === '/' ? 700 : 300)};
   text-decoration-line: none;
   &:hover {
