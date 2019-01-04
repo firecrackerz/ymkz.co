@@ -32,8 +32,8 @@ export default function Narosirase() {
         </li>
       </Ul>
       <Row space={16}>
-        <Image orientation="portrait" src="/images/narosirase_1.jpg" alt="narosirase_1" />
-        <Image orientation="portrait" src="/images/narosirase_2.jpg" alt="narosirase_2" />
+        <Image orientation="portrait" src="/images/narosirase_1.webp" alt="narosirase_1" />
+        <Image orientation="portrait" src="/images/narosirase_2.webp" alt="narosirase_2" />
       </Row>
     </Content>
   )

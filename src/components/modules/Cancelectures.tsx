@@ -44,12 +44,12 @@ export default function Cancelectures() {
       <Row space={16}>
         <Image
           orientation="portrait"
-          src="/images/cancelectures_native_1.jpg"
+          src="/images/cancelectures_native_1.webp"
           alt="cancelectures_native_1"
         />
         <Image
           orientation="portrait"
-          src="/images/cancelectures_native_2.jpg"
+          src="/images/cancelectures_native_2.webp"
           alt="cancelectures_native_2"
         />
       </Row>

@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <Container>
       <Row space={16}>
-        <img src="/images/icon_logo.png" alt="logo" height={24} width={24} />
+        <img src="/images/icon_logo.webp" alt="logo" height={24} width={24} />
         <NavLink exact precache href="/" activeClassName="active">
           ymkz
         </NavLink>
