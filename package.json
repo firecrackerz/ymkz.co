@@ -18,8 +18,8 @@
     "lazy": "run-p typecheck lint"
   },
   "dependencies": {
-    "@emotion/core": "10.0.5",
-    "@emotion/styled": "10.0.5",
+    "@emotion/core": "10.0.6",
+    "@emotion/styled": "10.0.6",
     "formik": "1.4.1",
     "navi": "0.10.5",
     "react": "16.7.0",
