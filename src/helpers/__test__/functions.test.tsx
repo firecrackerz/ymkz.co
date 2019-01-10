@@ -1,4 +1,4 @@
-import { Payload } from '../../types'
+import { Payload } from '../../typings'
 import { encodePayloadToBody } from '../functions'
 
 const validPayload: Payload = {

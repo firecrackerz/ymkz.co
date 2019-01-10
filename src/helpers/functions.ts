@@ -1,5 +1,5 @@
 import { FormikActions } from 'formik'
-import { Payload, Values } from '../types'
+import { Payload, Values } from '../typings'
 
 export function encodePayloadToBody(data: Payload): string {
   return Object.keys(data)

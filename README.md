@@ -30,7 +30,7 @@
   </a>
 </p>
 
-## Tech stacks
+## Stacks
 
 - React
 - TypeScript

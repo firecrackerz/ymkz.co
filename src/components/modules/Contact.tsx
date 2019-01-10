@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import Button from '../../components/elements/Button'
 import Field from '../../components/elements/Field'
 import { handleSubmitContact } from '../../helpers/functions'
-import { Values } from '../../types'
+import { Values } from '../../typings'
 import Content from '../abstracts/Content'
 import Title from '../elements/Title'
 

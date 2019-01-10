@@ -2,7 +2,7 @@ import styled from '@emotion/styled/macro'
 import * as Formik from 'formik'
 import * as React from 'react'
 import { colors } from '../../constants'
-import { Values } from '../../types'
+import { Values } from '../../typings'
 
 interface Props {
   name: string
