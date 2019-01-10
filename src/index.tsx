@@ -14,6 +14,6 @@ Navi.app({
     const __PRODUCTION__ = process.env.NODE_ENV === 'production'
     const renderer = __PRODUCTION__ ? ReactDOM.hydrate : ReactDOM.render
     renderer(<App navigation={navigation} />, document.querySelector('#root'))
-    ServiceWorker.register()
+    ServiceWorker.unregister()
   }
 })
