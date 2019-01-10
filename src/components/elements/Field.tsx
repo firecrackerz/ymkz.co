@@ -61,7 +61,6 @@ const Textarea = styled('textarea')`
   border: 0;
   border-radius: 4px;
   color: ${colors.white};
-  font-family: auto;
   font-size: 1rem;
   padding: 0.5rem;
   resize: vertical;
