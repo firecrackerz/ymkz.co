@@ -7078,10 +7078,10 @@ navi-scripts@0.10.6:
     raf "^3.4.0"
     serve-static "^1.11.2"
 
-navi@0.10.7:
-  version "0.10.7"
-  resolved "https://registry.yarnpkg.com/navi/-/navi-0.10.7.tgz#ac2adbf16bff303741532f5efe0ad8433a3baa34"
-  integrity sha512-0Xs+H1bDCV79xxYtkULYTN3p7cCg803iWWxJMVjNYiP9jJ0ilnomf8qaedJh5JT+RzZgFWKeZSNwr6adS6QP9w==
+navi@0.10.9:
+  version "0.10.9"
+  resolved "https://registry.yarnpkg.com/navi/-/navi-0.10.9.tgz#622dff3d20ee1c6c3ba705c54000ecfae9e74d6f"
+  integrity sha512-EgGwfpbViysK3DTnvAyMFoIM1SQ4IR6lm7fvFhMX7gOJlRqXKYlK7/GR4ynVIOnEC5SlCO+hUBjbA8bVA4xj2A==
   dependencies:
     history "^4.7.2"
 

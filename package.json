@@ -21,7 +21,7 @@
     "@emotion/core": "10.0.6",
     "@emotion/styled": "10.0.6",
     "formik": "1.4.2",
-    "navi": "0.10.7",
+    "navi": "0.10.9",
     "react": "16.7.0",
     "react-device-detect": "1.6.1",
     "react-dom": "16.7.0",
