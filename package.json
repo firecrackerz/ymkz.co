@@ -23,7 +23,7 @@
     "formik": "1.4.2",
     "navi": "0.10.10",
     "react": "16.7.0",
-    "react-device-detect": "1.6.1",
+    "react-device-detect": "1.6.2",
     "react-dom": "16.7.0",
     "react-navi": "0.10.9",
     "yup": "0.26.7"
