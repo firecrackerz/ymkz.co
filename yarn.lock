@@ -1215,10 +1215,10 @@
   resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.2.tgz#e13182e1b69871a422d7863e11a4a6f5b814a4bd"
   integrity sha512-42zEJkBpNfMEAvWR5WlwtTH22oDzcMjFsL9gDGExwF8X8WvAiw7Vwop7hPw03QT8TKfec83LwbHj6SvpqM4ELQ==
 
-"@types/yup@0.26.6":
-  version "0.26.6"
-  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.6.tgz#3197372455af255c48732f2e3b336b415e025701"
-  integrity sha512-B5Wy5IcmI+mISP2O8Y4J4e4+XVdpMgo9mLQ5mOUvjNYBWWqVxtfB6KkJO+MTfZ/KbwDaXsWtYM6xQnNo/tYI7w==
+"@types/yup@0.26.7":
+  version "0.26.7"
+  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.7.tgz#d6f4118a7284d6632e80708f24b13b947dc0c35d"
+  integrity sha512-+ClhJsLEfYU6yD3heB3bLx+O8mnzAITO5IM9L79HobyX+glcbyya448ovedUGUSMroraz55oATbb1eXOyDwczw==
 
 "@webassemblyjs/ast@1.7.6":
   version "1.7.6"
