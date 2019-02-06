@@ -22,9 +22,9 @@
     "@emotion/styled": "10.0.7",
     "formik": "1.4.3",
     "navi": "0.10.13",
-    "react": "16.7.0",
+    "react": "16.8.0",
     "react-device-detect": "1.6.2",
-    "react-dom": "16.7.0",
+    "react-dom": "16.8.0",
     "react-navi": "0.10.13",
     "yup": "0.26.10"
   },
