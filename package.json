@@ -29,7 +29,7 @@
     "yup": "0.26.10"
   },
   "devDependencies": {
-    "@commitlint/cli": "7.5.0",
+    "@commitlint/cli": "7.5.1",
     "@commitlint/config-conventional": "7.5.0",
     "@types/jest": "23.3.14",
     "@types/node": "10.12.24",
