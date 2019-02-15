@@ -13,12 +13,12 @@ commands:
     steps:
       - restore_cache:
           name: Restore node_modules
-          key: app-deps-{{ checksum "package-lock.json" }}
+          key: app-deps-{{ checksum "package.json" }}
   save_dependencies:
     steps:
       - save_cache:
           name: Cache node_modules
-          key: app-deps-{{ checksum "package-lock.json" }}
+          key: app-deps-{{ checksum "package.json" }}
           paths: ~/app/node_modules
 jobs:
   setup:
