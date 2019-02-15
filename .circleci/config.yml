@@ -43,7 +43,7 @@ jobs:
           command: npm run typecheck
       - run:
           name: Run Unit Test
-          command: npm run coverage && npm run codecov
+          command: npm run coverage && npx codecov
 workflows:
   work:
     jobs:
