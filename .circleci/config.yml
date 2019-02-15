@@ -61,4 +61,4 @@ workflows:
           executor: cypress/browsers-chrome69
           build: npm run build
           start: npm run start
-          command: npm run percy exec -- cypress run --browser chrome --record
+          command: npx percy exec -- cypress run --browser chrome --record
