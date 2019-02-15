@@ -1,10 +1,10 @@
-import * as React from 'react'
-import Content from '../abstracts/Content'
-import Row from '../abstracts/Row'
-import Text from '../elements/Text'
-import Title from '../elements/Title'
+import React from 'react'
+import Content from '../abstracts/content'
+import Row from '../abstracts/row'
+import Text from '../elements/text'
+import Title from '../elements/title'
 
-export default function Profile() {
+export default function Skills() {
   return (
     <Content>
       <Title>SKILLS</Title>
@@ -18,6 +18,7 @@ export default function Profile() {
         <Text>React Native</Text>
         <Text>Redux</Text>
         <Text>Webpack</Text>
+        <Text>Git</Text>
       </Row>
     </Content>
   )

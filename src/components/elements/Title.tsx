@@ -1,6 +1,6 @@
-import styled from '@emotion/styled/macro'
+import styled from '@emotion/styled'
 
-export default styled('h1')`
+export default styled.h1`
   font-family: 'Jost';
   font-size: 1.4rem;
   font-weight: 700;

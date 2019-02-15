@@ -1,31 +1,11 @@
-import styled from '@emotion/styled/macro'
-import * as React from 'react'
-import { constraints } from '../../constants'
-import Row from '../abstracts/Row'
-import NavLink from '../elements/NavLink'
+import React from 'react'
+import styled from '@emotion/styled'
+import { withRouter, WithRouterProps } from 'next/router'
+import constraints from '../../constants/constraints'
+import Row from '../abstracts/row'
+import NavLink from '../elements/nav-link'
 
-export default function Header() {
-  return (
-    <Container>
-      <Row space={16}>
-        <img src="/images/icon_logo.webp" alt="logo" height={24} width={24} />
-        <NavLink exact precache href="/" activeClassName="active">
-          ymkz
-        </NavLink>
-      </Row>
-      <Row space={16}>
-        <NavLink exact precache href="/about/" activeClassName="active">
-          about
-        </NavLink>
-        <NavLink exact precache href="/work/" activeClassName="active">
-          work
-        </NavLink>
-      </Row>
-    </Container>
-  )
-}
-
-const Container = styled('header')`
+const Container = styled.header`
   align-items: center;
   display: flex;
   height: ${constraints.headerHeightPx};
@@ -35,3 +15,26 @@ const Container = styled('header')`
     padding: 0 16px;
   }
 `
+
+function Header({ router }: WithRouterProps) {
+  return (
+    <Container>
+      <Row space={16}>
+        <img src="/static/images/icon_logo.webp" alt="logo" height={24} width={24} />
+        <NavLink href="/" pathname={router && router.pathname}>
+          ymkz
+        </NavLink>
+      </Row>
+      <Row space={16}>
+        <NavLink href="/about" pathname={router && router.pathname}>
+          about
+        </NavLink>
+        <NavLink href="/work" pathname={router && router.pathname}>
+          work
+        </NavLink>
+      </Row>
+    </Container>
+  )
+}
+
+export default withRouter(Header)

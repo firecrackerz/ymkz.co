@@ -1,7 +1,7 @@
-import styled from '@emotion/styled/macro'
-import { constraints } from '../../constants'
+import styled from '@emotion/styled'
+import constraints from '../../constants/constraints'
 
-export default styled('div')`
+export default styled.div`
   margin: 0 auto;
   max-width: 767px;
   padding: 96px 16px;

@@ -1,24 +1,10 @@
-import styled from '@emotion/styled/macro'
-import * as React from 'react'
-import { MobileOnlyView } from 'react-device-detect'
-import { constraints } from '../constants'
+import React from 'react'
+import styled from '@emotion/styled'
+import MediaQuery from 'react-responsive'
+import constraints from '../constants/constraints'
+import Layout from '../components/abstracts/layout'
 
-export default function Home() {
-  return (
-    <Container>
-      <Greeting>
-        Hi,&nbsp;
-        <MobileOnlyView render={<br />} />
-        I'm&nbsp;
-        <MobileOnlyView render={<br />} />
-        ymkz
-      </Greeting>
-      <Message>--- Play games, seriously</Message>
-    </Container>
-  )
-}
-
-const Container = styled('div')`
+const Container = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -32,27 +18,48 @@ const Container = styled('div')`
   }
 `
 
-const Greeting = styled('h1')`
+const Greeting = styled.h1`
   font-family: 'Jost';
   font-size: 7rem;
   font-weight: 900;
   margin: 0;
   @media (max-width: ${constraints.mobileWidthPx}) {
-    font-size: 5rem;
+    font-size: 7rem;
     line-height: 1;
   }
 `
 
-const Message = styled('p')`
+const Message = styled.p`
   font-family: 'Jost';
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 300;
   margin: 0;
   margin-left: 0.5rem;
   margin-top: -1.25rem;
   @media (max-width: ${constraints.mobileWidthPx}) {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-left: 0;
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
   }
 `
+
+export default function Home() {
+  return (
+    <Layout>
+      <Container>
+        <Greeting>
+          Hi,&nbsp;
+          <MediaQuery query={`(max-width: ${constraints.mobileWidthPx})`}>
+            <br />
+          </MediaQuery>
+          I&apos;m&nbsp;
+          <MediaQuery query={`(max-width: ${constraints.mobileWidthPx})`}>
+            <br />
+          </MediaQuery>
+          ymkz
+        </Greeting>
+        <Message>----- Play games, seriously</Message>
+      </Container>
+    </Layout>
+  )
+}

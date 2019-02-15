@@ -1,7 +1,7 @@
-import styled from '@emotion/styled/macro'
-import { constraints } from '../../constants'
+import styled from '@emotion/styled'
+import constraints from '../../constants/constraints'
 
-export default styled('h2')`
+export default styled.h2`
   font-family: 'Jost';
   font-size: 1.4rem;
   font-weight: 700;

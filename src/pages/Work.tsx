@@ -1,15 +1,18 @@
-import * as React from 'react'
-import Container from '../components/abstracts/Container'
-import Cancelectures from '../components/modules/Cancelectures'
-import Narosirase from '../components/modules/Narosirase'
-import Portfolio from '../components/modules/Portfolio'
+import React from 'react'
+import Layout from '../components/abstracts/layout'
+import Container from '../components/abstracts/container'
+import Portfolio from '../components/modules/portfolio'
+import Narosirase from '../components/modules/narosirase'
+import Cancelctures from '../components/modules/cancelctures'
 
 export default function Work() {
   return (
-    <Container>
-      <Portfolio />
-      <Narosirase />
-      <Cancelectures />
-    </Container>
+    <Layout>
+      <Container>
+        <Portfolio />
+        <Narosirase />
+        <Cancelctures />
+      </Container>
+    </Layout>
   )
 }

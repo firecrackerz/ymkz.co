@@ -1,6 +1,6 @@
-import styled from '@emotion/styled/macro'
+import styled from '@emotion/styled'
 
-export default styled('div')`
+export default styled.div`
   align-items: center;
   display: flex;
   flex-flow: row wrap;

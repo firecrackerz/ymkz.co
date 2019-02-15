@@ -1,6 +1,6 @@
-import styled from '@emotion/styled/macro'
-import * as React from 'react'
-import { colors } from '../../constants'
+import React from 'react'
+import styled from '@emotion/styled'
+import colors from '../../constants/colors'
 
 interface Props {
   href: string
@@ -15,7 +15,7 @@ export default function Link(props: Props) {
   )
 }
 
-const Anchor = styled('a')`
+const Anchor = styled.a`
   color: ${colors.white};
   line-height: 1.5;
   text-decoration-line: none;

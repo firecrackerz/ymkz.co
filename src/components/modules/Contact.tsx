@@ -1,52 +1,82 @@
-import * as Formik from 'formik'
-import * as React from 'react'
-import * as Yup from 'yup'
-import Button from '../../components/elements/Button'
-import Field from '../../components/elements/Field'
-import { handleSubmitContact } from '../../helpers/functions'
-import { Values } from '../../typings'
-import Content from '../abstracts/Content'
-import Title from '../elements/Title'
+// import React from 'react'
+// import { useForm, useField } from 'react-final-form-hooks'
+// import { FormApi } from 'final-form'
+// import Content from '../abstracts/content'
+// import Title from '../elements/title'
+// import Label from '../elements/label'
+// import Input from '../elements/input'
+// import Textarea from '../elements/textarea'
 
-const initialValuesContact: Values = {
-  name: '',
-  email: '',
-  message: ''
-}
+// interface Values {
+//   name: string
+//   email: string
+//   message: string
+// }
 
-const contactValidator = Yup.object().shape({
-  name: Yup.string().required('Name is required'),
-  email: Yup.string()
-    .required('Email is required')
-    .email('Invalid email address'),
-  message: Yup.string().required('Message is required')
-})
+// interface Payload extends Values {
+//   [key: string]: string
+//   'form-name': 'contact'
+// }
 
-export default function Contact() {
-  return (
-    <Content>
-      <Title>CONTACT</Title>
-      <Formik.Formik
-        initialValues={initialValuesContact}
-        validationSchema={contactValidator}
-        onSubmit={handleSubmitContact}
-      >
-        {({ isSubmitting, isValid }: Formik.FormikProps<Values>) => (
-          <Formik.Form data-netlify data-netlify-honeypot="bot-field">
-            <Field name="name" type="input" label="Name" placeholder="John Doe" />
-            <Field name="email" type="input" label="Email" placeholder="john.doe@example.com" />
-            <Field
-              name="message"
-              type="textarea"
-              label="Message"
-              placeholder="What you want to tell me"
-            />
-            <Button type="submit" disabled={!isValid || isSubmitting}>
-              Send
-            </Button>
-          </Formik.Form>
-        )}
-      </Formik.Formik>
-    </Content>
-  )
-}
+// function encodePayloadToBody(data: Payload): string {
+//   return Object.keys(data)
+//     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+//     .join('&')
+// }
+
+// async function onSubmit(values: object, form: FormApi) {
+//   console.log('submit', values)
+//   const request = {
+//     method: 'POST',
+//     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+//     body: encodePayloadToBody({ 'form-name': 'contact', ...values })
+//   }
+
+//   fetch('/', request)
+//     .then(() => {
+//       alert('Thank you for your contact')
+//       form.reset()
+//     })
+//     .catch(error => {
+//       alert('Unexpected error has occurred')
+//       console.error(error)
+//     })
+// }
+
+// export default function Contact() {
+//   const { form, handleSubmit, pristine, submitting } = useForm({ onSubmit })
+//   const name = useField('name', form)
+//   const email = useField('email', form)
+//   const message = useField('message', form)
+
+//   return (
+//     <Content>
+//       <Title>CONTACT</Title>
+//       <form onSubmit={handleSubmit}>
+//         <div>
+//           <Label htmlFor={name.input.name}>Name</Label>
+//           <Input id={name.input.name} placeholder="John Doe" {...name.input} />
+//           {name.meta.touched && name.meta.error && <span>{name.meta.error}</span>}
+//         </div>
+//         <div>
+//           <Label htmlFor={email.input.name}>E-mail</Label>
+//           <Input id={email.input.name} placeholder="john.doe@example.com" {...email.input} />
+//           {email.meta.touched && email.meta.error && <span>{email.meta.error}</span>}
+//         </div>
+//         <div>
+//           <Label htmlFor={message.input.name}>Message</Label>
+//           <Textarea
+//             id={message.input.name}
+//             rows={8}
+//             placeholder="What you want to tell me"
+//             {...message.input}
+//           />
+//           {message.meta.touched && message.meta.error && <span>{message.meta.error}</span>}
+//         </div>
+//         <button type="submit" disabled={pristine || submitting}>
+//           Submit
+//         </button>
+//       </form>
+//     </Content>
+//   )
+// }

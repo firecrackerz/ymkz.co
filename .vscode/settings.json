@@ -1,14 +1,21 @@
 {
   "editor.formatOnSave": true,
-  "editor.lineNumbers": "off",
   "editor.rulers": [100],
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.packageManager": "npm",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
+  ],
+  "files.autoSave": "off",
   "markdown.preview.breaks": true,
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/bower_components": true,
-    "**/yarn.lock": true
-  },
-  "tslint.enable": true,
-  "tslint.autoFixOnSave": true,
-  "tslint.packageManager": "yarn"
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  }
 }
