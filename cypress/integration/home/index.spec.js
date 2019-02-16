@@ -1,11 +1,10 @@
 describe('/', () => {
   it('Visits the / and take a screenshot', () => {
     cy.visit('/')
+    cy.screenshot()
 
-    if (process.env.CI === 'true') {
+    if (Cypress.env('PERCY') === true) {
       cy.percySnapshot()
-    } else {
-      cy.screenshot()
     }
   })
 })

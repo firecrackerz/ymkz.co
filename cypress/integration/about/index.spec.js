@@ -3,7 +3,7 @@ describe('/about', () => {
     cy.visit('/about')
     cy.screenshot()
 
-    if (process.env.CI === true) {
+    if (Cypress.env('PERCY') === true) {
       cy.percySnapshot()
     }
   })
