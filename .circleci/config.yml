@@ -58,8 +58,6 @@ workflows:
       - cypress/run:
           requires:
             - cypress/install
-          environment:
-            CYPRESS_PERCY: true
           executor: cypress/browsers-chrome69
           build: npm run build
           start: npm run start
