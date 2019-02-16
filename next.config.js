@@ -8,7 +8,7 @@ const withTypescript = require('@zeit/next-typescript')
 const copyFile = util.promisify(fs.copyFile)
 
 module.exports = withTypescript({
-  exportPathMap: async function(defaultPathMap, { dev, dir, outDir }) {
+  exportPathMap: async (defaultPathMap, { dev, dir, outDir }) => {
     if (dev) {
       return defaultPathMap
     }

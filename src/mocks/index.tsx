@@ -1,5 +1,3 @@
-/* eslint-disable compat/compat */
-
 import React from 'react'
 import { RouterProps } from 'next/router'
 
