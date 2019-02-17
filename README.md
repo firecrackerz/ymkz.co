@@ -57,6 +57,11 @@
 - ESLint
 - Prettier
 
+## Subjects
+
+- 画像を`webp`で表示したい
+  - Chrome for Desktop だと webp で表示できるが、なぜか Chrome for iOS だと表示できない
+
 ## Help wanted?
 
 `jest` によるテストはとりあえず導入したという感じで、現状はテストとして何も保証していません。

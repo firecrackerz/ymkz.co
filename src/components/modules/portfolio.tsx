@@ -25,7 +25,7 @@ export default function Portfolio() {
         </li>
       </List>
       <Row space={16}>
-        <Image orientation="landscape" src="/static/images/portfolio_1.webp" alt="portfolio_1" />
+        <Image orientation="landscape" src="/static/images/portfolio_1.png" alt="portfolio_1" />
       </Row>
     </Content>
   )

@@ -20,7 +20,7 @@ function Header({ router }: WithRouterProps) {
   return (
     <Container>
       <Row space={16}>
-        <img src="/static/images/logo_icon.webp" alt="logo_icon" height={24} width={24} />
+        <img src="/static/images/logo_icon.png" alt="logo_icon" height={24} width={24} />
         <NavLink href="/" pathname={router && router.pathname}>
           ymkz
         </NavLink>
