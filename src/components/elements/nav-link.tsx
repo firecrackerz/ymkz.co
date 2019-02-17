@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Router from 'next/router'
 import { withRouter } from 'next/router'
 import styled from '@emotion/styled'
 
@@ -28,12 +27,8 @@ const Anchor = styled.a`
 
 function NavLink({ children, pathname, href }: Props) {
   return (
-    <Link href={href}>
-      <Anchor
-        root={href === '/'}
-        active={pathname === href}
-        onMouseOver={() => Router.prefetch(href)}
-      >
+    <Link href={href} prefetch>
+      <Anchor root={href === '/'} active={pathname === href}>
         {children}
       </Anchor>
     </Link>
