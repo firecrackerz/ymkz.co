@@ -10,17 +10,17 @@ export default function Social() {
       <Title>SOCIAL</Title>
       <Row space={24}>
         <LinkIcon
-          src="/static/images/icon_github.svg"
+          src="/static/images/icons/github.svg"
           href="https://github.com/ymkz"
           alt="Link to GitHub"
         />
         <LinkIcon
-          src="/static/images/icon_twitter.svg"
+          src="/static/images/icons/twitter.svg"
           href="https://twitter.com/ymkzly"
           alt="Link to Twitter"
         />
         <LinkIcon
-          src="/static/images/icon_facebook.svg"
+          src="/static/images/icons/facebook.svg"
           href="https://facebook.com/ymkzly"
           alt="Link to Facebook"
         />
