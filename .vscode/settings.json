@@ -3,7 +3,7 @@
   "editor.rulers": [100],
   "eslint.enable": true,
   "eslint.autoFixOnSave": true,
-  "eslint.packageManager": "npm",
+  "eslint.packageManager": "yarn",
   "eslint.validate": [
     "javascript",
     "javascriptreact",

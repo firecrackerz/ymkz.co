@@ -13,12 +13,12 @@ commands:
     steps:
       - restore_cache:
           name: Restore node_modules
-          key: app-deps-{{ checksum "package.json" }}
+          key: app-deps-{{ checksum "yarn.lock" }}
   save_dependencies:
     steps:
       - save_cache:
           name: Cache node_modules
-          key: app-deps-{{ checksum "package.json" }}
+          key: app-deps-{{ checksum "yarn.lock" }}
           paths: ~/app/node_modules
 jobs:
   setup:
@@ -28,7 +28,7 @@ jobs:
       - restore_dependencies
       - run:
           name: Install dependencies
-          command: npm install
+          command: yarn install
       - save_dependencies
   check:
     executor: default
@@ -37,13 +37,13 @@ jobs:
       - restore_dependencies
       - run:
           name: Run Lint
-          command: npm run lint
+          command: yarn run lint
       - run:
           name: Run Typecheck
-          command: npm run typecheck
+          command: yarn run typecheck
       - run:
           name: Run Unit Test
-          command: npm run coverage && npx codecov
+          command: yarn run coverage && npx codecov
 workflows:
   work:
     jobs:
@@ -59,6 +59,6 @@ workflows:
           requires:
             - cypress/install
           executor: cypress/browsers-chrome69
-          build: npm run build
-          start: npm run start
+          build: yarn run build
+          start: yarn run start
           command: npx percy exec -- cypress run --browser chrome --record
