@@ -55,10 +55,12 @@ workflows:
           requires:
             - setup
           executor: cypress/browsers-chrome69
+          yarn: ture
       - cypress/run:
           requires:
             - cypress/install
           executor: cypress/browsers-chrome69
+          yarn: ture
           build: yarn run build
           start: yarn run start
           command: npx percy exec -- cypress run --browser chrome --record
