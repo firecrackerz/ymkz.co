@@ -12,7 +12,7 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://circleci.com/gh/ymkz/ymkz.co">
+  <a href="https://circleci.com/gh/ymkz/workflows/ymkz.co">
     <img src="https://flat.badgen.net/circleci/github/ymkz/ymkz.co">
   </a>
   <a href="https://github.com/Microsoft/TypeScript">
