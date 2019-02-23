@@ -7,7 +7,7 @@
   "homepage": "https://ymkz.co",
   "description": "The portfolio website about ymkz",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
