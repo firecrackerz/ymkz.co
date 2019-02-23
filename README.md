@@ -7,6 +7,11 @@
   <br />
 </div>
 <p align="center">
+  <a href="https://app.netlify.com/sites/ymkz/deploys">
+    <img src="https://api.netlify.com/api/v1/badges/9a7ae7fb-d8e6-4c46-aa81-04a119726751/deploy-status">
+  </a>
+</p>
+<p align="center">
   <a href="https://circleci.com/gh/ymkz/ymkz.co">
     <img src="https://flat.badgen.net/circleci/github/ymkz/ymkz.co">
   </a>
