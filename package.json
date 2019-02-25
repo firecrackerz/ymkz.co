@@ -34,7 +34,7 @@
     "@types/react": "16.8.4",
     "@types/react-dom": "16.8.2",
     "@types/react-responsive": "3.0.3",
-    "@typescript-eslint/eslint-plugin": "1.4.1",
+    "@typescript-eslint/eslint-plugin": "1.4.2",
     "@typescript-eslint/parser": "1.4.1",
     "@zeit/next-typescript": "1.1.1",
     "babel-plugin-emotion": "10.0.7",
