@@ -31,7 +31,7 @@
     "@percy/cypress": "1.0.2",
     "@types/jest": "24.0.6",
     "@types/next": "8.0.1",
-    "@types/react": "16.8.4",
+    "@types/react": "16.8.5",
     "@types/react-dom": "16.8.2",
     "@types/react-responsive": "3.0.3",
     "@typescript-eslint/eslint-plugin": "1.4.2",
