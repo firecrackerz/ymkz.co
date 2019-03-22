@@ -21,8 +21,8 @@
     "@emotion/core": "10.0.9",
     "@emotion/styled": "10.0.9",
     "next": "8.0.3",
-    "react": "16.8.4",
-    "react-dom": "16.8.4",
+    "react": "16.8.5",
+    "react-dom": "16.8.5",
     "react-responsive": "6.1.1"
   },
   "devDependencies": {
