@@ -18,8 +18,8 @@
     "lazy": "run-p typecheck lint coverage export"
   },
   "dependencies": {
-    "@emotion/core": "10.0.9",
-    "@emotion/styled": "10.0.9",
+    "@emotion/core": "10.0.10",
+    "@emotion/styled": "10.0.10",
     "next": "8.0.3",
     "react": "16.8.5",
     "react-dom": "16.8.5",
