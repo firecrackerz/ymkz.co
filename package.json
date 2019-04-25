@@ -41,7 +41,7 @@
     "codecov": "3.3.0",
     "cypress": "3.2.0",
     "eslint": "5.16.0",
-    "eslint-config-prettier": "4.1.0",
+    "eslint-config-prettier": "4.2.0",
     "eslint-plugin-compat": "3.1.1",
     "eslint-plugin-cypress": "2.2.1",
     "eslint-plugin-jest": "22.5.1",
